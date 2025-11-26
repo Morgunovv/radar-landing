@@ -61,7 +61,7 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="features" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,13 +70,13 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Всё что нужно для{' '}
-            <span className="bg-gradient-to-r from-telegram-600 to-primary-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
               эффективного мониторинга
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Мощные инструменты для автоматизации работы с Telegram-каналами
           </p>
         </motion.div>
@@ -93,14 +93,14 @@ export function Features() {
                 whileHover={{ y: -5 }}
                 className="relative group"
               >
-                <div className="h-full p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300">
+                <div className="h-full p-6 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl border border-gray-700 hover:border-primary-500 hover:shadow-xl transition-all duration-300">
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} p-3 mb-4 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
                     <span className="text-2xl">{feature.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl font-bold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

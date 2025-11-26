@@ -63,7 +63,7 @@ const useCases = [
 
 export function UseCases() {
   return (
-    <section id="use-cases" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+    <section id="use-cases" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,13 +72,13 @@ export function UseCases() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Кому подходит{' '}
-            <span className="bg-gradient-to-r from-telegram-600 to-primary-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
               Telegram Radar?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Независимо от твоей ниши — если тебе нужно отслеживать Telegram-каналы, мы поможем
           </p>
         </motion.div>
@@ -95,20 +95,20 @@ export function UseCases() {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="relative group"
               >
-                <div className={`h-full p-6 rounded-2xl border-2 border-transparent hover:border-primary-200 ${useCase.bgColor} transition-all duration-300 shadow-lg hover:shadow-2xl`}>
+                <div className={`h-full p-6 rounded-2xl border-2 border-gray-700 hover:border-primary-500 bg-gray-700/50 transition-all duration-300 shadow-lg hover:shadow-2xl`}>
                   <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${useCase.color} p-3 mb-4 transform group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center`}>
                     <span className="text-3xl">{useCase.icon}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-white mb-3">
                     {useCase.title}
                   </h3>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
+                  <p className="text-gray-300 mb-4 leading-relaxed">
                     {useCase.description}
                   </p>
                   <ul className="space-y-2">
                     {useCase.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start text-sm text-gray-600">
-                        <span className="text-primary-600 mr-2">✓</span>
+                      <li key={i} className="flex items-start text-sm text-gray-300">
+                        <span className="text-primary-400 mr-2">✓</span>
                         <span>{benefit}</span>
                       </li>
                     ))}
