@@ -43,7 +43,7 @@ const plans = [
     description: 'Для профессионалов и растущих проектов',
     features: [
       'Мониторинг до 100 каналов',
-      'До 50 ключевых запросов',
+      'До 100 ключевых запросов',
       'Мониторинг закрытых чатов, групп и каналов',
       'Неограниченное количество групп и сообщений',
       'Копирование старых сообщений',
@@ -169,12 +169,16 @@ export function Pricing() {
                 </div>
 
                 <ul className="flex-grow space-y-3 mb-6">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <span className={`text-lg mr-2 flex-shrink-0 text-primary-400`}>✓</span>
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </li>
-                  ))}
+                  {plan.features.map((feature, i) => {
+                    // Выделяем "до X" и числа жирным шрифтом
+                    const formattedFeature = feature.replace(/(до\s+\d+|\d+)/gi, '<strong>$1</strong>');
+                    return (
+                      <li key={i} className="flex items-start">
+                        <span className={`text-lg mr-2 flex-shrink-0 text-primary-400`}>✓</span>
+                        <span className="text-gray-300 text-sm" dangerouslySetInnerHTML={{ __html: formattedFeature }} />
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 <a
