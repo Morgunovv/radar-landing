@@ -115,28 +115,52 @@ export function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-cyan-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 cursor-pointer group"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-cyan-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 ease-out cursor-pointer group"
             >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">🎯</div>
-              <div className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors duration-300">до 500 каналов мониторинга</div>
+              <motion.div 
+                className="text-4xl mb-3"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >🎯</motion.div>
+              <motion.div 
+                className="text-sm md:text-base text-gray-300"
+                whileHover={{ color: "#ffffff" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >до 500 каналов мониторинга</motion.div>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-purple-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer group"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-purple-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 ease-out cursor-pointer group"
             >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">⏰</div>
-              <div className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors duration-300">Фильтры и тонкие настройки</div>
+              <motion.div 
+                className="text-4xl mb-3"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >⏰</motion.div>
+              <motion.div 
+                className="text-sm md:text-base text-gray-300"
+                whileHover={{ color: "#ffffff" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >Фильтры и тонкие настройки</motion.div>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3 }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-orange-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 cursor-pointer group"
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-orange-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 ease-out cursor-pointer group"
             >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">⚡</div>
+              <motion.div 
+                className="text-4xl mb-3"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >⚡</motion.div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-sm md:text-base text-gray-300 group-hover:text-white transition-colors duration-300">релевантности</div>
+              <motion.div 
+                className="text-sm md:text-base text-gray-300"
+                whileHover={{ color: "#ffffff" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >релевантности</motion.div>
             </motion.div>
           </div>
         </motion.div>
