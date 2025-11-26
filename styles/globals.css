@@ -55,3 +55,40 @@ html {
   background: #555;
 }
 
+/* Dark theme scrollbar */
+.dark-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 5px;
+}
+
+.dark-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Background patterns */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Animated gradient background */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg-animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+

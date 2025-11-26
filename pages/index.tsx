@@ -20,7 +20,10 @@ export default function Home() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </Head>
-      <main className="min-h-screen bg-gray-800">
+      <main className="min-h-screen bg-gray-900 relative">
+        {/* Background pattern overlay */}
+        <div className="fixed inset-0 bg-[url('/images/bg-pattern.svg')] bg-cover bg-center opacity-10 pointer-events-none"></div>
+        <div className="relative z-10">
         <Navbar />
         <Hero />
         <Features />
@@ -28,6 +31,7 @@ export default function Home() {
         <Pricing />
         <CTA />
         <Footer />
+        </div>
       </main>
     </>
   )

@@ -63,8 +63,16 @@ const useCases = [
 
 export function UseCases() {
   return (
-    <section id="use-cases" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800">
-      <div className="max-w-7xl mx-auto">
+    <section id="use-cases" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800 relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[url('/images/usecases-bg.svg')] bg-cover bg-center opacity-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900"></div>
+      </div>
+      
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
