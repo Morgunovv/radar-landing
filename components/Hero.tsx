@@ -124,7 +124,7 @@ export function Hero() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >🎯</motion.div>
               <motion.div 
-                className="text-sm md:text-base text-gray-300"
+                className="text-base md:text-lg text-gray-300"
                 whileHover={{ color: "#ffffff" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >до 500 каналов мониторинга</motion.div>
@@ -140,7 +140,7 @@ export function Hero() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >⏰</motion.div>
               <motion.div 
-                className="text-sm md:text-base text-gray-300"
+                className="text-base md:text-lg text-gray-300"
                 whileHover={{ color: "#ffffff" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >Фильтры и тонкие настройки</motion.div>
@@ -157,7 +157,7 @@ export function Hero() {
               >⚡</motion.div>
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
               <motion.div 
-                className="text-sm md:text-base text-gray-300"
+                className="text-base md:text-lg text-gray-300"
                 whileHover={{ color: "#ffffff" }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >релевантности</motion.div>
