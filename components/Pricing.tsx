@@ -156,14 +156,15 @@ export function Pricing() {
               } transition-all duration-300 ease-out cursor-pointer flex flex-col`}>
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="flex items-baseline mb-2">
-                    <span className="text-4xl font-extrabold text-white">{plan.price}</span>
-                    {plan.price !== 'Бесплатно' && (
+                  {plan.price === 'Бесплатно' ? (
+                    <div className="mb-2">
+                      <span className="text-sm font-semibold text-white">{plan.price} {plan.period}</span>
+                    </div>
+                  ) : (
+                    <div className="flex items-baseline mb-2">
+                      <span className="text-4xl font-extrabold text-white">{plan.price}</span>
                       <span className="text-gray-400 ml-2">{plan.period}</span>
-                    )}
-                  </div>
-                  {plan.period && plan.price === 'Бесплатно' && (
-                    <span className="text-sm text-gray-400">{plan.period}</span>
+                    </div>
                   )}
                   <p className="text-gray-300 mt-3 text-sm">{plan.description}</p>
                 </div>
