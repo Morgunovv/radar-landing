@@ -1,0 +1,115 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+const features = [
+  {
+    icon: '⚡',
+    title: 'Мгновенные уведомления',
+    description: 'Получай важные сообщения первым. Мониторинг в реальном времени без задержек.',
+    color: 'from-yellow-400 to-orange-500'
+  },
+  {
+    icon: '🎯',
+    title: 'Точная фильтрация',
+    description: 'Только релевантный контент по твоим ключевым словам. Умная фильтрация спама.',
+    color: 'from-blue-400 to-cyan-500'
+  },
+  {
+    icon: '⏰',
+    title: 'Экономия времени',
+    description: 'Автоматизируй рутину. Экономь 10-15 часов в неделю на поиске информации.',
+    color: 'from-green-400 to-emerald-500'
+  },
+  {
+    icon: '🔒',
+    title: 'Безопасность',
+    description: 'Шифрование сессий. Твои данные в безопасности. Поддержка приватных каналов.',
+    color: 'from-purple-400 to-pink-500'
+  },
+  {
+    icon: '📊',
+    title: 'Аналитика и статистика',
+    description: 'Отслеживай эффективность. Статистика по каналам и ключевым словам.',
+    color: 'from-indigo-400 to-blue-500'
+  },
+  {
+    icon: '🤖',
+    title: 'Автоматическая публикация',
+    description: 'Публикуй найденный контент в свои каналы автоматически. Один клик — готово.',
+    color: 'from-red-400 to-rose-500'
+  },
+  {
+    icon: '🔍',
+    title: 'Мощный поиск',
+    description: 'Регулярные выражения, точное совпадение, регистр — гибкие настройки поиска.',
+    color: 'from-teal-400 to-cyan-500'
+  },
+  {
+    icon: '🔽',
+    title: 'Умные фильтры',
+    description: 'Фильтрация по количеству реакций, комментариев, дате и другим параметрам.',
+    color: 'from-amber-400 to-orange-500'
+  },
+  {
+    icon: '🔔',
+    title: 'Персонализация',
+    description: 'Настрой всё под себя. Приоритеты каналов, расписание, форматы уведомлений.',
+    color: 'from-violet-400 to-purple-500'
+  }
+]
+
+export function Features() {
+  return (
+    <section id="features" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+            Всё что нужно для{' '}
+            <span className="bg-gradient-to-r from-telegram-600 to-primary-600 bg-clip-text text-transparent">
+              эффективного мониторинга
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Мощные инструменты для автоматизации работы с Telegram-каналами
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => {
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+                className="relative group"
+              >
+                <div className="h-full p-6 bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} p-3 mb-4 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center`}>
+                    <span className="text-2xl">{feature.icon}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
