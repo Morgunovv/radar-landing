@@ -132,7 +132,12 @@ export function Pricing() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: plan.popular ? 1.08 : 1.05, y: -5 }}
+              transition={{ 
+                opacity: { duration: 0.5, delay: index * 0.1 },
+                y: { duration: 0.5, delay: index * 0.1 },
+                scale: { duration: 0.3, ease: "easeOut" }
+              }}
               className={`relative ${plan.popular ? 'lg:scale-105 lg:-mt-4' : ''}`}
             >
               {plan.popular && (
@@ -146,9 +151,9 @@ export function Pricing() {
               
               <div className={`h-full p-6 rounded-2xl border-2 ${
                 plan.popular 
-                  ? 'border-primary-400 bg-gradient-to-br from-primary-900/50 to-gray-800 shadow-2xl' 
-                  : 'border-gray-700 bg-gray-800 hover:border-primary-500 hover:shadow-xl'
-              } transition-all duration-300 flex flex-col`}>
+                  ? 'border-primary-400 bg-gradient-to-br from-primary-900/50 to-gray-800 shadow-2xl hover:bg-primary-900/60' 
+                  : 'border-gray-700 bg-gray-800 hover:border-primary-500 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-primary-500/20'
+              } transition-all duration-300 ease-out cursor-pointer flex flex-col`}>
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
                   <div className="flex items-baseline mb-2">

@@ -99,14 +99,22 @@ export function UseCases() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                transition={{ 
+                  opacity: { duration: 0.5, delay: index * 0.1 },
+                  y: { duration: 0.5, delay: index * 0.1 },
+                  scale: { duration: 0.3, ease: "easeOut" }
+                }}
                 className="relative group"
               >
-                <div className={`h-full p-6 rounded-2xl border-2 border-gray-700 hover:border-primary-500 bg-gray-700/50 transition-all duration-300 shadow-lg hover:shadow-2xl`}>
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${useCase.color} p-3 mb-4 transform group-hover:rotate-6 transition-transform duration-300 flex items-center justify-center`}>
+                <div className={`h-full p-6 rounded-2xl border-2 border-gray-700 hover:border-primary-500 hover:bg-gray-800/70 bg-gray-700/50 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 ease-out cursor-pointer`}>
+                  <motion.div 
+                    className={`w-14 h-14 rounded-xl bg-gradient-to-r ${useCase.color} p-3 mb-4 flex items-center justify-center`}
+                    whileHover={{ scale: 1.1, rotate: 6 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  >
                     <span className="text-3xl">{useCase.icon}</span>
-                  </div>
+                  </motion.div>
                   <h3 className="text-xl font-bold text-white mb-3">
                     {useCase.title}
                   </h3>
