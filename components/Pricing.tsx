@@ -165,7 +165,7 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href="https://t.me/your_bot_username"
+                  href="https://t.me/radar_telegram_bot"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`w-full py-3 px-4 rounded-xl font-semibold text-center transition-all duration-200 ${

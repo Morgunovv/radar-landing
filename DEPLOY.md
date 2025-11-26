@@ -60,7 +60,7 @@ vercel --prod
 
 ### 1. Ссылки на бота
 
-Найдите и замените `your_bot_username` на реальный username вашего Telegram бота в файлах:
+Найдите и замените `radar_telegram_bot` на реальный username вашего Telegram бота в файлах:
 
 - `components/Navbar.tsx`
 - `components/Hero.tsx`

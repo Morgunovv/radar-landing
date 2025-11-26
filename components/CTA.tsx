@@ -27,7 +27,7 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.a
-              href="https://t.me/your_bot_username"
+              href="https://t.me/radar_telegram_bot"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

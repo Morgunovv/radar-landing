@@ -44,7 +44,7 @@ export function Navbar() {
               Тарифы
             </Link>
             <a
-              href="https://t.me/your_bot_username"
+              href="https://t.me/radar_telegram_bot"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-telegram-500 to-primary-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
@@ -55,7 +55,7 @@ export function Navbar() {
 
           <div className="md:hidden">
             <a
-              href="https://t.me/your_bot_username"
+              href="https://t.me/radar_telegram_bot"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-telegram-500 to-primary-600 text-white px-4 py-2 rounded-lg font-semibold text-sm"

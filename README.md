@@ -59,7 +59,7 @@ vercel --prod
 
 ### Изменение ссылки на бота
 
-Найдите все упоминания `your_bot_username` и замените на реальный username вашего бота:
+Найдите все упоминания `radar_telegram_bot` и замените на реальный username вашего бота:
 
 - `components/Navbar.tsx`
 - `components/Hero.tsx`

@@ -19,7 +19,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://t.me/your_bot_username"
+                href="https://t.me/radar_telegram_bot"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-telegram-400 transition-colors"
