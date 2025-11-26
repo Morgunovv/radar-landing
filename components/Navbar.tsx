@@ -43,6 +43,9 @@ export function Navbar() {
             <Link href="#pricing" className="text-gray-300 hover:text-primary-400 transition-colors font-medium">
               Тарифы
             </Link>
+            <Link href="/faq" className="text-gray-300 hover:text-primary-400 transition-colors font-medium">
+              FAQ
+            </Link>
             <a
               href="https://t.me/radar_telegram_bot"
               target="_blank"

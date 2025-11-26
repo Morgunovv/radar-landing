@@ -57,7 +57,7 @@ export function Footer() {
                 <a href="mailto:support@example.com" className="hover:text-white transition-colors">Связаться с нами</a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">FAQ</a>
+                <a href="/faq" className="hover:text-white transition-colors">FAQ</a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">Статус системы</a>
