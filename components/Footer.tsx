@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
@@ -57,7 +59,7 @@ export function Footer() {
                 <a href="mailto:support@example.com" className="hover:text-white transition-colors">Связаться с нами</a>
               </li>
               <li>
-                <a href="/faq" className="hover:text-white transition-colors">FAQ</a>
+                <Link href="/faq" className="hover:text-white transition-colors">FAQ</Link>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">Статус системы</a>
