@@ -58,6 +58,11 @@ html {
   max-width: 100vw;
 }
 
+/* Scroll margin для элементов с якорями - учитывает фиксированный навбар */
+[id] {
+  scroll-margin-top: 80px;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

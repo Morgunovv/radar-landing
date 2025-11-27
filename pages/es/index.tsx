@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { Hero } from '@/components/Hero'
@@ -13,8 +13,26 @@ import { Navbar } from '@/components/Navbar'
 export default function HomeES() {
   const router = useRouter()
 
+  // Используем useLayoutEffect для синхронного скролла до рендера
+  useLayoutEffect(() => {
+    if (typeof window !== 'undefined' && router.pathname === '/es') {
+      // Если есть якорь в URL, сразу скроллим к нему без задержек
+      if (window.location.hash) {
+        const hash = window.location.hash.substring(1) // убираем #
+        // Используем requestAnimationFrame для гарантии, что DOM готов
+        requestAnimationFrame(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            // Используем scrollIntoView с блокировкой поведения для мгновенного скролла
+            element.scrollIntoView({ behavior: 'auto', block: 'start' })
+          }
+        })
+      }
+    }
+  }, [router.pathname])
+
   useEffect(() => {
-    // Обработка якорей в URL (например, /es#features)
+    // Обработка якорей в URL при изменении hash (для плавного скролла при клике на ссылку)
     const handleHashScroll = () => {
       if (typeof window !== 'undefined' && window.location.hash) {
         const hash = window.location.hash.substring(1)
@@ -25,7 +43,7 @@ export default function HomeES() {
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
             window.scrollTo({
               top: y,
-              behavior: 'smooth'
+              behavior: 'smooth' // плавный скролл при клике на ссылку
             })
           }, 100)
         }
@@ -77,10 +95,11 @@ export default function HomeES() {
       }
     }
 
+    // Восстанавливаем позицию при загрузке/возврате на страницу
+    // Якоря обрабатываются в useLayoutEffect выше, здесь только восстановление позиции без якоря
     if (typeof window !== 'undefined' && router.pathname === '/es') {
-      if (window.location.hash) {
-        handleHashScroll()
-      } else {
+      // Если нет якоря, восстанавливаем сохраненную позицию
+      if (!window.location.hash) {
         const isReturning = sessionStorage.getItem('homeScrollPosition') !== null
         if (isReturning) {
           restoreScrollPosition()
