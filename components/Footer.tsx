@@ -39,6 +39,9 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Поддержка</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
+                <Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link>
+              </li>
+              <li>
                 <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Telegram бот</a>
               </li>
               <li>
@@ -54,8 +57,8 @@ export function Footer() {
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} Telegram Radar. Все права защищены.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-primary transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="hover:text-primary transition-colors">Условия использования</a>
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors">Политика конфиденциальности</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Условия использования</Link>
           </div>
         </div>
       </div>
