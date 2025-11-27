@@ -10,7 +10,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export default function CryptoTraders() {
   const { t } = useLanguage()
   const router = useRouter()
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://telegram-radar.com'
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/cases/crypto-traders`
   const ogImage = `${siteUrl}/logo.png`
   const title = String(t('pages.cases.crypto.title'))

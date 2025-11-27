@@ -83,7 +83,7 @@ export default function Home() {
     }
   }, [router])
 
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://telegram-radar.com'
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : siteUrl
   const ogImage = `${siteUrl}/logo.png`
   const title = String(t('pages.home.title'))

@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export default function Terms() {
   const { t, language } = useLanguage()
   const router = useRouter()
-  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://telegram-radar.com'
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/terms`
   const ogImage = `${siteUrl}/logo.png`
   const title = String(t('pages.terms.title'))
