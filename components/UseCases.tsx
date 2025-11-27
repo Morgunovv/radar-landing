@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { TrendingUp, Megaphone, Newspaper, ShoppingCart, Users, Repeat } from 'lucide-react'
 import Link from 'next/link'
-import { useLanguage } from '@/contexts/LanguageContext'
 
 const useCaseConfig = [
   {
@@ -45,7 +44,6 @@ const useCaseConfig = [
 ]
 
 export function UseCases() {
-  const { t } = useLanguage()
   return (
     <section id="usecases" className="py-24 px-4 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
@@ -60,8 +58,8 @@ export function UseCases() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('usecases.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t('usecases.subtitle')}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Для кого это?</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Решение для профессионалов в разных индустриях</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -84,8 +82,22 @@ export function UseCases() {
                   <div className={`relative inline-flex p-3 rounded-xl bg-gradient-to-br ${useCase.gradient} mb-4`}>
                     <IconComponent className="w-6 h-6 text-background" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{t(`usecases.items.${useCase.key}.title`)}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{t(`usecases.items.${useCase.key}.description`)}</p>
+                  <h3 className="text-xl font-bold mb-3">
+                    {useCase.key === 'crypto' && 'Крипто-трейдеры'}
+                    {useCase.key === 'marketers' && 'Маркетологи'}
+                    {useCase.key === 'media' && 'Медиа и журналисты'}
+                    {useCase.key === 'ecommerce' && 'E-commerce'}
+                    {useCase.key === 'hr' && 'HR и рекрутеры'}
+                    {useCase.key === 'resellers' && 'Реселлеры'}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {useCase.key === 'crypto' && 'Мониторь 100+ крипто-каналов одновременно. Получай только релевантные сигналы за секунды.'}
+                    {useCase.key === 'marketers' && 'Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов.'}
+                    {useCase.key === 'media' && 'Будь первым с новостями. Агрегируй информацию из 200+ источников за секунды.'}
+                    {useCase.key === 'ecommerce' && 'Находи выгодные предложения и тренды раньше конкурентов. Автоматизируй поиск товаров.'}
+                    {useCase.key === 'hr' && 'Находи таланты быстрее. Автоматизируй поиск кандидатов и мониторинг рынка труда.'}
+                    {useCase.key === 'resellers' && 'Не упускай выгодные сделки. Автоматизируй поиск товаров и услуг для перепродажи.'}
+                  </p>
                 </motion.div>
               </Link>
             )

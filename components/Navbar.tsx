@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronDown, Globe } from 'lucide-react'
-import { useLanguage } from '@/contexts/LanguageContext'
 
 const languages = [
   { code: 'ru', name: 'Русский', flag: '/flags/RU.webp', countryCode: 'RU' },
@@ -14,7 +13,7 @@ const languages = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
-  const { language, setLanguage, t } = useLanguage()
+  const [language, setLanguage] = useState<'ru' | 'en' | 'es'>('ru')
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,13 +62,13 @@ export function Navbar() {
           
           <div className="hidden md:flex items-center space-x-4">
             <Link href="#features" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              {t('navbar.features')}
+              Возможности
             </Link>
             <Link href="#pricing" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              {t('navbar.pricing')}
+              Тарифы
             </Link>
             <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              {t('navbar.faq')}
+              FAQ
             </Link>
             
             {/* Language selector */}
@@ -132,7 +131,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-11 rounded-md text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              {t('navbar.setup')}
+              Настроить за 3 минуты
             </a>
           </div>
 
@@ -195,7 +194,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-10 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-md text-sm"
             >
-              {t('navbar.start')}
+              Начать
             </a>
           </div>
         </div>

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, Star, Crown, Check, ChevronDown } from 'lucide-react'
-import { useLanguage } from '@/contexts/LanguageContext'
 
 const planConfig = [
   {
@@ -70,7 +69,6 @@ const currencySymbols: Record<string, string> = {
 }
 
 export function Pricing() {
-  const { t } = useLanguage()
   const [selectedCurrency, setSelectedCurrency] = useState('EUR')
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({})
@@ -124,7 +122,7 @@ export function Pricing() {
   }, [isDropdownOpen])
 
   const getPrice = (priceEur: number) => {
-    if (priceEur === 0) return t('pricing.free')
+    if (priceEur === 0) return 'Бесплатно'
     
     const rate = exchangeRates[selectedCurrency] || 1
     const convertedPrice = Math.round(priceEur * rate)
@@ -144,8 +142,8 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('pricing.title')}</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">{t('pricing.subtitle')}</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Выбери свой план</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">Начни бесплатно. Масштабируйся по мере роста.</p>
           
           {/* Выпадающий список валют */}
           <div className="relative inline-block currency-dropdown">
@@ -216,7 +214,7 @@ export function Pricing() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-bold text-primary-foreground">
-                    {t('pricing.popular')}
+                    Популярный
                   </div>
                 )}
                 
@@ -225,18 +223,24 @@ export function Pricing() {
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t(`pricing.plans.${plan.key}.subtitle`)}</p>
+                <p className="text-sm text-muted-foreground mb-4">
+                  {plan.key === 'free' && 'Попробуй возможности'}
+                  {plan.key === 'light' && 'Для начинающих'}
+                  {plan.key === 'medium' && 'Самый популярный'}
+                  {plan.key === 'hard' && 'Для профессионалов'}
+                  {plan.key === 'rock' && 'Максимальная мощность'}
+                </p>
                 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     {plan.priceEur === 0 ? (
-                      <span className="text-4xl font-bold">{t('pricing.free')}</span>
+                      <span className="text-4xl font-bold">Бесплатно</span>
                     ) : (
                       <>
                         <span className="text-4xl font-bold">
                           {loading ? '...' : getPrice(plan.priceEur)}
                         </span>
-                        <span className="text-muted-foreground"> {t('pricing.month')}</span>
+                        <span className="text-muted-foreground"> в месяц</span>
                       </>
                     )}
                   </div>
@@ -248,19 +252,19 @@ export function Pricing() {
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.channels')}
+                          До 5 каналов мониторинга
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.queries')}
+                          До 10 ключевых запросов
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.support')}
+                          Базовая поддержка
                         </span>
                       </li>
                     </>
@@ -269,38 +273,26 @@ export function Pricing() {
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {(() => {
-                            const text = t('pricing.plans.features.channels', { count: channelsCount.toString() })
-                            if (typeof text !== 'string') return text
-                            const parts = text.split('{{count}}')
-                            return parts.length > 1 ? (
-                              <>
-                                {parts[0]}<strong>{channelsCount}</strong>{parts[1]}
-                              </>
-                            ) : text
-                          })()}
+                          До <strong>{channelsCount}</strong> каналов мониторинга
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {(() => {
-                            const text = t('pricing.plans.features.queries', { count: queriesCount.toString() })
-                            if (typeof text !== 'string') return text
-                            const parts = text.split('{{count}}')
-                            return parts.length > 1 ? (
-                              <>
-                                {parts[0]}<strong>{queriesCount}</strong>{parts[1]}
-                              </>
-                            ) : text
-                          })()}
+                          До <strong>{queriesCount}</strong> ключевых запросов
                         </span>
                       </li>
                       {otherFeatures.map((feature, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                           <span className="text-sm text-muted-foreground">
-                            {t(`pricing.plans.features.${feature}`)}
+                            {feature === 'private' && 'Мониторинг закрытых каналов'}
+                            {feature === 'unlimited' && 'Безлимит групп для пересылки'}
+                            {feature === 'copy' && 'Копирование старых сообщений'}
+                            {feature === 'forward' && 'Форвард или копипаст постов'}
+                            {feature === 'links' && 'Управление ссылками на источник'}
+                            {feature === 'priority' && 'Приоритетная поддержка'}
+                            {feature === 'dedicated' && 'Dedicated support'}
                           </span>
                         </li>
                       ))}
@@ -318,7 +310,7 @@ export function Pricing() {
                       : 'bg-card hover:bg-muted text-primary-foreground'
                   }`}
                 >
-                  {plan.priceEur === 0 ? t('pricing.try') : t('pricing.choosePlan')}
+                  {plan.priceEur === 0 ? 'Попробовать' : 'Выбрать план'}
                 </a>
               </motion.div>
             )
@@ -332,7 +324,7 @@ export function Pricing() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12 text-muted-foreground"
         >
-          {t('pricing.footer')}
+          Бесплатный тариф навсегда • Платные тарифы без привязки карты
         </motion.p>
       </div>
     </section>

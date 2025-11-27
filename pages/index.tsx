@@ -9,11 +9,9 @@ import { Pricing } from '@/components/Pricing'
 import { CTA } from '@/components/CTA'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
-import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Home() {
   const router = useRouter()
-  const { t } = useLanguage()
 
   useEffect(() => {
     // Сохраняем позицию скролла при уходе со страницы
@@ -86,8 +84,8 @@ export default function Home() {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : siteUrl
   const ogImage = `${siteUrl}/logo.png`
-  const title = String(t('pages.home.title'))
-  const description = String(t('pages.home.description'))
+  const title = 'Telegram Radar - Мониторинг каналов на автопилоте'
+  const description = 'Автоматизируй мониторинг Telegram-каналов. Получай только релевантные сообщения по ключевым словам. Экономь часы работы каждый день.'
 
   return (
     <>
