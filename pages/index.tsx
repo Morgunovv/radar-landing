@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { Hero } from '@/components/Hero'
 import { ProblemsSolutions } from '@/components/ProblemsSolutions'
 import { Features } from '@/components/Features'
@@ -9,6 +11,76 @@ import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 
 export default function Home() {
+  const router = useRouter()
+
+  useEffect(() => {
+    // Сохраняем позицию скролла при уходе со страницы
+    const saveScrollPosition = () => {
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())
+      }
+    }
+
+    // Восстанавливаем позицию скролла при возврате на страницу
+    const restoreScrollPosition = () => {
+      if (typeof window !== 'undefined') {
+        const savedPosition = sessionStorage.getItem('homeScrollPosition')
+        if (savedPosition) {
+          // Небольшая задержка для того, чтобы контент успел загрузиться
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              window.scrollTo({
+                top: parseInt(savedPosition, 10),
+                behavior: 'auto'
+              })
+              sessionStorage.removeItem('homeScrollPosition')
+            }, 50)
+          })
+        }
+      }
+    }
+
+    // Сохраняем позицию при клике на ссылки, ведущие на другие страницы
+    const handleLinkClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const link = target.closest('a')
+      if (link) {
+        const href = link.getAttribute('href')
+        // Проверяем, что это ссылка на другую страницу (не якорь и не внешняя)
+        if (href && href.startsWith('/') && !href.startsWith('/#') && href !== '/') {
+          saveScrollPosition()
+        }
+      }
+    }
+
+    // Восстанавливаем позицию при загрузке/возврате на страницу
+    if (router.pathname === '/') {
+      // Проверяем, вернулись ли мы с другой страницы
+      const isReturning = sessionStorage.getItem('homeScrollPosition') !== null
+      if (isReturning) {
+        restoreScrollPosition()
+      }
+    }
+
+    // Сохраняем позицию при переходе на другую страницу через роутер
+    const handleRouteChangeStart = (url: string) => {
+      if (url !== '/' && !url.startsWith('/#')) {
+        saveScrollPosition()
+      }
+    }
+
+    // Сохраняем позицию при уходе со страницы
+    window.addEventListener('beforeunload', saveScrollPosition)
+    document.addEventListener('click', handleLinkClick, true)
+    router.events.on('routeChangeStart', handleRouteChangeStart)
+
+    return () => {
+      window.removeEventListener('beforeunload', saveScrollPosition)
+      document.removeEventListener('click', handleLinkClick, true)
+      router.events.off('routeChangeStart', handleRouteChangeStart)
+    }
+  }, [router])
+
   return (
     <>
       <Head>
