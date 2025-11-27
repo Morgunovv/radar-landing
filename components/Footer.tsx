@@ -14,7 +14,7 @@ export function Footer() {
               <img 
                 src="/logo.png" 
                 alt="Telegram Radar" 
-                className="w-8 h-8 rounded-xl object-contain"
+                className="w-4 h-4 rounded-xl object-contain"
                 loading="lazy"
               />
               <span className="text-xl font-bold">Telegram Radar</span>
