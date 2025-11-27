@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Send, ChevronDown, Globe } from 'lucide-react'
+import { ChevronDown, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const languages = [
@@ -51,9 +51,12 @@ export function Navbar() {
         <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Send className="w-4 h-4 text-background" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Telegram Radar" 
+                className="w-8 h-8 object-contain"
+                loading="eager"
+              />
               <span className="text-xl md:text-2xl font-bold">Telegram Radar</span>
             </Link>
           </div>

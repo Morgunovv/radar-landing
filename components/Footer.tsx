@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { Send } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export function Footer() {
@@ -12,9 +11,12 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <Send className="w-4 h-4 text-background" />
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Telegram Radar" 
+                className="w-8 h-8 object-contain"
+                loading="lazy"
+              />
               <span className="text-xl font-bold">Telegram Radar</span>
             </div>
             <p className="text-muted-foreground text-sm">
