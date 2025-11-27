@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Send, ChevronDown, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -76,12 +75,11 @@ export function Navbar() {
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
-                <Image 
+                <img 
                   src={currentLanguage.flag} 
                   alt={currentLanguage.name}
-                  width={20}
-                  height={15}
                   className="w-5 h-auto object-contain"
+                  loading="lazy"
                   onError={(e) => {
                     // Fallback если изображение не загрузилось
                     const target = e.target as HTMLImageElement
@@ -107,12 +105,11 @@ export function Navbar() {
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <Image 
+                        <img 
                           src={lang.flag} 
                           alt={lang.name}
-                          width={20}
-                          height={15}
                           className="w-5 h-auto object-contain"
+                          loading="lazy"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement
                             target.style.display = 'none'
@@ -143,12 +140,11 @@ export function Navbar() {
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
                 className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
-                <Image 
+                <img 
                   src={currentLanguage.flag} 
                   alt={currentLanguage.name}
-                  width={16}
-                  height={12}
                   className="w-4 h-auto object-contain"
+                  loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement
                     target.style.display = 'none'
@@ -172,12 +168,11 @@ export function Navbar() {
                       }`}
                     >
                       <div className="flex items-center gap-2">
-                        <Image 
+                        <img 
                           src={lang.flag} 
                           alt={lang.name}
-                          width={20}
-                          height={15}
                           className="w-5 h-auto object-contain"
+                          loading="lazy"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement
                             target.style.display = 'none'
