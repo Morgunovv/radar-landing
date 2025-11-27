@@ -50,9 +50,13 @@ export function UseCases() {
   const lang = getCurrentLanguage(router.pathname)
   const t = (key: string) => getTranslation(lang, key)
   
-  const getLanguagePath = (langCode: string) => {
-    if (langCode === 'ru') return ''
-    return `/${langCode}`
+  const getCasePath = (href: string) => {
+    // Всегда возвращаем правильный путь к кейсу для текущего языка
+    // href уже содержит абсолютный путь типа /cases/crypto-traders
+    if (lang === 'ru') {
+      return href
+    }
+    return `/${lang}${href}`
   }
   
   return (
@@ -77,7 +81,7 @@ export function UseCases() {
           {useCaseConfig.map((useCase, index) => {
             const IconComponent = useCase.icon
             return (
-              <Link key={index} href={`${getLanguagePath(lang)}${useCase.href}`}>
+              <Link key={index} href={getCasePath(useCase.href)}>
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}

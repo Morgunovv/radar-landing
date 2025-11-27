@@ -44,12 +44,30 @@ export function Navbar() {
     return `/${langCode}${currentPath === '/' ? '' : currentPath}`
   }
 
+  const getHomePath = () => {
+    // Всегда возвращаем путь к главной странице для текущего языка
+    if (lang === 'ru') {
+      return '/'
+    }
+    return `/${lang}`
+  }
+
   const getFAQPath = () => {
     // Всегда возвращаем правильный путь к FAQ для текущего языка
     if (lang === 'ru') {
       return '/faq'
     }
     return `/${lang}/faq`
+  }
+
+  const getFeaturesPath = () => {
+    // Всегда возвращаем путь к блоку Features на главной странице
+    return `${getHomePath()}#features`
+  }
+
+  const getPricingPath = () => {
+    // Всегда возвращаем путь к блоку Pricing на главной странице
+    return `${getHomePath()}#pricing`
   }
 
   useEffect(() => {
@@ -101,10 +119,10 @@ export function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Link href={`${getLanguagePath(lang)}#features`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <Link href={getFeaturesPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
               {t('navbar.features')}
             </Link>
-            <Link href={`${getLanguagePath(lang)}#pricing`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <Link href={getPricingPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
               {t('navbar.pricing')}
             </Link>
             <Link href={getFAQPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
@@ -243,14 +261,14 @@ export function Navbar() {
               <div className="container mx-auto px-4 py-4">
                 <nav className="flex flex-col gap-2">
                   <Link
-                    href={`${getLanguagePath(lang)}#features`}
+                    href={getFeaturesPath()}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
                     {t('navbar.features')}
                   </Link>
                   <Link
-                    href={`${getLanguagePath(lang)}#pricing`}
+                    href={getPricingPath()}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >

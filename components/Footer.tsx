@@ -9,9 +9,36 @@ export function Footer() {
   const lang = getCurrentLanguage(router.pathname)
   const t = (key: string, params?: Record<string, string>) => getTranslation(lang, key, params)
   
-  const getLanguagePath = (langCode: Language) => {
-    if (langCode === 'ru') return ''
-    return `/${langCode}`
+  const getHomePath = () => {
+    // Всегда возвращаем путь к главной странице для текущего языка
+    if (lang === 'ru') {
+      return '/'
+    }
+    return `/${lang}`
+  }
+
+  const getFAQPath = () => {
+    // Всегда возвращаем правильный путь к FAQ для текущего языка
+    if (lang === 'ru') {
+      return '/faq'
+    }
+    return `/${lang}/faq`
+  }
+
+  const getPrivacyPath = () => {
+    // Всегда возвращаем правильный путь к Privacy Policy для текущего языка
+    if (lang === 'ru') {
+      return '/privacy-policy'
+    }
+    return `/${lang}/privacy-policy`
+  }
+
+  const getTermsPath = () => {
+    // Всегда возвращаем правильный путь к Terms для текущего языка
+    if (lang === 'ru') {
+      return '/terms'
+    }
+    return `/${lang}/terms`
   }
   return (
     <footer className="border-t border-border/50 py-12 px-4">
@@ -36,10 +63,10 @@ export function Footer() {
             <h4 className="font-semibold mb-4">{t('footer.product.title')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href={`${getLanguagePath(lang)}#features`} className="hover:text-primary transition-colors relative z-10">{t('footer.product.features')}</Link>
+                <Link href={`${getHomePath()}#features`} className="hover:text-primary transition-colors relative z-10">{t('footer.product.features')}</Link>
               </li>
               <li>
-                <Link href={`${getLanguagePath(lang)}#pricing`} className="hover:text-primary transition-colors relative z-10">{t('footer.product.pricing')}</Link>
+                <Link href={`${getHomePath()}#pricing`} className="hover:text-primary transition-colors relative z-10">{t('footer.product.pricing')}</Link>
               </li>
               <li>
                 <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.product.try')}</a>
@@ -51,7 +78,7 @@ export function Footer() {
             <h4 className="font-semibold mb-4">{t('footer.support.title')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href={`${getLanguagePath(lang)}/faq`} className="hover:text-primary transition-colors relative z-10">{t('footer.support.faq')}</Link>
+                <Link href={getFAQPath()} className="hover:text-primary transition-colors relative z-10">{t('footer.support.faq')}</Link>
               </li>
               <li>
                 <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.support.bot')}</a>
@@ -69,8 +96,8 @@ export function Footer() {
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>{t('footer.copyright', { year: new Date().getFullYear().toString() })}</p>
           <div className="flex gap-6">
-            <Link href={`${getLanguagePath(lang)}/privacy-policy`} className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
-            <Link href={`${getLanguagePath(lang)}/terms`} className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
+            <Link href={getPrivacyPath()} className="hover:text-primary transition-colors">{t('footer.privacy')}</Link>
+            <Link href={getTermsPath()} className="hover:text-primary transition-colors">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>
