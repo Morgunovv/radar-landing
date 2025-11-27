@@ -193,11 +193,173 @@
     },
     "terms": {
       "title": "Terms of Use - Telegram Radar",
-      "description": "Terms of use for Telegram Radar service. Rules and restrictions for using the service."
+      "description": "Terms of use for Telegram Radar service. Rules and restrictions for using the service.",
+      "content": {
+        "heading": "Terms of Use",
+        "lastUpdated": "Last updated",
+        "acceptance": {
+          "title": "1. Acceptance of Terms",
+          "text": "By using the Telegram Radar service (hereinafter - \"Service\"), you agree to these Terms of Use. If you do not agree with any of the terms, please do not use the Service."
+        },
+        "description": {
+          "title": "2. Service Description",
+          "text": "Telegram Radar is a service for automatic monitoring of Telegram channels, filtering messages by keywords and automatic publication to specified channels. The Service is provided \"as is\" without any warranties."
+        },
+        "registration": {
+          "title": "3. Registration and Account",
+          "text": "To use the Service, you must:",
+          "items": [
+            "Have an active Telegram account",
+            "Start working with the bot @radar_telegram_bot",
+            "Follow the bot's instructions to set up monitoring"
+          ],
+          "responsibility": "You are responsible for maintaining access to your Telegram account and for all actions taken using your account."
+        },
+        "rules": {
+          "title": "4. Usage Rules",
+          "text": "When using the Service, it is prohibited to:",
+          "items": [
+            "Use the Service for illegal purposes",
+            "Violate intellectual property rights of third parties",
+            "Distribute spam, malware or content that violates the rights of others",
+            "Attempt to hack, disrupt or bypass Service limitations",
+            "Use the Service to monitor content without consent of channel owners (where required)",
+            "Violate Telegram usage rules"
+          ]
+        },
+        "pricing": {
+          "title": "5. Pricing and Payment",
+          "text": "The Service is provided under various pricing plans:",
+          "items": [
+            "Free plan - provided forever with limited functionality",
+            "Paid plans - paid through Telegram Stars on a monthly basis",
+            "Payment is made in advance for the selected period",
+            "Refunds are not provided, except in cases of technical failures"
+          ]
+        },
+        "liability": {
+          "title": "6. Liability Limitations",
+          "text": "The Service is provided \"as is\". We do not guarantee:",
+          "items": [
+            "Continuous and error-free operation of the Service",
+            "Absence of delays in message processing",
+            "Availability of all channels for monitoring",
+            "100% accuracy of keyword filtering"
+          ],
+          "responsibility": "We are not responsible for content published through the Service and for the consequences of its use."
+        },
+        "intellectual": {
+          "title": "7. Intellectual Property",
+          "text": "All rights to the Service, including design, software, logos and trademarks, belong to Telegram Radar. You do not have the right to copy, modify or distribute Service materials without written permission."
+        },
+        "termination": {
+          "title": "8. Termination of Use",
+          "text": "We reserve the right to suspend or terminate access to the Service in case of:",
+          "items": [
+            "Violation of these Terms of Use",
+            "Non-payment of paid plan",
+            "Technical work or force majeure circumstances",
+            "Violation of Telegram usage rules"
+          ]
+        },
+        "changes": {
+          "title": "9. Changes to Terms",
+          "text": "We reserve the right to change these Terms of Use at any time. We will notify users of significant changes through the Telegram bot or on the website. Continued use of the Service after changes means your agreement with the new terms."
+        },
+        "contacts": {
+          "title": "10. Contacts",
+          "text": "For all questions related to the use of the Service, please contact:",
+          "items": [
+            "Via Telegram bot: @radar_telegram_bot"
+          ]
+        },
+        "backToHome": "← Back to home"
+      }
     },
     "privacy": {
       "title": "Privacy Policy - Telegram Radar",
-      "description": "Telegram Radar Privacy Policy. Information about collection, use and protection of personal data."
+      "description": "Telegram Radar Privacy Policy. Information about collection, use and protection of personal data.",
+      "content": {
+        "heading": "Privacy Policy",
+        "lastUpdated": "Last updated",
+        "general": {
+          "title": "1. General Provisions",
+          "text1": "This Privacy Policy defines the procedure for processing and protection of personal data of users of the Telegram Radar service (hereinafter - \"Service\"). By using the Service, you agree to the terms of this Privacy Policy.",
+          "text2": "Personal data administrator: Telegram Radar. Contact information: via Telegram bot @radar_telegram_bot."
+        },
+        "data": {
+          "title": "2. Data Collected",
+          "text": "When using the Service, we may collect the following information:",
+          "items": [
+            "Telegram user identifier (User ID)",
+            "Telegram username (if specified)",
+            "Channel monitoring and keyword settings",
+            "Information about connected publication channels",
+            "Telegram session data (when connecting personal account)",
+            "Service usage logs"
+          ]
+        },
+        "purposes": {
+          "title": "3. Data Processing Purposes",
+          "text": "Personal data is processed for the following purposes:",
+          "items": [
+            "Providing Telegram channel monitoring functionality",
+            "Processing and filtering messages by keywords",
+            "Publishing messages to specified channels",
+            "Ensuring security and preventing abuse",
+            "Improving service quality and developing new features",
+            "Technical support for users"
+          ]
+        },
+        "storage": {
+          "title": "4. Data Storage and Protection",
+          "text": "We apply modern data protection methods:",
+          "items": [
+            "Encryption of Telegram sessions when stored",
+            "Secure data storage on protected servers",
+            "Limited access to personal data only for employees performing their official duties",
+            "Regular security system updates"
+          ],
+          "retention": "Data is stored for the duration of your account and may be deleted upon your request."
+        },
+        "sharing": {
+          "title": "5. Data Sharing with Third Parties",
+          "text": "We do not share your personal data with third parties, except in cases:",
+          "items": [
+            "When necessary to provide the service (e.g., interaction with Telegram API)",
+            "As required by law or judicial authorities",
+            "To protect rights and safety of users"
+          ]
+        },
+        "rights": {
+          "title": "6. User Rights",
+          "text": "You have the right to:",
+          "items": [
+            "Receive information about your personal data",
+            "Request correction of inaccurate data",
+            "Request deletion of your personal data",
+            "Withdraw consent to data processing",
+            "Limit processing of your data"
+          ],
+          "contact": "To exercise these rights, contact us via Telegram bot @radar_telegram_bot."
+        },
+        "cookies": {
+          "title": "7. Cookies and Similar Technologies",
+          "text": "The Service uses minimally necessary technical data to ensure functionality. We do not use cookies to track users."
+        },
+        "changes": {
+          "title": "8. Changes to Privacy Policy",
+          "text": "We reserve the right to make changes to this Privacy Policy. We will notify users of significant changes through the Telegram bot or on the website."
+        },
+        "contacts": {
+          "title": "9. Contacts",
+          "text": "For all questions related to personal data processing, you can contact:",
+          "items": [
+            "Via Telegram bot: @radar_telegram_bot"
+          ]
+        },
+        "backToHome": "← Back to home"
+      }
     },
     "cases": {
       "crypto": {
