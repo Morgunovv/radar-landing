@@ -47,7 +47,7 @@ const useCaseConfig = [
 export function UseCases() {
   const { t } = useLanguage()
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section id="usecases" className="py-24 px-4 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)' }}></div>
         <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)' }}></div>

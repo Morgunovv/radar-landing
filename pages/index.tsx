@@ -123,8 +123,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <ProblemsSolutions />
-        <Features />
         <UseCases />
+        <Features />
         <Pricing />
         <CTA />
         <Footer />

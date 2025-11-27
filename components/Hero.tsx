@@ -146,7 +146,7 @@ export function Hero() {
               </svg>
             </motion.a>
             <motion.a
-              href="#features"
+              href="#usecases"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors border bg-background hover:text-accent-foreground h-11 rounded-md text-lg px-8 py-6 border-primary/30 hover:bg-primary/10"
