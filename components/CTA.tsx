@@ -7,9 +7,9 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export function CTA() {
   const { t } = useLanguage()
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section className="py-24 px-4 relative overflow-visible">
       {/* Background decoration */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute -inset-24 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)', transform: 'scale(1.19159)' }}></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)', transform: 'scale(1.22995)' }}></div>
       </div>
