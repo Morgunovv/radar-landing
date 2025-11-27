@@ -14,16 +14,44 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(() => {
+    // Обработка якорей в URL (например, /#features)
+    const handleHashScroll = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        const hash = window.location.hash.substring(1) // убираем #
+        const element = document.getElementById(hash)
+        if (element) {
+          // Небольшая задержка для загрузки контента
+          setTimeout(() => {
+            const yOffset = -80 // отступ для фиксированного навбара
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+            window.scrollTo({
+              top: y,
+              behavior: 'smooth'
+            })
+          }, 100)
+        }
+      }
+    }
+
     // Сохраняем позицию скролла при уходе со страницы
     const saveScrollPosition = () => {
       if (typeof window !== 'undefined') {
-        sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())
+        // Не сохраняем позицию, если переходим с якорем
+        if (!window.location.hash) {
+          sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())
+        }
       }
     }
 
     // Восстанавливаем позицию скролла при возврате на страницу
     const restoreScrollPosition = () => {
       if (typeof window !== 'undefined') {
+        // Если есть якорь в URL, прокручиваем к нему
+        if (window.location.hash) {
+          handleHashScroll()
+          return
+        }
+        
         const savedPosition = sessionStorage.getItem('homeScrollPosition')
         if (savedPosition) {
           // Небольшая задержка для того, чтобы контент успел загрузиться
@@ -47,19 +75,41 @@ export default function Home() {
       if (link) {
         const href = link.getAttribute('href')
         // Проверяем, что это ссылка на другую страницу (не якорь и не внешняя)
+        // Не сохраняем позицию, если переходим на главную с якорем
         if (href && href.startsWith('/') && !href.startsWith('/#') && href !== '/') {
           saveScrollPosition()
+        } else if (href && href.startsWith('/#')) {
+          // При переходе на главную с якорем очищаем сохраненную позицию
+          if (typeof window !== 'undefined') {
+            sessionStorage.removeItem('homeScrollPosition')
+          }
         }
       }
     }
 
     // Восстанавливаем позицию при загрузке/возврате на страницу
-    if (router.pathname === '/') {
-      // Проверяем, вернулись ли мы с другой страницы
-      const isReturning = sessionStorage.getItem('homeScrollPosition') !== null
-      if (isReturning) {
-        restoreScrollPosition()
+    if (typeof window !== 'undefined' && router.pathname === '/') {
+      // Если есть якорь в URL, прокручиваем к нему
+      if (window.location.hash) {
+        handleHashScroll()
+      } else {
+        // Проверяем, вернулись ли мы с другой страницы
+        const isReturning = sessionStorage.getItem('homeScrollPosition') !== null
+        if (isReturning) {
+          restoreScrollPosition()
+        }
       }
+    }
+
+    // Обработка изменения hash в URL
+    const handleHashChange = () => {
+      if (typeof window !== 'undefined' && router.pathname === '/') {
+        handleHashScroll()
+      }
+    }
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('hashchange', handleHashChange)
     }
 
     // Сохраняем позицию при переходе на другую страницу через роутер
@@ -75,8 +125,13 @@ export default function Home() {
     router.events.on('routeChangeStart', handleRouteChangeStart)
 
     return () => {
-      window.removeEventListener('beforeunload', saveScrollPosition)
-      document.removeEventListener('click', handleLinkClick, true)
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('beforeunload', saveScrollPosition)
+        window.removeEventListener('hashchange', handleHashChange)
+      }
+      if (typeof document !== 'undefined') {
+        document.removeEventListener('click', handleLinkClick, true)
+      }
       router.events.off('routeChangeStart', handleRouteChangeStart)
     }
   }, [router])

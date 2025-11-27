@@ -65,10 +65,10 @@ export function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="#features" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <Link href="/#features" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Возможности
             </Link>
-            <Link href="#pricing" className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <Link href="/#pricing" className="text-muted-foreground hover:text-primary transition-colors font-medium">
               Тарифы
             </Link>
             <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors font-medium">
@@ -212,14 +212,14 @@ export function Navbar() {
               <div className="container mx-auto px-4 py-4">
                 <nav className="flex flex-col gap-2">
                   <Link
-                    href="#features"
+                    href="/#features"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
                     Возможности
                   </Link>
                   <Link
-                    href="#pricing"
+                    href="/#pricing"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >

@@ -5,7 +5,7 @@ import { Zap, Target, Clock } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div 

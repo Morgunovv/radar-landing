@@ -26,10 +26,10 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Продукт</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#features" className="hover:text-primary transition-colors relative z-10">Возможности</a>
+                <Link href="/#features" className="hover:text-primary transition-colors relative z-10">Возможности</Link>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-primary transition-colors relative z-10">Тарифы</a>
+                <Link href="/#pricing" className="hover:text-primary transition-colors relative z-10">Тарифы</Link>
               </li>
               <li>
                 <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">Попробовать</a>
