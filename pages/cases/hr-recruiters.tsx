@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { Users, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function HRRecruiters() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>HR и рекрутеры - Telegram Radar</title>
-        <meta name="description" content="Находи таланты быстрее. Автоматизируй поиск кандидатов и мониторинг рынка труда." />
+        <title>{t('pages.cases.hr.title')}</title>
+        <meta name="description" content={t('pages.cases.hr.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

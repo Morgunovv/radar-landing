@@ -9,9 +9,11 @@ import { Pricing } from '@/components/Pricing'
 import { CTA } from '@/components/CTA'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Home() {
   const router = useRouter()
+  const { t } = useLanguage()
 
   useEffect(() => {
     // Сохраняем позицию скролла при уходе со страницы
@@ -84,8 +86,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Telegram Radar - Мониторинг каналов на автопилоте</title>
-        <meta name="description" content="Автоматизируй мониторинг Telegram-каналов. Получай только релевантные сообщения по ключевым словам. Экономь часы работы каждый день." />
+        <title>{t('pages.home.title')}</title>
+        <meta name="description" content={t('pages.home.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

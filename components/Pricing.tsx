@@ -3,101 +3,50 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Zap, Star, Crown, Check, ChevronDown } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-const plans = [
+const planConfig = [
   {
     name: 'Free',
-    subtitle: 'Попробуй возможности',
-    price: 'Бесплатно',
+    key: 'free',
     priceEur: 0,
-    period: 'навсегда',
-    features: [
-      'До 5 каналов мониторинга',
-      'До 10 ключевых запросов',
-      'Базовая поддержка'
-    ],
+    features: [5, 10, 'support'],
     icon: Zap,
     gradient: 'from-gray-400 to-gray-600',
     popular: false
   },
   {
     name: 'Light',
-    subtitle: 'Для начинающих',
-    price: '€3',
+    key: 'light',
     priceEur: 3,
-    period: '/ мес',
-    periodText: 'в месяц',
-    features: [
-      'До 50 каналов мониторинга',
-      'До 50 ключевых запросов',
-      'Мониторинг закрытых каналов',
-      'Безлимит групп для пересылки',
-      'Копирование старых сообщений',
-      'Форвард или копипаст постов'
-    ],
+    features: [50, 50, 'private', 'unlimited', 'copy', 'forward'],
     icon: Zap,
     gradient: 'from-blue-400 to-cyan-500',
     popular: false
   },
   {
     name: 'Medium',
-    subtitle: 'Самый популярный',
-    price: '€5',
+    key: 'medium',
     priceEur: 5,
-    period: '/ мес',
-    periodText: 'в месяц',
-    features: [
-      'До 100 каналов мониторинга',
-      'До 100 ключевых запросов',
-      'Мониторинг закрытых каналов',
-      'Безлимит групп для пересылки',
-      'Копирование старых сообщений',
-      'Форвард или копипаст постов',
-      'Управление ссылками на источник'
-    ],
+    features: [100, 100, 'private', 'unlimited', 'copy', 'forward', 'links'],
     icon: Star,
     gradient: 'from-primary to-secondary',
     popular: true
   },
   {
     name: 'Hard',
-    subtitle: 'Для профессионалов',
-    price: '€9',
+    key: 'hard',
     priceEur: 9,
-    period: '/ мес',
-    periodText: 'в месяц',
-    features: [
-      'До 200 каналов мониторинга',
-      'До 200 ключевых запросов',
-      'Мониторинг закрытых каналов',
-      'Безлимит групп для пересылки',
-      'Копирование старых сообщений',
-      'Форвард или копипаст постов',
-      'Управление ссылками на источник',
-      'Приоритетная поддержка'
-    ],
+    features: [200, 200, 'private', 'unlimited', 'copy', 'forward', 'links', 'priority'],
     icon: Crown,
     gradient: 'from-purple-400 to-pink-500',
     popular: false
   },
   {
     name: 'Rock',
-    subtitle: 'Максимальная мощность',
-    price: '€17',
+    key: 'rock',
     priceEur: 17,
-    period: '/ мес',
-    periodText: 'в месяц',
-    features: [
-      'До 500 каналов мониторинга',
-      'До 200 ключевых запросов',
-      'Мониторинг закрытых каналов',
-      'Безлимит групп для пересылки',
-      'Копирование старых сообщений',
-      'Форвард или копипаст постов',
-      'Управление ссылками на источник',
-      'Приоритетная поддержка',
-      'Dedicated support'
-    ],
+    features: [500, 200, 'private', 'unlimited', 'copy', 'forward', 'links', 'priority', 'dedicated'],
     icon: Crown,
     gradient: 'from-yellow-400 to-orange-500',
     popular: false
@@ -121,6 +70,7 @@ const currencySymbols: Record<string, string> = {
 }
 
 export function Pricing() {
+  const { t } = useLanguage()
   const [selectedCurrency, setSelectedCurrency] = useState('EUR')
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({})
@@ -174,7 +124,7 @@ export function Pricing() {
   }, [isDropdownOpen])
 
   const getPrice = (priceEur: number) => {
-    if (priceEur === 0) return 'Бесплатно'
+    if (priceEur === 0) return t('pricing.free')
     
     const rate = exchangeRates[selectedCurrency] || 1
     const convertedPrice = Math.round(priceEur * rate)
@@ -182,6 +132,7 @@ export function Pricing() {
     
     return `${symbol}${convertedPrice}`
   }
+
 
   return (
     <section id="pricing" className="py-24 px-4 relative overflow-hidden">
@@ -193,8 +144,8 @@ export function Pricing() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Выбери свой план</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">Начни бесплатно. Масштабируйся по мере роста.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('pricing.title')}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">{t('pricing.subtitle')}</p>
           
           {/* Выпадающий список валют */}
           <div className="relative inline-block currency-dropdown">
@@ -238,8 +189,14 @@ export function Pricing() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {plans.map((plan, index) => {
+          {planConfig.map((plan, index) => {
             const IconComponent = plan.icon
+            // Определяем, это каналы или запросы для первого числа
+            const firstIsChannels = plan.features[0] > plan.features[1]
+            const channelsCount = firstIsChannels ? plan.features[0] : plan.features[1]
+            const queriesCount = firstIsChannels ? plan.features[1] : plan.features[0]
+            const otherFeatures = plan.features.slice(2) as string[]
+            
             return (
               <motion.div
                 key={index}
@@ -259,7 +216,7 @@ export function Pricing() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-bold text-primary-foreground">
-                    Популярный
+                    {t('pricing.popular')}
                   </div>
                 )}
                 
@@ -268,41 +225,85 @@ export function Pricing() {
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{plan.subtitle}</p>
+                <p className="text-sm text-muted-foreground mb-4">{t(`pricing.plans.${plan.key}.subtitle`)}</p>
                 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     {plan.priceEur === 0 ? (
-                      <span className="text-4xl font-bold">Бесплатно</span>
+                      <span className="text-4xl font-bold">{t('pricing.free')}</span>
                     ) : (
                       <>
                         <span className="text-4xl font-bold">
                           {loading ? '...' : getPrice(plan.priceEur)}
                         </span>
-                        <span className="text-muted-foreground">{plan.period}</span>
+                        <span className="text-muted-foreground"> {t('pricing.month')}</span>
                       </>
                     )}
                   </div>
-                  {plan.periodText && (
-                    <p className="text-sm text-muted-foreground mt-1">{plan.periodText}</p>
-                  )}
                 </div>
 
                 <ul className="space-y-3 mb-6">
-                  {plan.features.map((feature, i) => {
-                    // Выделяем числа жирным
-                    const parts = feature.split(/(\d+)/)
-                    return (
-                      <li key={i} className="flex items-start gap-2">
+                  {plan.key === 'free' ? (
+                    <>
+                      <li className="flex items-start gap-2">
                         <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-sm text-muted-foreground">
-                          {parts.map((part, j) => 
-                            /^\d+$/.test(part) ? <strong key={j}>{part}</strong> : part
-                          )}
+                          {t('pricing.plans.free.features.channels')}
                         </span>
                       </li>
-                    )
-                  })}
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {t('pricing.plans.free.features.queries')}
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {t('pricing.plans.free.features.support')}
+                        </span>
+                      </li>
+                    </>
+                  ) : (
+                    <>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {(() => {
+                            const text = t('pricing.plans.features.channels', { count: channelsCount.toString() })
+                            const parts = text.split('{{count}}')
+                            return parts.length > 1 ? (
+                              <>
+                                {parts[0]}<strong>{channelsCount}</strong>{parts[1]}
+                              </>
+                            ) : text
+                          })()}
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {(() => {
+                            const text = t('pricing.plans.features.queries', { count: queriesCount.toString() })
+                            const parts = text.split('{{count}}')
+                            return parts.length > 1 ? (
+                              <>
+                                {parts[0]}<strong>{queriesCount}</strong>{parts[1]}
+                              </>
+                            ) : text
+                          })()}
+                        </span>
+                      </li>
+                      {otherFeatures.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-muted-foreground">
+                            {t(`pricing.plans.features.${feature}`)}
+                          </span>
+                        </li>
+                      ))}
+                    </>
+                  )}
                 </ul>
 
                 <a
@@ -315,7 +316,7 @@ export function Pricing() {
                       : 'bg-card hover:bg-muted text-primary-foreground'
                   }`}
                 >
-                  {plan.price === 'Бесплатно' ? 'Попробовать' : 'Выбрать план'}
+                  {plan.priceEur === 0 ? t('pricing.try') : t('pricing.choosePlan')}
                 </a>
               </motion.div>
             )
@@ -329,7 +330,7 @@ export function Pricing() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12 text-muted-foreground"
         >
-          Бесплатный тариф навсегда • Платные тарифы без привязки карты
+          {t('pricing.footer')}
         </motion.p>
       </div>
     </section>

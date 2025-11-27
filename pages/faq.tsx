@@ -2,13 +2,15 @@ import Head from 'next/head'
 import { FAQ } from '@/components/FAQ'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function FAQPage() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>FAQ - Telegram Radar</title>
-        <meta name="description" content="Часто задаваемые вопросы о Telegram Radar. Ответы на вопросы о мониторинге каналов, ключевых словах, тарифах и решении проблем." />
+        <title>{t('pages.faq.title')}</title>
+        <meta name="description" content={t('pages.faq.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

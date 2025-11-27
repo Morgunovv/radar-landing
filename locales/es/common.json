@@ -97,6 +97,26 @@
       }
     }
   },
+  "problems": {
+    "title": "¿Situación familiar?",
+    "subtitle": "Convierte el dolor en eficiencia",
+    "problemsTitle": "Problemas",
+    "solutionsTitle": "Soluciones",
+    "items": {
+      "manual": "Necesidad de monitorear 50+ canales manualmente",
+      "missed": "Perder señales y noticias importantes",
+      "time": "Tiempo en filtrar información (10+ horas al día)",
+      "opportunities": "Oportunidades perdidas por retraso en la información",
+      "competitors": "Imposibilidad de rastrear competidores en tiempo real"
+    },
+    "solutions": {
+      "automatic": "Monitoreo automático de 100+ canales simultáneamente",
+      "instant": "Notificaciones instantáneas sobre eventos importantes",
+      "savings": "Ahorra 10-15 horas por semana",
+      "first": "Sé el primero en conocer oportunidades",
+      "analytics": "Análisis de competidores en tiempo real"
+    }
+  },
   "usecases": {
     "title": "¿Para quién es esto?",
     "subtitle": "Solución para profesionales en diferentes industrias",
@@ -161,6 +181,50 @@
     "copyright": "© {{year}} Telegram Radar. Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Uso"
+  },
+  "pages": {
+    "home": {
+      "title": "Telegram Radar - Monitoreo de Canales en Piloto Automático",
+      "description": "Automatiza el monitoreo de canales de Telegram. Obtén solo mensajes relevantes por palabras clave. Ahorra horas de trabajo cada día."
+    },
+    "faq": {
+      "title": "FAQ - Telegram Radar",
+      "description": "Preguntas frecuentes sobre Telegram Radar. Respuestas a preguntas sobre monitoreo de canales, palabras clave, precios y solución de problemas."
+    },
+    "terms": {
+      "title": "Términos de Uso - Telegram Radar",
+      "description": "Términos de uso del servicio Telegram Radar. Reglas y restricciones para usar el servicio."
+    },
+    "privacy": {
+      "title": "Política de Privacidad - Telegram Radar",
+      "description": "Política de Privacidad de Telegram Radar. Información sobre recopilación, uso y protección de datos personales."
+    },
+    "cases": {
+      "crypto": {
+        "title": "Traders de Cripto - Telegram Radar",
+        "description": "Automatiza el monitoreo de canales de cripto. Obtén señales sobre listados, bombas y noticias importantes primero."
+      },
+      "marketers": {
+        "title": "Marketers - Telegram Radar",
+        "description": "Automatiza la búsqueda de contenido para republicaciones. Encuentra tendencias antes que los competidores."
+      },
+      "media": {
+        "title": "Medios y Periodistas - Telegram Radar",
+        "description": "Sé el primero con las noticias. Agrega información de 200+ fuentes en segundos."
+      },
+      "ecommerce": {
+        "title": "E-commerce - Telegram Radar",
+        "description": "Encuentra ofertas rentables y tendencias antes que los competidores. Automatiza la búsqueda de productos."
+      },
+      "hr": {
+        "title": "RRHH y Reclutadores - Telegram Radar",
+        "description": "Encuentra talentos más rápido. Automatiza la búsqueda de candidatos y el monitoreo del mercado laboral."
+      },
+      "resellers": {
+        "title": "Revendedores - Telegram Radar",
+        "description": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa."
+      }
+    }
   }
 }
 

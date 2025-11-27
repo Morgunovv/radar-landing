@@ -2,13 +2,15 @@ import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function PrivacyPolicy() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Политика конфиденциальности - Telegram Radar</title>
-        <meta name="description" content="Политика конфиденциальности Telegram Radar. Информация о сборе, использовании и защите персональных данных." />
+        <title>{t('pages.privacy.title')}</title>
+        <meta name="description" content={t('pages.privacy.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

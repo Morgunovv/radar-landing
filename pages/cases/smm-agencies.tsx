@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { Megaphone, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function SMMAgencies() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Маркетологи - Telegram Radar</title>
-        <meta name="description" content="Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов." />
+        <title>{t('pages.cases.marketers.title')}</title>
+        <meta name="description" content={t('pages.cases.marketers.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

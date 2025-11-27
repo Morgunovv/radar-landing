@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { TrendingUp, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function CryptoTraders() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Крипто-трейдеры - Telegram Radar</title>
-        <meta name="description" content="Автоматизируй мониторинг крипто-каналов. Получай сигналы о листингах, пампах и важных новостях первым." />
+        <title>{t('pages.cases.crypto.title')}</title>
+        <meta name="description" content={t('pages.cases.crypto.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

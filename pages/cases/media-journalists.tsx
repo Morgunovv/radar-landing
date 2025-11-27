@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { Newspaper, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function MediaJournalists() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Медиа и журналисты - Telegram Radar</title>
-        <meta name="description" content="Будь первым с новостями. Агрегируй информацию из 200+ источников за секунды." />
+        <title>{t('pages.cases.media.title')}</title>
+        <meta name="description" content={t('pages.cases.media.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

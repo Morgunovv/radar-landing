@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { ShoppingCart, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Ecommerce() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>E-commerce - Telegram Radar</title>
-        <meta name="description" content="Находи выгодные предложения и тренды раньше конкурентов. Автоматизируй поиск товаров." />
+        <title>{t('pages.cases.ecommerce.title')}</title>
+        <meta name="description" content={t('pages.cases.ecommerce.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

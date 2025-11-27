@@ -97,6 +97,26 @@
       }
     }
   },
+  "problems": {
+    "title": "Familiar situation?",
+    "subtitle": "Turn pain into efficiency",
+    "problemsTitle": "Problems",
+    "solutionsTitle": "Solutions",
+    "items": {
+      "manual": "Need to monitor 50+ channels manually",
+      "missed": "Missing important signals and news",
+      "time": "Time spent filtering information (10+ hours per day)",
+      "opportunities": "Missed opportunities due to information delay",
+      "competitors": "Unable to track competitors in real-time"
+    },
+    "solutions": {
+      "automatic": "Automatic monitoring of 100+ channels simultaneously",
+      "instant": "Instant notifications about important events",
+      "savings": "Save 10-15 hours per week",
+      "first": "Be first to know about opportunities",
+      "analytics": "Real-time competitor analytics"
+    }
+  },
   "usecases": {
     "title": "Who is this for?",
     "subtitle": "Solution for professionals in different industries",
@@ -161,5 +181,49 @@
     "copyright": "© {{year}} Telegram Radar. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use"
+  },
+  "pages": {
+    "home": {
+      "title": "Telegram Radar - Channel Monitoring on Autopilot",
+      "description": "Automate Telegram channel monitoring. Get only relevant messages by keywords. Save hours of work every day."
+    },
+    "faq": {
+      "title": "FAQ - Telegram Radar",
+      "description": "Frequently asked questions about Telegram Radar. Answers to questions about channel monitoring, keywords, pricing and troubleshooting."
+    },
+    "terms": {
+      "title": "Terms of Use - Telegram Radar",
+      "description": "Terms of use for Telegram Radar service. Rules and restrictions for using the service."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Telegram Radar",
+      "description": "Telegram Radar Privacy Policy. Information about collection, use and protection of personal data."
+    },
+    "cases": {
+      "crypto": {
+        "title": "Crypto Traders - Telegram Radar",
+        "description": "Automate crypto channel monitoring. Get signals about listings, pumps and important news first."
+      },
+      "marketers": {
+        "title": "Marketers - Telegram Radar",
+        "description": "Automate content search for reposts. Find trends before competitors."
+      },
+      "media": {
+        "title": "Media & Journalists - Telegram Radar",
+        "description": "Be first with news. Aggregate information from 200+ sources in seconds."
+      },
+      "ecommerce": {
+        "title": "E-commerce - Telegram Radar",
+        "description": "Find profitable offers and trends before competitors. Automate product search."
+      },
+      "hr": {
+        "title": "HR & Recruiters - Telegram Radar",
+        "description": "Find talents faster. Automate candidate search and labor market monitoring."
+      },
+      "resellers": {
+        "title": "Resellers - Telegram Radar",
+        "description": "Don't miss profitable deals. Automate search for products and services for resale."
+      }
+    }
   }
 }

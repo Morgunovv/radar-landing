@@ -4,13 +4,15 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { Repeat, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Resellers() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Реселлеры - Telegram Radar</title>
-        <meta name="description" content="Не упускай выгодные сделки. Автоматизируй поиск товаров и услуг для перепродажи." />
+        <title>{t('pages.cases.resellers.title')}</title>
+        <meta name="description" content={t('pages.cases.resellers.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

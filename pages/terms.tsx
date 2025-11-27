@@ -2,13 +2,15 @@ import Head from 'next/head'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Terms() {
+  const { t } = useLanguage()
   return (
     <>
       <Head>
-        <title>Условия использования - Telegram Radar</title>
-        <meta name="description" content="Условия использования сервиса Telegram Radar. Правила и ограничения использования сервиса." />
+        <title>{t('pages.terms.title')}</title>
+        <meta name="description" content={t('pages.terms.description')} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
