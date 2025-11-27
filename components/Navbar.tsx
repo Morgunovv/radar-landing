@@ -76,7 +76,7 @@ export function Navbar() {
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
                 <Globe className="w-5 h-5" />
-                <span className="text-sm font-medium">{currentLanguage.countryCode} {currentLanguage.countryCode}</span>
+                <span className="text-sm font-medium">{currentLanguage.flag} {currentLanguage.countryCode}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -95,7 +95,7 @@ export function Navbar() {
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
-                      <span className="font-medium">{lang.countryCode} {lang.name}</span>
+                      <span className="font-medium">{lang.flag} {lang.countryCode} {lang.name}</span>
                     </button>
                   ))}
                 </div>
@@ -120,7 +120,7 @@ export function Navbar() {
                 className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
                 <Globe className="w-4 h-4" />
-                <span className="text-xs font-medium">{currentLanguage.countryCode}</span>
+                <span className="text-xs font-medium">{currentLanguage.flag} {currentLanguage.countryCode}</span>
               </button>
               
               {isLangDropdownOpen && (
@@ -138,7 +138,7 @@ export function Navbar() {
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
-                      <span className="font-medium">{lang.countryCode} {lang.name}</span>
+                      <span className="font-medium">{lang.flag} {lang.countryCode} {lang.name}</span>
                     </button>
                   ))}
                 </div>
