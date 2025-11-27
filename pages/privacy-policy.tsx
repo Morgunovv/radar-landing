@@ -43,9 +43,12 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.data.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.privacy.content.data.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.privacy.content.data.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -55,9 +58,12 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.purposes.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.privacy.content.purposes.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.privacy.content.purposes.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -67,9 +73,12 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.storage.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.privacy.content.storage.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.privacy.content.storage.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.privacy.content.storage.retention')}
@@ -82,9 +91,12 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.sharing.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.privacy.content.sharing.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.privacy.content.sharing.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -94,9 +106,12 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.rights.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.privacy.content.rights.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.privacy.content.rights.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.privacy.content.rights.contact')}
@@ -123,7 +138,11 @@ export default function PrivacyPolicy() {
                     {t('pages.privacy.content.contacts.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>{(t('pages.privacy.content.contacts.items', { returnObjects: true }) as string[])[0]}: <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
+                    <li>{(() => {
+                      const items = t('pages.privacy.content.contacts.items', { returnObjects: true })
+                      const firstItem = Array.isArray(items) ? items[0] : String(items)
+                      return `${firstItem}: `
+                    })()}<a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
                   </ul>
                 </section>
 

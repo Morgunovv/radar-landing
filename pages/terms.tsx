@@ -47,9 +47,12 @@ export default function Terms() {
                     {t('pages.terms.content.registration.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.terms.content.registration.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.terms.content.registration.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.terms.content.registration.responsibility')}
@@ -62,9 +65,12 @@ export default function Terms() {
                     {t('pages.terms.content.rules.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.terms.content.rules.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.terms.content.rules.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -74,9 +80,12 @@ export default function Terms() {
                     {t('pages.terms.content.pricing.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.terms.content.pricing.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.terms.content.pricing.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -86,9 +95,12 @@ export default function Terms() {
                     {t('pages.terms.content.liability.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.terms.content.liability.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.terms.content.liability.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.terms.content.liability.responsibility')}
@@ -108,9 +120,12 @@ export default function Terms() {
                     {t('pages.terms.content.termination.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(t('pages.terms.content.termination.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
+                    {(() => {
+                      const items = t('pages.terms.content.termination.items', { returnObjects: true })
+                      return Array.isArray(items) ? items.map((item: string, index: number) => (
+                        <li key={index}>{item}</li>
+                      )) : null
+                    })()}
                   </ul>
                 </section>
 
@@ -127,7 +142,11 @@ export default function Terms() {
                     {t('pages.terms.content.contacts.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>{(t('pages.terms.content.contacts.items', { returnObjects: true }) as string[])[0]}: <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
+                    <li>{(() => {
+                      const items = t('pages.terms.content.contacts.items', { returnObjects: true })
+                      const firstItem = Array.isArray(items) ? items[0] : String(items)
+                      return `${firstItem}: `
+                    })()}<a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
                   </ul>
                 </section>
 
