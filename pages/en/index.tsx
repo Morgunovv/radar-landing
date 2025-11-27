@@ -10,19 +10,18 @@ import { CTA } from '@/components/CTA'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 
-export default function Home() {
+export default function HomeEN() {
   const router = useRouter()
 
   useEffect(() => {
-    // Обработка якорей в URL (например, /#features)
+    // Обработка якорей в URL (например, /en#features)
     const handleHashScroll = () => {
       if (typeof window !== 'undefined' && window.location.hash) {
-        const hash = window.location.hash.substring(1) // убираем #
+        const hash = window.location.hash.substring(1)
         const element = document.getElementById(hash)
         if (element) {
-          // Небольшая задержка для загрузки контента
           setTimeout(() => {
-            const yOffset = -80 // отступ для фиксированного навбара
+            const yOffset = -80
             const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
             window.scrollTo({
               top: y,
@@ -33,20 +32,16 @@ export default function Home() {
       }
     }
 
-    // Сохраняем позицию скролла при уходе со страницы
     const saveScrollPosition = () => {
       if (typeof window !== 'undefined') {
-        // Не сохраняем позицию, если переходим с якорем
         if (!window.location.hash) {
           sessionStorage.setItem('homeScrollPosition', window.scrollY.toString())
         }
       }
     }
 
-    // Восстанавливаем позицию скролла при возврате на страницу
     const restoreScrollPosition = () => {
       if (typeof window !== 'undefined') {
-        // Если есть якорь в URL, прокручиваем к нему
         if (window.location.hash) {
           handleHashScroll()
           return
@@ -54,7 +49,6 @@ export default function Home() {
         
         const savedPosition = sessionStorage.getItem('homeScrollPosition')
         if (savedPosition) {
-          // Небольшая задержка для того, чтобы контент успел загрузиться
           requestAnimationFrame(() => {
             setTimeout(() => {
               window.scrollTo({
@@ -68,18 +62,14 @@ export default function Home() {
       }
     }
 
-    // Сохраняем позицию при клике на ссылки, ведущие на другие страницы
     const handleLinkClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
       const link = target.closest('a')
       if (link) {
         const href = link.getAttribute('href')
-        // Проверяем, что это ссылка на другую страницу (не якорь и не внешняя)
-        // Не сохраняем позицию, если переходим на главную с якорем
-        if (href && href.startsWith('/') && !href.startsWith('/#') && href !== '/') {
+        if (href && href.startsWith('/') && !href.startsWith('/#') && href !== '/en' && !href.startsWith('/en#')) {
           saveScrollPosition()
-        } else if (href && href.startsWith('/#')) {
-          // При переходе на главную с якорем очищаем сохраненную позицию
+        } else if (href && (href.startsWith('/#') || href.startsWith('/en#'))) {
           if (typeof window !== 'undefined') {
             sessionStorage.removeItem('homeScrollPosition')
           }
@@ -87,13 +77,10 @@ export default function Home() {
       }
     }
 
-    // Восстанавливаем позицию при загрузке/возврате на страницу
-    if (typeof window !== 'undefined' && router.pathname === '/') {
-      // Если есть якорь в URL, прокручиваем к нему
+    if (typeof window !== 'undefined' && router.pathname === '/en') {
       if (window.location.hash) {
         handleHashScroll()
       } else {
-        // Проверяем, вернулись ли мы с другой страницы
         const isReturning = sessionStorage.getItem('homeScrollPosition') !== null
         if (isReturning) {
           restoreScrollPosition()
@@ -101,9 +88,8 @@ export default function Home() {
       }
     }
 
-    // Обработка изменения hash в URL
     const handleHashChange = () => {
-      if (typeof window !== 'undefined' && router.pathname === '/') {
+      if (typeof window !== 'undefined' && router.pathname === '/en') {
         handleHashScroll()
       }
     }
@@ -112,14 +98,12 @@ export default function Home() {
       window.addEventListener('hashchange', handleHashChange)
     }
 
-    // Сохраняем позицию при переходе на другую страницу через роутер
     const handleRouteChangeStart = (url: string) => {
-      if (url !== '/' && !url.startsWith('/#')) {
+      if (url !== '/en' && !url.startsWith('/en#')) {
         saveScrollPosition()
       }
     }
 
-    // Сохраняем позицию при уходе со страницы
     window.addEventListener('beforeunload', saveScrollPosition)
     document.addEventListener('click', handleLinkClick, true)
     router.events.on('routeChangeStart', handleRouteChangeStart)
@@ -139,8 +123,8 @@ export default function Home() {
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : siteUrl
   const ogImage = `${siteUrl}/logo.png`
-  const title = 'Telegram Radar - Мониторинг каналов на автопилоте'
-  const description = 'Автоматизируй мониторинг Telegram-каналов. Получай только релевантные сообщения по ключевым словам. Экономь часы работы каждый день.'
+  const title = 'Telegram Radar - Channel Monitoring on Autopilot'
+  const description = 'Automate Telegram channel monitoring. Get only relevant messages by keywords. Save hours of work every day.'
 
   return (
     <>
@@ -159,7 +143,7 @@ export default function Home() {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Telegram Radar" />
-        <meta property="og:locale" content={router.locale === 'ru' ? 'ru_RU' : router.locale === 'es' ? 'es_ES' : 'en_US'} />
+        <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />

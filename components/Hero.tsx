@@ -2,8 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Zap, Target, Clock } from 'lucide-react'
+import { useRouter } from 'next/router'
+import { getTranslation, getCurrentLanguage, Language } from '@/utils/translations'
 
 export function Hero() {
+  const router = useRouter()
+  const lang = getCurrentLanguage(router.pathname)
+  const t = (key: string) => getTranslation(lang, key)
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-28">
       {/* Background image */}
@@ -43,7 +48,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20"
           >
             <Zap className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Мониторинг в реальном времени</span>
+            <span className="text-sm font-medium">{t('hero.badge')}</span>
           </motion.div>
 
           {/* Main heading */}
@@ -53,11 +58,11 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            Не ищи информацию -
+            {t('hero.title')}
             <br className="mt-2" />
             <span className="relative inline-block mt-2">
               <span className="relative z-10 bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, #971FC4, hsl(var(--primary)))' }}>
-                пусть она найдёт тебя
+                {t('hero.titleHighlight')}
               </span>
               <span className="absolute inset-0 blur-xl opacity-50" style={{ background: 'var(--gradient-primary)' }}></span>
             </span>
@@ -70,7 +75,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto"
           >
-            Автоматизируй мониторинг Telegram-каналов. Получай только релевантную информацию в реальном времени.
+            {t('hero.subtitle')}
           </motion.p>
 
           {/* Stats cards */}
@@ -88,7 +93,7 @@ export function Hero() {
             >
               <Target className="w-8 h-8 text-primary mb-3 mx-auto" />
               <div className="text-3xl font-bold mb-1">100+</div>
-              <div className="text-sm text-muted-foreground">каналов мониторинга</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.channels')}</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +108,7 @@ export function Hero() {
             >
               <Clock className="w-8 h-8 text-primary mb-3 mx-auto" />
               <div className="text-3xl font-bold mb-1">0</div>
-              <div className="text-sm text-muted-foreground">времени на поиск</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.time')}</div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -118,7 +123,7 @@ export function Hero() {
             >
               <Zap className="w-8 h-8 text-primary mb-3 mx-auto" />
               <div className="text-3xl font-bold mb-1">100%</div>
-              <div className="text-sm text-muted-foreground">релевантности</div>
+              <div className="text-sm text-muted-foreground">{t('hero.stats.relevance')}</div>
             </motion.div>
           </div>
 
@@ -137,7 +142,7 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-11 rounded-md text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground group"
             >
-              Настроить за 3 минуты
+              {t('hero.cta.setup')}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>
@@ -149,7 +154,7 @@ export function Hero() {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors border bg-background hover:text-accent-foreground h-11 rounded-md text-lg px-8 py-6 border-primary/30 hover:bg-primary/10"
             >
-              Узнать больше
+              {t('hero.cta.learnMore')}
             </motion.a>
           </motion.div>
 
@@ -160,7 +165,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 text-sm text-muted-foreground"
           >
-            🔒 Безопасно • Бесплатно навсегда • Без кредитной карты
+            {t('hero.footer')}
           </motion.p>
         </div>
       </div>

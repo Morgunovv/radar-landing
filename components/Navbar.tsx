@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { ChevronDown, Globe, Menu, X } from 'lucide-react'
+import { getTranslation, getCurrentLanguage, Language } from '@/utils/translations'
 
 const languages = [
   { code: 'ru', name: 'Русский', flag: '/flags/RU.webp', countryCode: 'RU' },
@@ -11,10 +13,17 @@ const languages = [
 ]
 
 export function Navbar() {
+  const router = useRouter()
   const [scrolled, setScrolled] = useState(false)
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [language, setLanguage] = useState<'ru' | 'en' | 'es'>('ru')
+  const lang = getCurrentLanguage(router.pathname)
+  const t = (key: string) => getTranslation(lang, key)
+  
+  const getLanguagePath = (langCode: Language) => {
+    if (langCode === 'ru') return '/'
+    return `/${langCode}`
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +53,7 @@ export function Navbar() {
     }
   }, [isLangDropdownOpen, isMobileMenuOpen])
 
-  const currentLanguage = languages.find(lang => lang.code === language) || languages[0]
+  const currentLanguage = languages.find(l => l.code === lang) || languages[0]
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -65,14 +74,14 @@ export function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/#features" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              Возможности
+            <Link href={`${getLanguagePath(lang)}#features`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+              {t('navbar.features')}
             </Link>
-            <Link href="/#pricing" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              Тарифы
+            <Link href={`${getLanguagePath(lang)}#pricing`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+              {t('navbar.pricing')}
             </Link>
-            <Link href="/faq" className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              FAQ
+            <Link href={`${getLanguagePath(lang)}/faq`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+              {t('navbar.faq')}
             </Link>
             
             {/* Language selector */}
@@ -87,7 +96,6 @@ export function Navbar() {
                   className="w-5 h-auto object-contain"
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback если изображение не загрузилось
                     const target = e.target as HTMLImageElement
                     target.style.display = 'none'
                   }}
@@ -97,23 +105,21 @@ export function Navbar() {
               
               {isLangDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-48 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setLanguage(lang.code as 'ru' | 'en' | 'es')
-                        setIsLangDropdownOpen(false)
-                      }}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                        language === lang.code
+                  {languages.map((l) => (
+                    <Link
+                      key={l.code}
+                      href={getLanguagePath(l.code as Language)}
+                      onClick={() => setIsLangDropdownOpen(false)}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors block ${
+                        lang === l.code
                           ? 'bg-primary/20 text-primary'
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <img 
-                          src={lang.flag} 
-                          alt={lang.name}
+                          src={l.flag} 
+                          alt={l.name}
                           className="w-5 h-auto object-contain"
                           loading="lazy"
                           onError={(e) => {
@@ -121,9 +127,9 @@ export function Navbar() {
                             target.style.display = 'none'
                           }}
                         />
-                        <span className="font-medium">{lang.name}</span>
+                        <span className="font-medium">{l.name}</span>
                       </div>
-                    </button>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -135,7 +141,7 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-11 rounded-md text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              Настроить за 3 минуты
+              {t('navbar.setup')}
             </a>
           </div>
 
@@ -160,23 +166,21 @@ export function Navbar() {
               
               {isLangDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-40 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        setLanguage(lang.code as 'ru' | 'en' | 'es')
-                        setIsLangDropdownOpen(false)
-                      }}
-                      className={`w-full text-left px-3 py-2 text-sm transition-colors ${
-                        language === lang.code
+                  {languages.map((l) => (
+                    <Link
+                      key={l.code}
+                      href={getLanguagePath(l.code as Language)}
+                      onClick={() => setIsLangDropdownOpen(false)}
+                      className={`w-full text-left px-3 py-2 text-sm transition-colors block ${
+                        lang === l.code
                           ? 'bg-primary/20 text-primary'
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
                       <div className="flex items-center gap-2">
                         <img 
-                          src={lang.flag} 
-                          alt={lang.name}
+                          src={l.flag} 
+                          alt={l.name}
                           className="w-5 h-auto object-contain"
                           loading="lazy"
                           onError={(e) => {
@@ -184,9 +188,9 @@ export function Navbar() {
                             target.style.display = 'none'
                           }}
                         />
-                        <span className="font-medium">{lang.name}</span>
+                        <span className="font-medium">{l.name}</span>
                       </div>
-                    </button>
+                    </Link>
                   ))}
                 </div>
               )}
@@ -212,25 +216,25 @@ export function Navbar() {
               <div className="container mx-auto px-4 py-4">
                 <nav className="flex flex-col gap-2">
                   <Link
-                    href="/#features"
+                    href={`${getLanguagePath(lang)}#features`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
-                    Возможности
+                    {t('navbar.features')}
                   </Link>
                   <Link
-                    href="/#pricing"
+                    href={`${getLanguagePath(lang)}#pricing`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
-                    Тарифы
+                    {t('navbar.pricing')}
                   </Link>
                   <Link
-                    href="/faq"
+                    href={`${getLanguagePath(lang)}/faq`}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
-                    FAQ
+                    {t('navbar.faq')}
                   </Link>
                   <div className="pt-2 mt-2 border-t border-border/50">
                     <a
@@ -240,7 +244,7 @@ export function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className="inline-flex items-center justify-center w-full px-4 py-3 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-colors"
                     >
-                      Начать
+                      {t('navbar.start')}
                     </a>
                   </div>
                 </nav>
