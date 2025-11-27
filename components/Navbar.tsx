@@ -60,9 +60,9 @@ export function Navbar() {
     return `/${lang}/faq`
   }
 
-  const getFeaturesPath = () => {
-    // Всегда возвращаем путь к блоку Features на главной странице
-    return `${getHomePath()}#features`
+  const getUseCasesPath = () => {
+    // Всегда возвращаем путь к блоку UseCases (Для кого) на главной странице
+    return `${getHomePath()}#usecases`
   }
 
   const getPricingPath = () => {
@@ -119,8 +119,8 @@ export function Navbar() {
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Link href={getFeaturesPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
-              {t('navbar.features')}
+            <Link href={getUseCasesPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+              {t('navbar.forWhom')}
             </Link>
             <Link href={getPricingPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
               {t('navbar.pricing')}
