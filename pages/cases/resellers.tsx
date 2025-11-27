@@ -63,9 +63,9 @@ export default function Resellers() {
                   <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 mb-6">
                     <Repeat className="w-12 h-12 text-background" />
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">Реселлеры</h1>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('pages.cases.resellers.hero.title')}</h1>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                    Не упускай выгодные сделки. Автоматизируй поиск товаров и услуг для перепродажи.
+                    {t('pages.cases.resellers.hero.subtitle')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -73,7 +73,7 @@ export default function Resellers() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-lg transition-colors"
                   >
-                    Начать поиск
+                    {t('pages.cases.resellers.hero.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </motion.div>
@@ -83,17 +83,17 @@ export default function Resellers() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Вызовы реселлеров</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.resellers.problems.title')}</h2>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Clock className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Поиск выгодных предложений</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.resellers.problems.deals.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Нужно постоянно мониторить десятки каналов с предложениями товаров и услуг. Выгодные сделки разбирают за минуты.
+                        {t('pages.cases.resellers.problems.deals.description')}
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
@@ -101,17 +101,17 @@ export default function Resellers() {
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Target className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Упущенные возможности</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.resellers.problems.missed.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Пока ты просматриваешь каналы вручную, другие реселлеры уже покупают выгодные товары. Каждая минута задержки - упущенная прибыль.
+                        {t('pages.cases.resellers.problems.missed.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Решение для реселлеров</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.resellers.solution.title')}</h2>
                   <div className="space-y-6">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
                       <div className="flex items-start gap-4">
@@ -119,9 +119,9 @@ export default function Resellers() {
                           <Zap className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Мгновенные уведомления</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.resellers.solution.notifications.title')}</h3>
                           <p className="text-muted-foreground">
-                            Получай уведомления о выгодных предложениях в реальном времени. Реагируй быстрее конкурентов и закрывай сделки первым.
+                            {t('pages.cases.resellers.solution.notifications.description')}
                           </p>
                         </div>
                       </div>
@@ -133,9 +133,9 @@ export default function Resellers() {
                           <Target className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Фильтрация по критериям</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.resellers.solution.filtering.title')}</h3>
                           <p className="text-muted-foreground">
-                            Настрой мониторинг по ключевым словам: категории товаров, цены, условия. Получай только релевантные предложения.
+                            {t('pages.cases.resellers.solution.filtering.description')}
                           </p>
                         </div>
                       </div>
@@ -147,9 +147,9 @@ export default function Resellers() {
                           <Clock className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Мониторинг множества каналов</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.resellers.solution.channels.title')}</h3>
                           <p className="text-muted-foreground">
-                            Отслеживай десятки каналов одновременно: маркетплейсы, группы продаж, каналы с предложениями. Ничего не пропустишь.
+                            {t('pages.cases.resellers.solution.channels.description')}
                           </p>
                         </div>
                       </div>
@@ -158,33 +158,33 @@ export default function Resellers() {
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Примеры использования</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.resellers.examples.title')}</h2>
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Мониторинг распродаж</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.resellers.examples.sales.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Настрой ключевые слова: "скидка", "распродажа", "выгодно", названия категорий товаров. Получай уведомления о выгодных предложениях.
+                        {t('pages.cases.resellers.examples.sales.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Поиск оптовых предложений</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.resellers.examples.wholesale.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Мониторь каналы с оптовыми предложениями. Находи товары для перепродажи с хорошей маржой.
+                        {t('pages.cases.resellers.examples.wholesale.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Отслеживание услуг</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.resellers.examples.services.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Мониторь предложения услуг для перепродажи: подписки, курсы, доступы. Находи выгодные партнерства.
+                        {t('pages.cases.resellers.examples.services.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30">
-                  <h2 className="text-2xl font-bold mb-4">Начни использовать</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.cases.resellers.cta.title')}</h2>
                   <p className="text-muted-foreground mb-6">
-                    Настрой мониторинг выгодных предложений за 3 минуты. Бесплатный тариф доступен навсегда.
+                    {t('pages.cases.resellers.cta.description')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -192,14 +192,14 @@ export default function Resellers() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold transition-colors"
                   >
-                    Настроить мониторинг
+                    {t('pages.cases.resellers.cta.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
                   <Link href="/" className="text-primary hover:underline">
-                    ← Вернуться на главную
+                    {t('pages.cases.resellers.backToHome')}
                   </Link>
                 </div>
               </div>

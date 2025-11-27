@@ -64,9 +64,9 @@ export default function CryptoTraders() {
                   <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 mb-6">
                     <TrendingUp className="w-12 h-12 text-background" />
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">Крипто-трейдеры</h1>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('pages.cases.crypto.hero.title')}</h1>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                    Мониторь 100+ крипто-каналов одновременно. Получай только релевантные сигналы за секунды.
+                    {t('pages.cases.crypto.hero.subtitle')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -74,7 +74,7 @@ export default function CryptoTraders() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-lg transition-colors"
                   >
-                    Начать мониторинг
+                    {t('pages.cases.crypto.hero.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </motion.div>
@@ -85,17 +85,17 @@ export default function CryptoTraders() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Проблемы крипто-трейдеров</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.crypto.problems.title')}</h2>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Clock className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Упущенные возможности</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.crypto.problems.missedOpportunities.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Пока ты просматриваешь каналы вручную, другие трейдеры уже входят в позиции. Каждая минута задержки может стоить прибыли.
+                        {t('pages.cases.crypto.problems.missedOpportunities.description')}
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
@@ -103,17 +103,17 @@ export default function CryptoTraders() {
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Target className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Информационный шум</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.crypto.problems.informationNoise.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Сотни сообщений в день, но только единицы действительно важны. Как найти нужное среди всего этого шума?
+                        {t('pages.cases.crypto.problems.informationNoise.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Решение с Telegram Radar</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.crypto.solution.title')}</h2>
                   <div className="space-y-6">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
                       <div className="flex items-start gap-4">
@@ -121,9 +121,9 @@ export default function CryptoTraders() {
                           <Zap className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Мониторинг 100+ каналов</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.crypto.solution.monitoring.title')}</h3>
                           <p className="text-muted-foreground">
-                            Отслеживай все важные крипто-каналы одновременно: новости о листингах, сигналы от аналитиков, обсуждения в сообществах. Ничего не пропустишь.
+                            {t('pages.cases.crypto.solution.monitoring.description')}
                           </p>
                         </div>
                       </div>
@@ -135,9 +135,9 @@ export default function CryptoTraders() {
                           <Target className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Точная фильтрация сигналов</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.crypto.solution.filtering.title')}</h3>
                           <p className="text-muted-foreground">
-                            Настрой мониторинг по ключевым словам: названия монет, термины "листинг", "памп", "дамп", "аирдроп". Получай только релевантные сообщения.
+                            {t('pages.cases.crypto.solution.filtering.description')}
                           </p>
                         </div>
                       </div>
@@ -149,9 +149,9 @@ export default function CryptoTraders() {
                           <Clock className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Мгновенные уведомления</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.crypto.solution.notifications.title')}</h3>
                           <p className="text-muted-foreground">
-                            Получай сигналы в реальном времени. Первым узнавай о важных событиях и принимай решения быстрее конкурентов.
+                            {t('pages.cases.crypto.solution.notifications.description')}
                           </p>
                         </div>
                       </div>
@@ -160,33 +160,33 @@ export default function CryptoTraders() {
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Примеры использования</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.crypto.examples.title')}</h2>
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Мониторинг листингов</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.crypto.examples.listings.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Настрой ключевые слова: "листинг", "listing", "новый токен". Получай уведомления о новых листингах на биржах за секунды.
+                        {t('pages.cases.crypto.examples.listings.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Отслеживание сигналов</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.crypto.examples.signals.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Мониторь каналы аналитиков по ключевым словам: названия монет, "buy", "sell", "target". Не пропусти важные сигналы.
+                        {t('pages.cases.crypto.examples.signals.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Новости и события</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.crypto.examples.news.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Отслеживай новости о партнерствах, обновлениях протоколов, важных событиях в экосистеме криптовалют.
+                        {t('pages.cases.crypto.examples.news.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30">
-                  <h2 className="text-2xl font-bold mb-4">Начни прямо сейчас</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.cases.crypto.cta.title')}</h2>
                   <p className="text-muted-foreground mb-6">
-                    Настрой мониторинг крипто-каналов за 3 минуты. Бесплатный тариф доступен навсегда.
+                    {t('pages.cases.crypto.cta.description')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -194,14 +194,14 @@ export default function CryptoTraders() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold transition-colors"
                   >
-                    Настроить мониторинг
+                    {t('pages.cases.crypto.cta.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
                   <Link href="/" className="text-primary hover:underline">
-                    ← Вернуться на главную
+                    {t('pages.cases.crypto.backToHome')}
                   </Link>
                 </div>
               </div>

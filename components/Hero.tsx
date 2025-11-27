@@ -75,15 +75,16 @@ export function Hero() {
           </motion.p>
 
           {/* Stats cards */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ 
+                opacity: { duration: 0.5, delay: 0.3 },
+                y: { duration: 0.5, delay: 0.3 },
+                scale: { duration: 0.3, ease: "easeOut" }
+              }}
               className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
             >
               <Target className="w-8 h-8 text-primary mb-3 mx-auto" />
@@ -91,8 +92,14 @@ export function Hero() {
               <div className="text-sm text-muted-foreground">{t('hero.stats.channels')}</div>
             </motion.div>
             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ 
+                opacity: { duration: 0.5, delay: 0.35 },
+                y: { duration: 0.5, delay: 0.35 },
+                scale: { duration: 0.3, ease: "easeOut" }
+              }}
               className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
             >
               <Clock className="w-8 h-8 text-primary mb-3 mx-auto" />
@@ -100,15 +107,21 @@ export function Hero() {
               <div className="text-sm text-muted-foreground">{t('hero.stats.time')}</div>
             </motion.div>
             <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ 
+                opacity: { duration: 0.5, delay: 0.4 },
+                y: { duration: 0.5, delay: 0.4 },
+                scale: { duration: 0.3, ease: "easeOut" }
+              }}
               className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
             >
               <Zap className="w-8 h-8 text-primary mb-3 mx-auto" />
               <div className="text-3xl font-bold mb-1">100%</div>
               <div className="text-sm text-muted-foreground">{t('hero.stats.relevance')}</div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* CTA Buttons */}
           <motion.div

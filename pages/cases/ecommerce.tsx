@@ -63,9 +63,9 @@ export default function Ecommerce() {
                   <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 mb-6">
                     <ShoppingCart className="w-12 h-12 text-background" />
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">E-commerce</h1>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('pages.cases.ecommerce.hero.title')}</h1>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                    Находи выгодные предложения и тренды раньше конкурентов. Автоматизируй поиск товаров.
+                    {t('pages.cases.ecommerce.hero.subtitle')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -73,7 +73,7 @@ export default function Ecommerce() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-lg transition-colors"
                   >
-                    Начать мониторинг
+                    {t('pages.cases.ecommerce.hero.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </motion.div>
@@ -83,17 +83,17 @@ export default function Ecommerce() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Вызовы e-commerce</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.ecommerce.problems.title')}</h2>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Target className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Поиск выгодных предложений</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.ecommerce.problems.deals.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Нужно отслеживать десятки каналов с распродажами, акциями и специальными предложениями. Как не пропустить выгодную сделку?
+                        {t('pages.cases.ecommerce.problems.deals.description')}
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
@@ -101,17 +101,17 @@ export default function Ecommerce() {
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Clock className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Тренд-вотчинг</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.ecommerce.problems.trendWatching.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Важно знать, какие товары становятся популярными, чтобы вовремя пополнить ассортимент или запустить рекламу.
+                        {t('pages.cases.ecommerce.problems.trendWatching.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Решение для e-commerce</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.ecommerce.solution.title')}</h2>
                   <div className="space-y-6">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
                       <div className="flex items-start gap-4">
@@ -119,9 +119,9 @@ export default function Ecommerce() {
                           <Zap className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Мониторинг распродаж</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.ecommerce.solution.sales.title')}</h3>
                           <p className="text-muted-foreground">
-                            Отслеживай каналы с распродажами, акциями и специальными предложениями. Получай уведомления о выгодных сделках автоматически.
+                            {t('pages.cases.ecommerce.solution.sales.description')}
                           </p>
                         </div>
                       </div>
@@ -133,9 +133,9 @@ export default function Ecommerce() {
                           <Target className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Отслеживание трендов</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.ecommerce.solution.trends.title')}</h3>
                           <p className="text-muted-foreground">
-                            Мониторь обсуждения товаров, отзывы, популярные категории. Узнавай о трендах раньше конкурентов.
+                            {t('pages.cases.ecommerce.solution.trends.description')}
                           </p>
                         </div>
                       </div>
@@ -147,9 +147,9 @@ export default function Ecommerce() {
                           <Clock className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Конкурентная разведка</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.ecommerce.solution.intelligence.title')}</h3>
                           <p className="text-muted-foreground">
-                            Отслеживай каналы конкурентов, их акции и новинки. Анализируй стратегии и оставайся впереди.
+                            {t('pages.cases.ecommerce.solution.intelligence.description')}
                           </p>
                         </div>
                       </div>
@@ -158,33 +158,33 @@ export default function Ecommerce() {
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Примеры использования</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.ecommerce.examples.title')}</h2>
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Мониторинг распродаж</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.ecommerce.examples.sales.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Настрой ключевые слова: "скидка", "распродажа", "акция", названия брендов. Получай уведомления о выгодных предложениях.
+                        {t('pages.cases.ecommerce.examples.sales.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Отслеживание новинок</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.ecommerce.examples.newProducts.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Мониторь каналы производителей и дистрибьюторов. Узнавай о новых товарах первым.
+                        {t('pages.cases.ecommerce.examples.newProducts.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Анализ спроса</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.ecommerce.examples.demand.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Отслеживай обсуждения товаров, отзывы, популярные категории. Планируй закупки на основе данных.
+                        {t('pages.cases.ecommerce.examples.demand.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30">
-                  <h2 className="text-2xl font-bold mb-4">Начни использовать</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.cases.ecommerce.cta.title')}</h2>
                   <p className="text-muted-foreground mb-6">
-                    Настрой мониторинг товаров и предложений за 3 минуты. Бесплатный тариф доступен навсегда.
+                    {t('pages.cases.ecommerce.cta.description')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -192,14 +192,14 @@ export default function Ecommerce() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold transition-colors"
                   >
-                    Настроить мониторинг
+                    {t('pages.cases.ecommerce.cta.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
                   <Link href="/" className="text-primary hover:underline">
-                    ← Вернуться на главную
+                    {t('pages.cases.ecommerce.backToHome')}
                   </Link>
                 </div>
               </div>

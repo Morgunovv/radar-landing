@@ -7,11 +7,11 @@ import { Megaphone, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-export default function SMMAgencies() {
+export default function Marketing() {
   const { t } = useLanguage()
   const router = useRouter()
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/cases/smm-agencies`
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/cases/marketing`
   const ogImage = `${siteUrl}/logo.png`
   const title = String(t('pages.cases.marketers.title'))
   const description = String(t('pages.cases.marketers.description'))
@@ -63,9 +63,9 @@ export default function SMMAgencies() {
                   <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-pink-400 to-purple-500 mb-6">
                     <Megaphone className="w-12 h-12 text-background" />
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">Маркетологи</h1>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6">{t('pages.cases.marketers.hero.title')}</h1>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                    Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов.
+                    {t('pages.cases.marketers.hero.subtitle')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -73,7 +73,7 @@ export default function SMMAgencies() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold text-lg transition-colors"
                   >
-                    Начать использовать
+                    {t('pages.cases.marketers.hero.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </motion.div>
@@ -83,17 +83,17 @@ export default function SMMAgencies() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Вызовы маркетологов</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.marketers.problems.title')}</h2>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Clock className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Поиск контента</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.marketers.problems.contentSearch.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Часы ежедневно тратятся на поиск релевантного контента для клиентов. Нужно мониторить десятки каналов вручную.
+                        {t('pages.cases.marketers.problems.contentSearch.description')}
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
@@ -101,17 +101,17 @@ export default function SMMAgencies() {
                         <div className="p-2 rounded-lg bg-destructive/20">
                           <Target className="w-6 h-6 text-destructive" />
                         </div>
-                        <h3 className="text-xl font-bold">Конкурентная разведка</h3>
+                        <h3 className="text-xl font-bold">{t('pages.cases.marketers.problems.competitiveIntelligence.title')}</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Важно отслеживать, что публикуют конкуренты, какие тренды появляются, чтобы быть впереди.
+                        {t('pages.cases.marketers.problems.competitiveIntelligence.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Как Telegram Radar помогает</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.marketers.solution.title')}</h2>
                   <div className="space-y-6">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-primary/20">
                       <div className="flex items-start gap-4">
@@ -119,9 +119,9 @@ export default function SMMAgencies() {
                           <Zap className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Автоматический поиск контента</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.marketers.solution.autoSearch.title')}</h3>
                           <p className="text-muted-foreground">
-                            Настрой мониторинг по тематикам ваших клиентов. Получай релевантный контент автоматически, без ручного поиска.
+                            {t('pages.cases.marketers.solution.autoSearch.description')}
                           </p>
                         </div>
                       </div>
@@ -133,9 +133,9 @@ export default function SMMAgencies() {
                           <Target className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Тренд-вотчинг</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.marketers.solution.trendWatching.title')}</h3>
                           <p className="text-muted-foreground">
-                            Отслеживай популярные темы и тренды в вашей нише. Будь первым, кто использует новые идеи для контента.
+                            {t('pages.cases.marketers.solution.trendWatching.description')}
                           </p>
                         </div>
                       </div>
@@ -147,9 +147,9 @@ export default function SMMAgencies() {
                           <Clock className="w-6 h-6 text-background" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold mb-2">Экономия времени</h3>
+                          <h3 className="text-xl font-bold mb-2">{t('pages.cases.marketers.solution.timeSaving.title')}</h3>
                           <p className="text-muted-foreground">
-                            Экономь 10-15 часов в неделю на поиске контента. Фокусируйся на стратегии и креативе, а не на рутине.
+                            {t('pages.cases.marketers.solution.timeSaving.description')}
                           </p>
                         </div>
                       </div>
@@ -158,33 +158,33 @@ export default function SMMAgencies() {
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Примеры использования</h2>
+                  <h2 className="text-3xl font-bold mb-6">{t('pages.cases.marketers.examples.title')}</h2>
                   <div className="space-y-4">
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Мониторинг конкурентов</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.marketers.examples.competitors.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Отслеживай каналы конкурентов и клиентов. Узнавай первым о новых публикациях и акциях.
+                        {t('pages.cases.marketers.examples.competitors.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Поиск контента для репостов</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.marketers.examples.reposts.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Настрой фильтры по тематикам клиентов. Получай готовый контент для публикации автоматически.
+                        {t('pages.cases.marketers.examples.reposts.description')}
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-card/30 border border-border/50">
-                      <h4 className="font-semibold mb-2">Отслеживание упоминаний</h4>
+                      <h4 className="font-semibold mb-2">{t('pages.cases.marketers.examples.mentions.title')}</h4>
                       <p className="text-muted-foreground text-sm">
-                        Мониторь упоминания брендов клиентов. Реагируй на обсуждения и отзывы в реальном времени.
+                        {t('pages.cases.marketers.examples.mentions.description')}
                       </p>
                     </div>
                   </div>
                 </section>
 
                 <section className="mb-12 p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 border border-primary/30">
-                  <h2 className="text-2xl font-bold mb-4">Начни автоматизировать</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.cases.marketers.cta.title')}</h2>
                   <p className="text-muted-foreground mb-6">
-                    Настрой мониторинг контента для ваших клиентов за 3 минуты. Бесплатный тариф доступен навсегда.
+                    {t('pages.cases.marketers.cta.description')}
                   </p>
                   <a
                     href="https://t.me/radar_telegram_bot"
@@ -192,14 +192,14 @@ export default function SMMAgencies() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold transition-colors"
                   >
-                    Настроить мониторинг
+                    {t('pages.cases.marketers.cta.button')}
                     <ArrowRight className="w-5 h-5" />
                   </a>
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
                   <Link href="/" className="text-primary hover:underline">
-                    ← Вернуться на главную
+                    {t('pages.cases.marketers.backToHome')}
                   </Link>
                 </div>
               </div>

@@ -16,7 +16,7 @@ const useCaseConfig = [
     icon: Megaphone,
     key: 'marketers',
     gradient: 'from-pink-400 to-purple-500',
-    href: '/cases/smm-agencies'
+    href: '/cases/marketing'
   },
   {
     icon: Newspaper,
