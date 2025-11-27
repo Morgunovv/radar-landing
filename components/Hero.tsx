@@ -58,7 +58,7 @@ export function Hero() {
             {t('hero.title')}
             <br className="mt-2" />
             <span className="relative inline-block mt-2">
-              <span className="relative z-10 bg-gradient-to-r from-purple-400 to-primary bg-clip-text text-transparent">
+              <span className="relative z-10 bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(to right, #971FC4, hsl(var(--primary)))' }}>
                 {t('hero.titleHighlight')}
               </span>
               <span className="absolute inset-0 blur-xl opacity-50" style={{ background: 'var(--gradient-primary)' }}></span>
