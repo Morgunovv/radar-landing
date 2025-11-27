@@ -9,7 +9,7 @@ export default function Ecommerce() {
   return (
     <>
       <Head>
-        <title>E-commerce — Telegram Radar</title>
+        <title>E-commerce - Telegram Radar</title>
         <meta name="description" content="Находи выгодные предложения и тренды раньше конкурентов. Автоматизируй поиск товаров." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />

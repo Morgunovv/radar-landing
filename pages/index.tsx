@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Telegram Radar — Мониторинг каналов на автопилоте</title>
+        <title>Telegram Radar - Мониторинг каналов на автопилоте</title>
         <meta name="description" content="Автоматизируй мониторинг Telegram-каналов. Получай только релевантные сообщения по ключевым словам. Экономь часы работы каждый день." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />

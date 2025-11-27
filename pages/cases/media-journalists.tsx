@@ -9,7 +9,7 @@ export default function MediaJournalists() {
   return (
     <>
       <Head>
-        <title>Медиа и журналисты — Telegram Radar</title>
+        <title>Медиа и журналисты - Telegram Radar</title>
         <meta name="description" content="Будь первым с новостями. Агрегируй информацию из 200+ источников за секунды." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
@@ -66,7 +66,7 @@ export default function MediaJournalists() {
                         <h3 className="text-xl font-bold">Скорость публикации</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        В медиа скорость — это всё. Пока ты ищешь информацию вручную, конкуренты уже публикуют новости.
+                        В медиа скорость - это всё. Пока ты ищешь информацию вручную, конкуренты уже публикуют новости.
                       </p>
                     </div>
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">

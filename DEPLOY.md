@@ -76,8 +76,8 @@ vercel --prod
 ### 3. Метаданные
 
 В `pages/index.tsx` обновите:
-- `<title>` — заголовок страницы
-- `<meta name="description">` — описание для SEO
+- `<title>` - заголовок страницы
+- `<meta name="description">` - описание для SEO
 
 ## Проверка локально
 

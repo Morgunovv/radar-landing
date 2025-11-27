@@ -9,7 +9,7 @@ export default function Resellers() {
   return (
     <>
       <Head>
-        <title>Реселлеры — Telegram Radar</title>
+        <title>Реселлеры - Telegram Radar</title>
         <meta name="description" content="Не упускай выгодные сделки. Автоматизируй поиск товаров и услуг для перепродажи." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
@@ -77,7 +77,7 @@ export default function Resellers() {
                         <h3 className="text-xl font-bold">Упущенные возможности</h3>
                       </div>
                       <p className="text-muted-foreground">
-                        Пока ты просматриваешь каналы вручную, другие реселлеры уже покупают выгодные товары. Каждая минута задержки — упущенная прибыль.
+                        Пока ты просматриваешь каналы вручную, другие реселлеры уже покупают выгодные товары. Каждая минута задержки - упущенная прибыль.
                       </p>
                     </div>
                   </div>

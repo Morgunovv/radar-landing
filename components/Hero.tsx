@@ -53,7 +53,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
           >
-            Не ищи информацию —{' '}
+            Не ищи информацию -{' '}
             <span className="relative inline-block">
               <span className="relative z-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                 пусть она найдёт тебя

@@ -7,7 +7,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <Head>
-        <title>Политика конфиденциальности — Telegram Radar</title>
+        <title>Политика конфиденциальности - Telegram Radar</title>
         <meta name="description" content="Политика конфиденциальности Telegram Radar. Информация о сборе, использовании и защите персональных данных." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
                 <section className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">1. Общие положения</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сервиса Telegram Radar (далее — «Сервис»). Используя Сервис, вы соглашаетесь с условиями настоящей Политики конфиденциальности.
+                    Настоящая Политика конфиденциальности определяет порядок обработки и защиты персональных данных пользователей сервиса Telegram Radar (далее - «Сервис»). Используя Сервис, вы соглашаетесь с условиями настоящей Политики конфиденциальности.
                   </p>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     Администратор персональных данных: Telegram Radar. Контактная информация: через Telegram бот @radar_telegram_bot.

@@ -9,7 +9,7 @@ export default function HRRecruiters() {
   return (
     <>
       <Head>
-        <title>HR и рекрутеры — Telegram Radar</title>
+        <title>HR и рекрутеры - Telegram Radar</title>
         <meta name="description" content="Находи таланты быстрее. Автоматизируй поиск кандидатов и мониторинг рынка труда." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />

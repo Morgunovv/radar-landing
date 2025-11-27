@@ -7,7 +7,7 @@ export default function FAQPage() {
   return (
     <>
       <Head>
-        <title>FAQ — Telegram Radar</title>
+        <title>FAQ - Telegram Radar</title>
         <meta name="description" content="Часто задаваемые вопросы о Telegram Radar. Ответы на вопросы о мониторинге каналов, ключевых словах, тарифах и решении проблем." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />

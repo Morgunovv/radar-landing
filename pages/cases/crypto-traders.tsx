@@ -9,7 +9,7 @@ export default function CryptoTraders() {
   return (
     <>
       <Head>
-        <title>Крипто-трейдеры — Telegram Radar</title>
+        <title>Крипто-трейдеры - Telegram Radar</title>
         <meta name="description" content="Автоматизируй мониторинг крипто-каналов. Получай сигналы о листингах, пампах и важных новостях первым." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />

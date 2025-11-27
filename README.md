@@ -1,14 +1,14 @@
 # Telegram Radar Landing Page
 
-Лэндинг для Telegram Radar — системы мониторинга Telegram-каналов.
+Лэндинг для Telegram Radar - системы мониторинга Telegram-каналов.
 
 ## Технологии
 
-- **Next.js 14** — React framework
-- **TypeScript** — типизация
-- **Tailwind CSS** — стилизация
-- **Framer Motion** — анимации
-- **Lucide React** — иконки
+- **Next.js 14** - React framework
+- **TypeScript** - типизация
+- **Tailwind CSS** - стилизация
+- **Framer Motion** - анимации
+- **Lucide React** - иконки
 
 ## Установка
 
@@ -98,16 +98,16 @@ landing/
 
 Цвета настраиваются в `tailwind.config.js`:
 
-- `primary` — основной цвет (синий)
-- `telegram` — цвет Telegram (голубой)
+- `primary` - основной цвет (синий)
+- `telegram` - цвет Telegram (голубой)
 
 ### Контент
 
 Все тексты и описания находятся в компонентах:
-- `components/Hero.tsx` — главный заголовок и описание
-- `components/Features.tsx` — список возможностей
-- `components/UseCases.tsx` — кейсы использования
-- `components/Pricing.tsx` — тарифы и цены
+- `components/Hero.tsx` - главный заголовок и описание
+- `components/Features.tsx` - список возможностей
+- `components/UseCases.tsx` - кейсы использования
+- `components/Pricing.tsx` - тарифы и цены
 
 ## Лицензия
 

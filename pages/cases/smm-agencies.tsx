@@ -9,7 +9,7 @@ export default function SMMAgencies() {
   return (
     <>
       <Head>
-        <title>SMM-агентства — Telegram Radar</title>
+        <title>SMM-агентства - Telegram Radar</title>
         <meta name="description" content="Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
