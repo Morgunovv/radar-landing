@@ -180,13 +180,13 @@ export function Pricing() {
     
     const rate = exchangeRates[selectedCurrency] || 1
     const convertedPrice = Math.round(priceEur * rate)
-    const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
-    // Для CAD используем правильный формат: C$ перед числом
+    // Для CAD используем формат: CAD перед числом
     if (selectedCurrency === 'CAD') {
-      return `C$${convertedPrice}`
+      return `CAD ${convertedPrice}`
     }
     
+    const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     return `${symbol}${convertedPrice}`
   }
 
@@ -210,7 +210,7 @@ export function Pricing() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
             >
               <span className="text-sm font-medium">
-                {currencies.find(c => c.code === selectedCurrency)?.symbol} {selectedCurrency}
+                {selectedCurrency === 'CAD' ? 'CAD' : `${currencies.find(c => c.code === selectedCurrency)?.symbol} ${selectedCurrency}`}
               </span>
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -231,10 +231,18 @@ export function Pricing() {
                     }`}
                   >
                     <span className="font-medium">
-                      {selectedCurrency === currency.code ? (
-                        <span className="text-primary">{currency.symbol} {currency.name}</span>
+                      {currency.code === 'CAD' ? (
+                        selectedCurrency === currency.code ? (
+                          <span className="text-primary">CAD</span>
+                        ) : (
+                          <span>CAD</span>
+                        )
                       ) : (
-                        <span>{currency.symbol} {currency.name}</span>
+                        selectedCurrency === currency.code ? (
+                          <span className="text-primary">{currency.symbol} {currency.name}</span>
+                        ) : (
+                          <span>{currency.symbol} {currency.name}</span>
+                        )
                       )}
                     </span>
                   </button>
