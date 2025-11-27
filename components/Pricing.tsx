@@ -1,184 +1,181 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Zap, Star, Crown, Check } from 'lucide-react'
 
 const plans = [
   {
-    name: 'Бесплатный',
+    name: 'Free',
+    subtitle: 'Попробуй возможности',
     price: 'Бесплатно',
     period: 'навсегда',
-    description: 'Бесплатный доступ навсегда с базовыми возможностями',
     features: [
-      'Мониторинг 5 каналов',
+      'До 5 каналов мониторинга',
       'До 10 ключевых запросов',
-      'Фильтр сообщений'
+      'Базовая поддержка'
     ],
-    cta: 'Начать бесплатно',
-    popular: false,
-    color: 'from-gray-400 to-gray-600'
+    icon: Zap,
+    gradient: 'from-gray-400 to-gray-600',
+    popular: false
   },
   {
     name: 'Light',
-    price: '3€',
-    period: 'в месяц',
-    description: 'Идеально для старта и небольших проектов',
+    subtitle: 'Для начинающих',
+    price: '€3',
+    period: '/ мес',
+    periodText: 'в месяц',
     features: [
-      'Мониторинг до 50 каналов',
+      'До 50 каналов мониторинга',
       'До 50 ключевых запросов',
-      'Мониторинг закрытых чатов, групп и каналов',
-      'Неограниченное количество групп и сообщений',
+      'Мониторинг закрытых каналов',
+      'Безлимит групп для пересылки',
       'Копирование старых сообщений',
-      'Отправка с фильтром или без',
-      'Форвард или копипаст постов',
-      'Добавить/скрыть ссылку на источник'
+      'Форвард или копипаст постов'
     ],
-    cta: 'Начать пользоваться',
-    popular: false,
-    color: 'from-telegram-400 to-telegram-600'
+    icon: Zap,
+    gradient: 'from-blue-400 to-cyan-500',
+    popular: false
   },
   {
     name: 'Medium',
-    price: '5€',
-    period: 'в месяц',
-    description: 'Для профессионалов и растущих проектов',
+    subtitle: 'Самый популярный',
+    price: '€5',
+    period: '/ мес',
+    periodText: 'в месяц',
     features: [
-      'Мониторинг до 100 каналов',
+      'До 100 каналов мониторинга',
       'До 100 ключевых запросов',
-      'Мониторинг закрытых чатов, групп и каналов',
-      'Неограниченное количество групп и сообщений',
+      'Мониторинг закрытых каналов',
+      'Безлимит групп для пересылки',
       'Копирование старых сообщений',
-      'Отправка с фильтром или без',
       'Форвард или копипаст постов',
-      'Добавить/скрыть ссылку на источник'
+      'Управление ссылками на источник'
     ],
-    cta: 'Начать пользоваться',
-    popular: true,
-    color: 'from-primary-400 to-primary-600'
+    icon: Star,
+    gradient: 'from-primary to-secondary',
+    popular: true
   },
   {
     name: 'Hard',
-    price: '9€',
-    period: 'в месяц',
-    description: 'Для агентств и крупных проектов',
+    subtitle: 'Для профессионалов',
+    price: '€9',
+    period: '/ мес',
+    periodText: 'в месяц',
     features: [
-      'Мониторинг до 200 каналов',
+      'До 200 каналов мониторинга',
       'До 200 ключевых запросов',
-      'Мониторинг закрытых чатов, групп и каналов',
-      'Неограниченное количество групп и сообщений',
+      'Мониторинг закрытых каналов',
+      'Безлимит групп для пересылки',
       'Копирование старых сообщений',
-      'Отправка с фильтром или без',
       'Форвард или копипаст постов',
-      'Добавить/скрыть ссылку на источник'
+      'Управление ссылками на источник',
+      'Приоритетная поддержка'
     ],
-    cta: 'Начать пользоваться',
-    popular: false,
-    color: 'from-purple-400 to-purple-600'
+    icon: Crown,
+    gradient: 'from-purple-400 to-pink-500',
+    popular: false
   },
   {
     name: 'Rock',
-    price: '17€',
-    period: 'в месяц',
-    description: 'Для enterprise и максимального масштаба',
+    subtitle: 'Максимальная мощность',
+    price: '€17',
+    period: '/ мес',
+    periodText: 'в месяц',
     features: [
-      'Мониторинг до 500 каналов',
+      'До 500 каналов мониторинга',
       'До 200 ключевых запросов',
-      'Мониторинг закрытых чатов, групп и каналов',
-      'Неограниченное количество групп и сообщений',
+      'Мониторинг закрытых каналов',
+      'Безлимит групп для пересылки',
       'Копирование старых сообщений',
-      'Отправка с фильтром или без',
       'Форвард или копипаст постов',
-      'Добавить/скрыть ссылку на источник'
+      'Управление ссылками на источник',
+      'Приоритетная поддержка',
+      'Dedicated support'
     ],
-    cta: 'Начать пользоваться',
-    popular: false,
-    color: 'from-yellow-400 to-orange-600'
+    icon: Crown,
+    gradient: 'from-yellow-400 to-orange-500',
+    popular: false
   }
 ]
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/images/pricing-bg.svg')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900"></div>
-      </div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="pricing" className="py-24 px-4 relative overflow-hidden">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Простые и прозрачные{' '}
-            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
-              тарифы
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Выбери план, который подходит именно тебе. Начни с бесплатного тарифа навсегда.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Выбери свой план</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Начни бесплатно. Масштабируйся по мере роста.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {plans.map((plan, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: plan.popular ? 1.08 : 1.05, y: -5 }}
-              transition={{ 
-                opacity: { duration: 0.5, delay: index * 0.1 },
-                y: { duration: 0.5, delay: index * 0.1 },
-                scale: { duration: 0.3, ease: "easeOut" }
-              }}
-              className={`relative ${plan.popular ? 'lg:scale-105 lg:-mt-4' : ''}`}
-            >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <span className="bg-gradient-to-r from-primary-500 to-telegram-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
-                    <span>⚡</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          {plans.map((plan, index) => {
+            const IconComponent = plan.icon
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: plan.popular ? 1.08 : 1.05, y: -5 }}
+                transition={{ 
+                  opacity: { duration: 0.5, delay: index * 0.1 },
+                  scale: { duration: 0.3, ease: "easeOut" }
+                }}
+                className={`relative rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 ${
+                  plan.popular 
+                    ? 'bg-card border-2 border-primary shadow-2xl scale-105 lg:scale-110 z-10' 
+                    : 'bg-card/50 border border-border/50 hover:border-primary/50'
+                }`}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-bold text-primary-foreground">
                     Популярный
-                  </span>
+                  </div>
+                )}
+                
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${plan.gradient} mb-4`}>
+                  <IconComponent className="w-6 h-6 text-background" />
                 </div>
-              )}
-              
-              <div className={`h-full p-6 rounded-2xl border-2 ${
-                plan.popular 
-                  ? 'border-primary-400 bg-gradient-to-br from-primary-900/50 to-gray-800 shadow-2xl hover:bg-primary-900/60' 
-                  : 'border-gray-700 bg-gray-800 hover:border-primary-500 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-primary-500/20'
-              } transition-all duration-300 ease-out cursor-pointer flex flex-col`}>
+                
+                <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{plan.subtitle}</p>
+                
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  {plan.price === 'Бесплатно' ? (
-                    <div className="mb-2">
-                      <span className="text-sm font-semibold text-white">{plan.price} {plan.period}</span>
-                    </div>
-                  ) : (
-                    <div className="flex items-baseline mb-2">
-                      <span className="text-4xl font-extrabold text-white">{plan.price}</span>
-                      <span className="text-gray-400 ml-2">{plan.period}</span>
-                    </div>
+                  <div className="flex items-baseline gap-1">
+                    {plan.price === 'Бесплатно' ? (
+                      <span className="text-4xl font-bold">Бесплатно</span>
+                    ) : (
+                      <>
+                        <span className="text-4xl font-bold">{plan.price}</span>
+                        <span className="text-muted-foreground">{plan.period}</span>
+                      </>
+                    )}
+                  </div>
+                  {plan.periodText && (
+                    <p className="text-sm text-muted-foreground mt-1">{plan.periodText}</p>
                   )}
-                  <p className="text-gray-300 mt-3 text-sm">{plan.description}</p>
                 </div>
 
-                <ul className="flex-grow space-y-3 mb-6">
+                <ul className="space-y-3 mb-6">
                   {plan.features.map((feature, i) => {
-                    // Выделяем "до X" и числа жирным шрифтом
-                    const formattedFeature = feature.replace(/(до\s+\d+|\d+)/gi, '<strong>$1</strong>');
+                    // Выделяем числа жирным
+                    const parts = feature.split(/(\d+)/)
                     return (
-                      <li key={i} className="flex items-start">
-                        <span className={`text-lg mr-2 flex-shrink-0 text-primary-400`}>✓</span>
-                        <span className="text-gray-300 text-sm" dangerouslySetInnerHTML={{ __html: formattedFeature }} />
+                      <li key={i} className="flex items-start gap-2">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-muted-foreground">
+                          {parts.map((part, j) => 
+                            /^\d+$/.test(part) ? <strong key={j}>{part}</strong> : part
+                          )}
+                        </span>
                       </li>
-                    );
+                    )
                   })}
                 </ul>
 
@@ -186,35 +183,29 @@ export function Pricing() {
                   href="https://t.me/radar_telegram_bot"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-full py-3 px-4 rounded-xl font-semibold text-center transition-all duration-200 ${
+                  className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors h-10 px-4 py-2 w-full ${
                     plan.popular
-                      ? `bg-gradient-to-r ${plan.color} text-white hover:shadow-lg transform hover:-translate-y-0.5`
-                      : 'bg-gray-700 text-white hover:bg-gray-600'
+                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                      : 'bg-card hover:bg-muted text-primary-foreground'
                   }`}
                 >
-                  {plan.cta}
+                  {plan.price === 'Бесплатно' ? 'Попробовать' : 'Выбрать план'}
                 </a>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
         </div>
 
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center"
+          className="text-center mt-12 text-muted-foreground"
         >
-          <p className="text-gray-300">
-            Все тарифы можно изменить или отменить в любой момент. Нужен индивидуальный план?{' '}
-            <a href="mailto:support@example.com" className="text-primary-400 hover:text-primary-300 font-semibold">
-              Свяжитесь с нами
-            </a>
-          </p>
-        </motion.div>
+          Бесплатный тариф навсегда • Платные тарифы без привязки карты
+        </motion.p>
       </div>
     </section>
   )
 }
-

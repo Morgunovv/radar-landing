@@ -1,212 +1,155 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Zap, Target, Clock } from 'lucide-react'
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.svg')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"></div>
-      </div>
-      
-      {/* Animated background decorations with gradient */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-telegram-500/30 to-primary-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-primary-500/30 to-telegram-500/20 rounded-full mix-blend-screen filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-telegram-400/20 via-primary-400/15 to-telegram-400/20 rounded-full mix-blend-screen filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
-        
-        {/* Additional gradient orbs for depth */}
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-telegram-400/15 to-primary-400/10 rounded-full mix-blend-screen filter blur-2xl opacity-40 animate-blob animation-delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-tr from-primary-400/15 to-telegram-400/10 rounded-full mix-blend-screen filter blur-2xl opacity-40 animate-blob animation-delay-3000"></div>
-      </div>
-      
-      {/* Gradient overlay for text area */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900/50 pointer-events-none"></div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center"
+      <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("/images/hero-bg.jpg")',
+          }}
         >
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background"></div>
+        </div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 z-0 opacity-20">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+          }}
+        ></div>
+      </div>
+
+      {/* Gradient orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl" style={{ background: 'var(--gradient-primary)', transform: 'scale(1.12772)' }}></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full opacity-20 blur-3xl" style={{ background: 'var(--gradient-primary)', transform: 'scale(1.1533)' }}></div>
+
+      <div className="container relative z-10 px-4 mx-auto">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-block mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-card/50 backdrop-blur-sm border border-primary/20"
           >
-            <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-telegram-500/20 via-primary-500/20 to-telegram-500/20 rounded-full text-sm font-semibold text-white border border-telegram-400/30">
-              ⚡ Мониторинг в реальном времени
-            </span>
+            <Zap className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium">Мониторинг в реальном времени</span>
           </motion.div>
 
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight relative">
-            <span className="relative z-10 inline-block">
-              <span className="text-white">Не ищи информацию — </span>
-              <span className="relative inline-block">
-                {/* Gradient background glow behind text - blue to purple */}
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 blur-3xl opacity-70 -z-10 animate-pulse"></span>
-                <span className="absolute inset-0 bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 blur-2xl opacity-50 -z-10"></span>
-                {/* Gradient text - cyan to purple */}
-                <span className="relative bg-gradient-to-r from-cyan-300 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
-                  пусть она найдёт тебя
-                </span>
+          {/* Main heading */}
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          >
+            Не ищи информацию —{' '}
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                пусть она найдёт тебя
               </span>
+              <span className="absolute inset-0 blur-xl opacity-50" style={{ background: 'var(--gradient-primary)' }}></span>
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto"
+          >
             Автоматизируй мониторинг Telegram-каналов. Получай только релевантную информацию в реальном времени.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          {/* Stats cards */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
+            >
+              <Target className="w-8 h-8 text-primary mb-3 mx-auto" />
+              <div className="text-3xl font-bold mb-1">100+</div>
+              <div className="text-sm text-muted-foreground">каналов мониторинга</div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
+            >
+              <Clock className="w-8 h-8 text-primary mb-3 mx-auto" />
+              <div className="text-3xl font-bold mb-1">0</div>
+              <div className="text-sm text-muted-foreground">времени на поиск</div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, y: -5 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
+            >
+              <Zap className="w-8 h-8 text-primary mb-3 mx-auto" />
+              <div className="text-3xl font-bold mb-1">100%</div>
+              <div className="text-sm text-muted-foreground">релевантности</div>
+            </motion.div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
             <motion.a
               href="https://t.me/radar_telegram_bot"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group relative px-8 py-4 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transform transition-all duration-200 overflow-hidden"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-11 rounded-md text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground group"
             >
-              {/* Gradient background - cyan to green */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 to-emerald-500"></div>
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-300/50 via-blue-300/50 to-emerald-400/50 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <span className="relative z-10 flex items-center">
-                Настроить за 3 минуты
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
+              Настроить за 3 минуты
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
             </motion.a>
-
             <motion.a
               href="#features"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gray-800 text-white rounded-xl font-semibold text-lg border-2 border-gray-700 hover:border-gray-600 hover:shadow-lg transform transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors border bg-background hover:text-accent-foreground h-11 rounded-md text-lg px-8 py-6 border-primary/30 hover:bg-primary/10"
             >
               Узнать больше
             </motion.a>
-          </div>
-          
-          {/* Footer text in Hero */}
-          <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-400 mb-8">
-            <span className="flex items-center gap-2">
-              <span>🔒</span>
-              <span>Безопасно</span>
-            </span>
-            <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-2">
-              <span>Бесплатно навсегда</span>
-            </span>
-            <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-2">
-              <span>Без кредитной карты</span>
-            </span>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-16">
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-cyan-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 ease-out cursor-pointer group"
-            >
-              <motion.div 
-                className="text-4xl mb-3"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >🎯</motion.div>
-              <motion.div 
-                className="text-base md:text-lg text-gray-300"
-                whileHover={{ color: "#ffffff" }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >до 500 каналов мониторинга</motion.div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-purple-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 ease-out cursor-pointer group"
-            >
-              <motion.div 
-                className="text-4xl mb-3"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >⏰</motion.div>
-              <motion.div 
-                className="text-base md:text-lg text-gray-300"
-                whileHover={{ color: "#ffffff" }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >Фильтры и тонкие настройки</motion.div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="text-center p-6 bg-gray-800/50 rounded-xl border border-gray-700/50 backdrop-blur-sm hover:border-orange-400/50 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-orange-500/20 transition-all duration-300 ease-out cursor-pointer group"
-            >
-              <motion.div 
-                className="text-4xl mb-3"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >⚡</motion.div>
-              <div className="text-3xl md:text-4xl font-bold text-white mb-2">100%</div>
-              <motion.div 
-                className="text-base md:text-lg text-gray-300"
-                whileHover={{ color: "#ffffff" }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-              >релевантности</motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
+          {/* Footer text */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-8 text-sm text-muted-foreground"
+          >
+            🔒 Безопасно • Бесплатно навсегда • Без кредитной карты
+          </motion.p>
+        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-        @keyframes gradient {
-          0%, 100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animate-gradient {
-          background-size: 200% 200%;
-          animation: gradient 3s ease infinite;
-        }
-        .animation-delay-1000 {
-          animation-delay: 1s;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-3000 {
-          animation-delay: 3s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
     </section>
   )
 }
-

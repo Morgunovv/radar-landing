@@ -313,31 +313,22 @@ export function FAQ() {
   }
 
   return (
-    <section id="faq" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/images/features-bg.svg')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900"></div>
-      </div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      
-      <div className="max-w-4xl mx-auto relative z-10">
+    <section id="faq" className="py-24 px-4 relative">
+      <div className="container mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Часто задаваемые{' '}
-            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               вопросы
             </span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Нашли ответы на самые популярные вопросы о Telegram Radar
           </p>
         </motion.div>
@@ -365,11 +356,11 @@ export function FAQ() {
                       whileInView={{ opacity: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: itemIndex * 0.05 }}
-                      className="bg-gray-700/50 rounded-xl border border-gray-700 overflow-hidden hover:border-primary-500/50 transition-all duration-300"
+                      className="bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 overflow-hidden hover:border-primary/50 transition-all duration-300"
                     >
                       <button
                         onClick={() => toggleItem(sectionIndex, itemIndex)}
-                        className="w-full px-6 py-4 text-left flex justify-between items-center text-white hover:text-primary-400 transition-colors"
+                        className="w-full px-6 py-4 text-left flex justify-between items-center hover:text-primary transition-colors"
                       >
                         <span className="font-semibold text-lg pr-4">{item.question}</span>
                         <svg
@@ -389,7 +380,7 @@ export function FAQ() {
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-6 pb-4 text-gray-300 whitespace-pre-line leading-relaxed">
+                          <div className="px-6 pb-4 text-muted-foreground whitespace-pre-line leading-relaxed">
                             {item.answer}
                           </div>
                         </motion.div>
@@ -409,14 +400,14 @@ export function FAQ() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-300 mb-6">
+          <p className="text-muted-foreground mb-6">
             Не нашли ответ на свой вопрос?
           </p>
           <a
             href="https://t.me/radar_telegram_bot"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-telegram-500 to-primary-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
           >
             Связаться с поддержкой
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

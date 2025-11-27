@@ -1,135 +1,88 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { TrendingUp, Megaphone, Newspaper, ShoppingCart, Users, Repeat } from 'lucide-react'
 
 const useCases = [
   {
-    icon: '📈',
+    icon: TrendingUp,
     title: 'Крипто-трейдеры',
-    description: 'Мониторь 100+ крипто-каналов. Получай сигналы о листингах, пампах и важных новостях первым.',
-    benefits: ['Скорость = деньги', 'Не пропускай прибыльные сигналы', 'Экономия 10+ часов в неделю'],
-    color: 'from-yellow-500 to-orange-600',
-    bgColor: 'bg-gradient-to-br from-yellow-50 to-orange-50'
+    description: 'Мониторь 100+ крипто-каналов одновременно. Получай только релевантные сигналы за секунды.',
+    gradient: 'from-yellow-400 to-orange-500'
   },
   {
-    icon: '👥',
+    icon: Megaphone,
     title: 'SMM-агентства',
-    description: 'Автоматизируй поиск контента для репостов. Находи тренды и упоминания брендов раньше конкурентов.',
-    benefits: ['Автоматический сбор контента', 'Конкурентная разведка', 'Экономия 80% времени'],
-    color: 'from-blue-500 to-cyan-600',
-    bgColor: 'bg-gradient-to-br from-blue-50 to-cyan-50'
+    description: 'Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов.',
+    gradient: 'from-pink-400 to-purple-500'
   },
   {
-    icon: '📰',
-    title: 'Медиа и новости',
+    icon: Newspaper,
+    title: 'Медиа и журналисты',
     description: 'Будь первым с новостями. Агрегируй информацию из 200+ источников за секунды.',
-    benefits: ['Первым публикуй новости', 'Широкий охват источников', 'Автоматизация редакторской работы'],
-    color: 'from-red-500 to-pink-600',
-    bgColor: 'bg-gradient-to-br from-red-50 to-pink-50'
+    gradient: 'from-blue-400 to-cyan-500'
   },
   {
-    icon: '🛒',
+    icon: ShoppingCart,
     title: 'E-commerce',
     description: 'Находи выгодные предложения и тренды раньше конкурентов. Автоматизируй поиск товаров.',
-    benefits: ['Поиск выгодных сделок', 'Тренд-вотчинг', 'Конкурентная разведка'],
-    color: 'from-green-500 to-emerald-600',
-    bgColor: 'bg-gradient-to-br from-green-50 to-emerald-50'
+    gradient: 'from-green-400 to-emerald-500'
   },
   {
-    icon: '💼',
+    icon: Users,
     title: 'HR и рекрутеры',
     description: 'Находи таланты быстрее. Автоматизируй поиск кандидатов и мониторинг рынка труда.',
-    benefits: ['Поиск кандидатов', 'Рыночная аналитика', 'Проактивный рекрутинг'],
-    color: 'from-purple-500 to-violet-600',
-    bgColor: 'bg-gradient-to-br from-purple-50 to-violet-50'
+    gradient: 'from-indigo-400 to-blue-500'
   },
   {
-    icon: '💰',
+    icon: Repeat,
     title: 'Реселлеры',
     description: 'Не упускай выгодные сделки. Автоматизируй поиск товаров и услуг для перепродажи.',
-    benefits: ['Мгновенные уведомления', 'Максимизация прибыли', 'Персонализация'],
-    color: 'from-indigo-500 to-blue-600',
-    bgColor: 'bg-gradient-to-br from-indigo-50 to-blue-50'
-  },
-  {
-    icon: '👤',
-    title: 'Блогеры',
-    description: 'Находи контент для постов автоматически. Будь в тренде, не тратя часы на поиск.',
-    benefits: ['Автоматический сбор контента', 'Тренд-вотчинг', 'Отслеживание упоминаний'],
-    color: 'from-teal-500 to-cyan-600',
-    bgColor: 'bg-gradient-to-br from-teal-50 to-cyan-50'
+    gradient: 'from-purple-400 to-pink-500'
   }
 ]
 
 export function UseCases() {
   return (
-    <section id="use-cases" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/images/usecases-bg.svg')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900"></div>
+    <section className="py-24 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-0 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)' }}></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 rounded-full blur-3xl" style={{ background: 'var(--gradient-primary)' }}></div>
       </div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Кому подходит{' '}
-            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
-              Telegram Radar?
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Независимо от твоей ниши — если тебе нужно отслеживать Telegram-каналы, мы поможем
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Для кого это?</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Решение для профессионалов в разных индустриях</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {useCases.map((useCase, index) => {
+            const IconComponent = useCase.icon
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
                   opacity: { duration: 0.5, delay: index * 0.1 },
-                  y: { duration: 0.5, delay: index * 0.1 },
                   scale: { duration: 0.3, ease: "easeOut" }
                 }}
-                className="relative group"
+                className="group relative overflow-hidden rounded-2xl p-6 bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300"
               >
-                <div className={`h-full p-6 rounded-2xl border-2 border-gray-700 hover:border-primary-500 hover:bg-gray-800/70 bg-gray-700/50 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 ease-out cursor-pointer`}>
-                  <motion.div 
-                    className={`w-14 h-14 rounded-xl bg-gradient-to-r ${useCase.color} p-3 mb-4 flex items-center justify-center`}
-                    whileHover={{ scale: 1.1, rotate: 6 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  >
-                    <span className="text-3xl">{useCase.icon}</span>
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-3">
-                    {useCase.title}
-                  </h3>
-                  <p className="text-gray-300 mb-4 leading-relaxed">
-                    {useCase.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {useCase.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-start text-sm text-gray-300">
-                        <span className="text-primary-400 mr-2">✓</span>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className={`absolute inset-0 bg-gradient-to-br ${useCase.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
+                <div className={`relative inline-flex p-3 rounded-xl bg-gradient-to-br ${useCase.gradient} mb-4`}>
+                  <IconComponent className="w-6 h-6 text-background" />
                 </div>
+                <h3 className="text-xl font-bold mb-3">{useCase.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{useCase.description}</p>
               </motion.div>
             )
           })}
@@ -138,4 +91,3 @@ export function UseCases() {
     </section>
   )
 }
-

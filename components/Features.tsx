@@ -1,125 +1,86 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Zap, Target, TrendingUp, Clock, Shield, Sparkles } from 'lucide-react'
 
 const features = [
   {
-    icon: '⚡',
-    title: 'Мгновенные уведомления',
-    description: 'Получай важные сообщения первым. Мониторинг в реальном времени без задержек.',
-    color: 'from-yellow-400 to-orange-500'
+    icon: Zap,
+    title: 'Скорость = Деньги',
+    description: 'Первым узнавай о важных событиях. Автоматическая фильтрация по вашим критериям. 0 задержек - мониторинг в реальном времени.',
+    gradient: 'from-primary to-cyan-400'
   },
   {
-    icon: '🎯',
-    title: 'Точная фильтрация',
-    description: 'Только релевантный контент по твоим ключевым словам. Умная фильтрация спама.',
-    color: 'from-blue-400 to-cyan-500'
-  },
-  {
-    icon: '⏰',
-    title: 'Экономия времени',
-    description: 'Автоматизируй рутину. Экономь 10-15 часов в неделю на поиске информации.',
-    color: 'from-green-400 to-emerald-500'
-  },
-  {
-    icon: '🔒',
-    title: 'Безопасность',
-    description: 'Шифрование сессий. Твои данные в безопасности. Поддержка приватных каналов.',
-    color: 'from-purple-400 to-pink-500'
-  },
-  {
-    icon: '📊',
-    title: 'Аналитика и статистика',
-    description: 'Отслеживай эффективность. Статистика по каналам и ключевым словам.',
-    color: 'from-indigo-400 to-blue-500'
-  },
-  {
-    icon: '🤖',
-    title: 'Автоматическая публикация',
-    description: 'Публикуй найденный контент в свои каналы автоматически. Один клик — готово.',
-    color: 'from-red-400 to-rose-500'
-  },
-  {
-    icon: '🔍',
-    title: 'Мощный поиск',
-    description: 'Регулярные выражения, точное совпадение, регистр — гибкие настройки поиска.',
-    color: 'from-teal-400 to-cyan-500'
-  },
-  {
-    icon: '🔽',
-    title: 'Умные фильтры',
-    description: 'Фильтрация по количеству реакций, комментариев, дате и другим параметрам.',
-    color: 'from-amber-400 to-orange-500'
-  },
-  {
-    icon: '🔔',
+    icon: Target,
     title: 'Персонализация',
-    description: 'Настрой всё под себя. Приоритеты каналов, расписание, форматы уведомлений.',
-    color: 'from-violet-400 to-purple-500'
+    description: 'Мониторинг только по вашим ключевым словам. Умная фильтрация спама и нерелевантного контента. Настройка приоритетов каналов.',
+    gradient: 'from-secondary to-purple-400'
+  },
+  {
+    icon: TrendingUp,
+    title: 'ROI',
+    description: 'Экономия 10-15 часов в неделю = больше времени на анализ. Не пропускай прибыльные сигналы. Конкурентное преимущество через скорость реакции.',
+    gradient: 'from-primary to-blue-400'
+  },
+  {
+    icon: Clock,
+    title: 'Автоматизация',
+    description: 'Автоматизация 80% рутинной работы. Фокус на стратегии, а не на поиске контента. Масштабирование без найма дополнительных сотрудников.',
+    gradient: 'from-cyan-400 to-primary'
+  },
+  {
+    icon: Shield,
+    title: 'Приватность',
+    description: 'Поддержка мониторинга приватных каналов через личный аккаунт. Безопасное хранение сессий с шифрованием. Полный контроль над данными.',
+    gradient: 'from-purple-400 to-secondary'
+  },
+  {
+    icon: Sparkles,
+    title: 'Надёжность',
+    description: 'Автоматическая обработка ошибок. Retry механизмы для стабильной работы. Мониторинг и логирование всех операций.',
+    gradient: 'from-blue-400 to-cyan-400'
   }
 ]
 
 export function Features() {
   return (
-    <section id="features" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gray-800 relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[url('/images/features-bg.svg')] bg-cover bg-center opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-800 via-gray-800 to-gray-900"></div>
-      </div>
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="features" className="py-24 px-4 relative">
+      <div className="container mx-auto max-w-7xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            Всё что нужно для{' '}
-            <span className="bg-gradient-to-r from-telegram-400 to-primary-400 bg-clip-text text-transparent">
-              эффективного мониторинга
-            </span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Мощные инструменты для автоматизации работы с Telegram-каналами
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Ключевые преимущества</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Всё, что нужно для эффективного мониторинга Telegram</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
+            const IconComponent = feature.icon
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
                   opacity: { duration: 0.5, delay: index * 0.1 },
-                  y: { duration: 0.5, delay: index * 0.1 },
                   scale: { duration: 0.3, ease: "easeOut" }
                 }}
-                className="relative group"
+                className="group relative p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-all duration-300"
               >
-                <div className="h-full p-6 bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl border border-gray-700 hover:border-primary-500 hover:bg-gray-800/70 hover:shadow-lg hover:shadow-primary-500/20 transition-all duration-300 ease-out cursor-pointer">
-                  <motion.div 
-                    className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} p-3 mb-4 flex items-center justify-center`}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  >
-                    <span className="text-2xl">{feature.icon}</span>
-                  </motion.div>
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    {feature.description}
-                  </p>
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-300" style={{ background: 'var(--gradient-primary)' }}></div>
+                <div className={`relative w-12 h-12 rounded-xl bg-gradient-to-br ${feature.gradient} p-0.5 mb-4`}>
+                  <div className="w-full h-full rounded-xl bg-card flex items-center justify-center">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
                 </div>
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </motion.div>
             )
           })}
@@ -128,4 +89,3 @@ export function Features() {
     </section>
   )
 }
-
