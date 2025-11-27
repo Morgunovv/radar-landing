@@ -271,6 +271,7 @@ export function Pricing() {
                         <span className="text-sm text-muted-foreground">
                           {(() => {
                             const text = t('pricing.plans.features.channels', { count: channelsCount.toString() })
+                            if (typeof text !== 'string') return text
                             const parts = text.split('{{count}}')
                             return parts.length > 1 ? (
                               <>
@@ -285,6 +286,7 @@ export function Pricing() {
                         <span className="text-sm text-muted-foreground">
                           {(() => {
                             const text = t('pricing.plans.features.queries', { count: queriesCount.toString() })
+                            if (typeof text !== 'string') return text
                             const parts = text.split('{{count}}')
                             return parts.length > 1 ? (
                               <>
