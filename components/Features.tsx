@@ -2,47 +2,45 @@
 
 import { motion } from 'framer-motion'
 import { Zap, Target, TrendingUp, Clock, Shield, Sparkles } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-const features = [
+const featureKeys = ['speed', 'personalization', 'roi', 'automation', 'privacy', 'reliability']
+
+const featureConfig = [
   {
     icon: Zap,
-    title: 'Скорость = Деньги',
-    description: 'Первым узнавай о важных событиях. Автоматическая фильтрация по вашим критериям. 0 задержек - мониторинг в реальном времени.',
+    key: 'speed',
     gradient: 'from-primary to-cyan-400'
   },
   {
     icon: Target,
-    title: 'Персонализация',
-    description: 'Мониторинг только по вашим ключевым словам. Умная фильтрация спама и нерелевантного контента. Настройка приоритетов каналов.',
+    key: 'personalization',
     gradient: 'from-secondary to-purple-400'
   },
   {
     icon: TrendingUp,
-    title: 'ROI',
-    description: 'Экономия 10-15 часов в неделю = больше времени на анализ. Не пропускай прибыльные сигналы. Конкурентное преимущество через скорость реакции.',
+    key: 'roi',
     gradient: 'from-primary to-blue-400'
   },
   {
     icon: Clock,
-    title: 'Автоматизация',
-    description: 'Автоматизация 80% рутинной работы. Фокус на стратегии, а не на поиске контента. Масштабирование без найма дополнительных сотрудников.',
+    key: 'automation',
     gradient: 'from-cyan-400 to-primary'
   },
   {
     icon: Shield,
-    title: 'Приватность',
-    description: 'Поддержка мониторинга приватных каналов через личный аккаунт. Безопасное хранение сессий с шифрованием. Полный контроль над данными.',
+    key: 'privacy',
     gradient: 'from-purple-400 to-secondary'
   },
   {
     icon: Sparkles,
-    title: 'Надёжность',
-    description: 'Автоматическая обработка ошибок. Retry механизмы для стабильной работы. Мониторинг и логирование всех операций.',
+    key: 'reliability',
     gradient: 'from-blue-400 to-cyan-400'
   }
 ]
 
 export function Features() {
+  const { t } = useLanguage()
   return (
     <section id="features" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-7xl">
@@ -53,12 +51,12 @@ export function Features() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Ключевые преимущества</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Всё, что нужно для эффективного мониторинга Telegram</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('features.title')}</h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t('features.subtitle')}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, index) => {
+          {featureConfig.map((feature, index) => {
             const IconComponent = feature.icon
             return (
               <motion.div
@@ -79,8 +77,8 @@ export function Features() {
                     <IconComponent className="w-6 h-6 text-primary" />
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold mb-3">{t(`features.items.${feature.key}.title`)}</h3>
+                <p className="text-muted-foreground leading-relaxed">{t(`features.items.${feature.key}.description`)}</p>
               </motion.div>
             )
           })}

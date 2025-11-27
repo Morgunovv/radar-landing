@@ -96,6 +96,71 @@
         "dedicated": "Soporte dedicado"
       }
     }
+  },
+  "usecases": {
+    "title": "¿Para quién es esto?",
+    "subtitle": "Solución para profesionales en diferentes industrias",
+    "items": {
+      "crypto": {
+        "title": "Traders de Cripto",
+        "description": "Monitorea 100+ canales de cripto simultáneamente. Obtén solo señales relevantes en segundos."
+      },
+      "marketers": {
+        "title": "Marketers",
+        "description": "Automatiza la búsqueda de contenido para republicaciones. Encuentra tendencias antes que los competidores."
+      },
+      "media": {
+        "title": "Medios y Periodistas",
+        "description": "Sé el primero con las noticias. Agrega información de 200+ fuentes en segundos."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Encuentra ofertas rentables y tendencias antes que los competidores. Automatiza la búsqueda de productos."
+      },
+      "hr": {
+        "title": "RRHH y Reclutadores",
+        "description": "Encuentra talentos más rápido. Automatiza la búsqueda de candidatos y el monitoreo del mercado laboral."
+      },
+      "resellers": {
+        "title": "Revendedores",
+        "description": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa."
+      }
+    }
+  },
+  "cta": {
+    "title": "¿Listo para automatizar el monitoreo?",
+    "subtitle": "Comienza con un plan gratuito para siempre. Sin tarjeta de crédito, sin límites de tiempo.",
+    "stats": {
+      "free": "Gratis para siempre",
+      "noLimits": "Sin límites",
+      "setup": "3 min",
+      "setupLabel": "Configuración"
+    },
+    "button": "Comenzar ahora",
+    "labels": {
+      "secure": "Seguro",
+      "instant": "Acceso instantáneo",
+      "noCard": "Sin tarjeta de crédito"
+    }
+  },
+  "footer": {
+    "description": "Automatiza el monitoreo de canales de Telegram. Obtén solo información relevante en tiempo real.",
+    "product": {
+      "title": "Producto",
+      "features": "Características",
+      "pricing": "Precios",
+      "try": "Probar"
+    },
+    "support": {
+      "title": "Soporte",
+      "faq": "FAQ",
+      "bot": "Bot de Telegram",
+      "docs": "Documentación",
+      "contact": "Contáctanos"
+    },
+    "copyright": "© {{year}} Telegram Radar. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Uso"
   }
 }
 

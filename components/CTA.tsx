@@ -2,8 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { Sparkles } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export function CTA() {
+  const { t } = useLanguage()
   return (
     <section className="py-24 px-4 relative overflow-hidden">
       {/* Background decoration */}
@@ -27,23 +29,23 @@ export function CTA() {
 
           {/* Main heading */}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Готов автоматизировать мониторинг?
+            {t('cta.title')}
           </h2>
 
           {/* Subtitle */}
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Начни с бесплатного тарифа навсегда. Без кредитной карты, без ограничений по времени.
+            {t('cta.subtitle')}
           </p>
 
           {/* Stats blocks */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-2xl mx-auto">
             <div className="p-4">
-              <div className="text-3xl font-bold text-primary mb-1">Бесплатно навсегда</div>
-              <div className="text-sm text-muted-foreground">Без ограничений</div>
+              <div className="text-3xl font-bold text-primary mb-1">{t('cta.stats.free')}</div>
+              <div className="text-sm text-muted-foreground">{t('cta.stats.noLimits')}</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-bold text-primary mb-1">3 мин</div>
-              <div className="text-sm text-muted-foreground">Настройка</div>
+              <div className="text-3xl font-bold text-primary mb-1">{t('cta.stats.setup')}</div>
+              <div className="text-sm text-muted-foreground">{t('cta.stats.setupLabel')}</div>
             </div>
             <div className="p-4">
               <div className="text-3xl font-bold text-primary mb-1">100%</div>
@@ -60,7 +62,7 @@ export function CTA() {
             whileTap={{ scale: 0.95 }}
             className="group inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-11 rounded-md text-lg px-10 py-7 bg-primary hover:bg-primary/90 text-primary-foreground"
           >
-            Начни сейчас
+            {t('cta.button')}
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform">
               <path d="M5 12h14"></path>
               <path d="m12 5 7 7-7 7"></path>
@@ -70,13 +72,13 @@ export function CTA() {
           {/* Bottom info labels */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
             <span className="flex items-center gap-2">
-              🔒 Безопасно
+              🔒 {t('cta.labels.secure')}
             </span>
             <span className="flex items-center gap-2">
-              ⚡ Мгновенный доступ
+              ⚡ {t('cta.labels.instant')}
             </span>
             <span className="flex items-center gap-2">
-              💳 Без кредитной карты
+              💳 {t('cta.labels.noCard')}
             </span>
           </div>
         </motion.div>

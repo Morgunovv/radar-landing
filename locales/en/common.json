@@ -96,5 +96,70 @@
         "dedicated": "Dedicated support"
       }
     }
+  },
+  "usecases": {
+    "title": "Who is this for?",
+    "subtitle": "Solution for professionals in different industries",
+    "items": {
+      "crypto": {
+        "title": "Crypto Traders",
+        "description": "Monitor 100+ crypto channels simultaneously. Get only relevant signals in seconds."
+      },
+      "marketers": {
+        "title": "Marketers",
+        "description": "Automate content search for reposts. Find trends before competitors."
+      },
+      "media": {
+        "title": "Media & Journalists",
+        "description": "Be first with news. Aggregate information from 200+ sources in seconds."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Find profitable offers and trends before competitors. Automate product search."
+      },
+      "hr": {
+        "title": "HR & Recruiters",
+        "description": "Find talents faster. Automate candidate search and labor market monitoring."
+      },
+      "resellers": {
+        "title": "Resellers",
+        "description": "Don't miss profitable deals. Automate search for products and services for resale."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to automate monitoring?",
+    "subtitle": "Start with a free plan forever. No credit card, no time limits.",
+    "stats": {
+      "free": "Free forever",
+      "noLimits": "No limits",
+      "setup": "3 min",
+      "setupLabel": "Setup"
+    },
+    "button": "Start now",
+    "labels": {
+      "secure": "Secure",
+      "instant": "Instant access",
+      "noCard": "No credit card"
+    }
+  },
+  "footer": {
+    "description": "Automate Telegram channel monitoring. Get only relevant information in real-time.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "try": "Try"
+    },
+    "support": {
+      "title": "Support",
+      "faq": "FAQ",
+      "bot": "Telegram bot",
+      "docs": "Documentation",
+      "contact": "Contact us"
+    },
+    "copyright": "© {{year}} Telegram Radar. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
   }
 }

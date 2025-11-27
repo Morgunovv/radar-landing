@@ -9,7 +9,7 @@ export default function SMMAgencies() {
   return (
     <>
       <Head>
-        <title>SMM-агентства - Telegram Radar</title>
+        <title>Маркетологи - Telegram Radar</title>
         <meta name="description" content="Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
@@ -36,7 +36,7 @@ export default function SMMAgencies() {
                   <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-pink-400 to-purple-500 mb-6">
                     <Megaphone className="w-12 h-12 text-background" />
                   </div>
-                  <h1 className="text-4xl md:text-6xl font-bold mb-6">SMM-агентства</h1>
+                  <h1 className="text-4xl md:text-6xl font-bold mb-6">Маркетологи</h1>
                   <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-8">
                     Автоматизируй поиск контента для репостов. Находи тренды раньше конкурентов.
                   </p>
@@ -56,7 +56,7 @@ export default function SMMAgencies() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <section className="mb-12">
-                  <h2 className="text-3xl font-bold mb-6">Вызовы SMM-агентств</h2>
+                  <h2 className="text-3xl font-bold mb-6">Вызовы маркетологов</h2>
                   <div className="grid md:grid-cols-2 gap-6 mb-8">
                     <div className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50">
                       <div className="flex items-center gap-3 mb-4">
