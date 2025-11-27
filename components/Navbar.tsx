@@ -261,11 +261,11 @@ export function Navbar() {
               <div className="container mx-auto px-4 py-4">
                 <nav className="flex flex-col gap-2">
                   <Link
-                    href={getFeaturesPath()}
+                    href={getUseCasesPath()}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
-                    {t('navbar.features')}
+                    {t('navbar.forWhom')}
                   </Link>
                   <Link
                     href={getPricingPath()}
