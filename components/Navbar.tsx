@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { ChevronDown, Globe } from 'lucide-react'
+import { ChevronDown, Globe, Menu, X } from 'lucide-react'
 
 const languages = [
   { code: 'ru', name: 'Русский', flag: '/flags/RU.webp', countryCode: 'RU' },
@@ -13,6 +13,7 @@ const languages = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [language, setLanguage] = useState<'ru' | 'en' | 'es'>('ru')
 
   useEffect(() => {
@@ -29,16 +30,19 @@ export function Navbar() {
       if (!target.closest('.language-dropdown')) {
         setIsLangDropdownOpen(false)
       }
+      if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-button')) {
+        setIsMobileMenuOpen(false)
+      }
     }
 
-    if (isLangDropdownOpen) {
+    if (isLangDropdownOpen || isMobileMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isLangDropdownOpen])
+  }, [isLangDropdownOpen, isMobileMenuOpen])
 
   const currentLanguage = languages.find(lang => lang.code === language) || languages[0]
 
@@ -188,15 +192,61 @@ export function Navbar() {
               )}
             </div>
 
-            <a
-              href="https://t.me/radar_telegram_bot"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors h-10 px-4 py-2 bg-primary hover:bg-primary/90 text-primary-foreground rounded-md text-sm"
+            {/* Burger menu button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
+              aria-label="Меню"
             >
-              Начать
-            </a>
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
+
+          {/* Mobile menu */}
+          {isMobileMenuOpen && (
+            <div className="mobile-menu absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg z-40 md:hidden">
+              <div className="container mx-auto px-4 py-4">
+                <nav className="flex flex-col gap-2">
+                  <Link
+                    href="#features"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
+                  >
+                    Возможности
+                  </Link>
+                  <Link
+                    href="#pricing"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
+                  >
+                    Тарифы
+                  </Link>
+                  <Link
+                    href="/faq"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
+                  >
+                    FAQ
+                  </Link>
+                  <div className="pt-2 mt-2 border-t border-border/50">
+                    <a
+                      href="https://t.me/radar_telegram_bot"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="inline-flex items-center justify-center w-full px-4 py-3 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-colors"
+                    >
+                      Начать
+                    </a>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </nav>
