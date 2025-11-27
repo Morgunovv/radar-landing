@@ -364,27 +364,339 @@
     "cases": {
       "crypto": {
         "title": "Crypto Traders - Telegram Radar",
-        "description": "Automate crypto channel monitoring. Get signals about listings, pumps and important news first."
+        "description": "Automate crypto channel monitoring. Get signals about listings, pumps and important news first.",
+        "hero": {
+          "title": "Crypto Traders",
+          "subtitle": "Monitor 100+ crypto channels simultaneously. Get only relevant signals in seconds.",
+          "button": "Start monitoring"
+        },
+        "problems": {
+          "title": "Crypto traders' problems",
+          "missedOpportunities": {
+            "title": "Missed opportunities",
+            "description": "While you browse channels manually, other traders are already entering positions. Every minute of delay can cost profits."
+          },
+          "informationNoise": {
+            "title": "Information noise",
+            "description": "Hundreds of messages per day, but only a few are truly important. How to find what you need among all this noise?"
+          }
+        },
+        "solution": {
+          "title": "Solution with Telegram Radar",
+          "monitoring": {
+            "title": "Monitoring 100+ channels",
+            "description": "Track all important crypto channels simultaneously: listing news, analyst signals, community discussions. You won't miss anything."
+          },
+          "filtering": {
+            "title": "Precise signal filtering",
+            "description": "Set up monitoring by keywords: coin names, terms \"listing\", \"pump\", \"dump\", \"airdrop\". Get only relevant messages."
+          },
+          "notifications": {
+            "title": "Instant notifications",
+            "description": "Receive signals in real-time. Be the first to know about important events and make decisions faster than competitors."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "listings": {
+            "title": "Listing monitoring",
+            "description": "Set keywords: \"listing\", \"listing\", \"new token\". Get notifications about new exchange listings in seconds."
+          },
+          "signals": {
+            "title": "Signal tracking",
+            "description": "Monitor analyst channels by keywords: coin names, \"buy\", \"sell\", \"target\". Don't miss important signals."
+          },
+          "news": {
+            "title": "News and events",
+            "description": "Track news about partnerships, protocol updates, important events in the cryptocurrency ecosystem."
+          }
+        },
+        "cta": {
+          "title": "Start right now",
+          "description": "Set up crypto channel monitoring in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       },
       "marketers": {
         "title": "Marketers - Telegram Radar",
-        "description": "Automate content search for reposts. Find trends before competitors."
+        "description": "Automate content search for reposts. Find trends before competitors.",
+        "hero": {
+          "title": "Marketers",
+          "subtitle": "Automate content search for reposts. Find trends before competitors.",
+          "button": "Start using"
+        },
+        "problems": {
+          "title": "Marketers' challenges",
+          "contentSearch": {
+            "title": "Content search",
+            "description": "Hours are spent daily searching for relevant content for clients. You need to monitor dozens of channels manually."
+          },
+          "competitiveIntelligence": {
+            "title": "Competitive intelligence",
+            "description": "It's important to track what competitors publish, what trends appear, to stay ahead."
+          }
+        },
+        "solution": {
+          "title": "How Telegram Radar helps",
+          "autoSearch": {
+            "title": "Automatic content search",
+            "description": "Set up monitoring by your clients' topics. Get relevant content automatically, without manual search."
+          },
+          "trendWatching": {
+            "title": "Trend watching",
+            "description": "Track popular topics and trends in your niche. Be the first to use new ideas for content."
+          },
+          "timeSaving": {
+            "title": "Time saving",
+            "description": "Save 10-15 hours per week on content search. Focus on strategy and creativity, not routine."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "competitors": {
+            "title": "Competitor monitoring",
+            "description": "Track competitors' and clients' channels. Be the first to know about new publications and promotions."
+          },
+          "reposts": {
+            "title": "Content search for reposts",
+            "description": "Set up filters by clients' topics. Get ready-to-publish content automatically."
+          },
+          "mentions": {
+            "title": "Mention tracking",
+            "description": "Monitor mentions of clients' brands. Respond to discussions and reviews in real-time."
+          }
+        },
+        "cta": {
+          "title": "Start automating",
+          "description": "Set up content monitoring for your clients in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       },
       "media": {
         "title": "Media & Journalists - Telegram Radar",
-        "description": "Be first with news. Aggregate information from 200+ sources in seconds."
+        "description": "Be first with news. Aggregate information from 200+ sources in seconds.",
+        "hero": {
+          "title": "Media & Journalists",
+          "subtitle": "Be first with news. Aggregate information from 200+ sources in seconds.",
+          "button": "Start monitoring"
+        },
+        "problems": {
+          "title": "Media problems",
+          "speed": {
+            "title": "Publication speed",
+            "description": "In media, speed is everything. While you search for information manually, competitors are already publishing news."
+          },
+          "sources": {
+            "title": "Multiple sources",
+            "description": "You need to track hundreds of channels and sources. How not to miss an important news story among the information flow?"
+          }
+        },
+        "solution": {
+          "title": "Solution for media",
+          "aggregation": {
+            "title": "Aggregation from 200+ sources",
+            "description": "Monitor all important news channels, blogs, official sources simultaneously. Get information from all sources in one place."
+          },
+          "filtering": {
+            "title": "Filtering by topics",
+            "description": "Set up monitoring by keywords: topics, names, events. Get only relevant news for your editorial."
+          },
+          "firstNews": {
+            "title": "First with news",
+            "description": "Receive notifications about important events in real-time. Publish news before competitors."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "newsChannels": {
+            "title": "News channel monitoring",
+            "description": "Track all important news channels in your topic. Get news automatically, without manual search."
+          },
+          "events": {
+            "title": "Event tracking",
+            "description": "Set up monitoring by keywords: event names, names, places. Be the first to know about events."
+          },
+          "aggregation": {
+            "title": "Information aggregation",
+            "description": "Collect information from different sources into one channel. Save time on search and analysis."
+          }
+        },
+        "cta": {
+          "title": "Start using",
+          "description": "Set up news source monitoring in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       },
       "ecommerce": {
         "title": "E-commerce - Telegram Radar",
-        "description": "Find profitable offers and trends before competitors. Automate product search."
+        "description": "Find profitable offers and trends before competitors. Automate product search.",
+        "hero": {
+          "title": "E-commerce",
+          "subtitle": "Find profitable offers and trends before competitors. Automate product search.",
+          "button": "Start monitoring"
+        },
+        "problems": {
+          "title": "E-commerce challenges",
+          "deals": {
+            "title": "Search for profitable offers",
+            "description": "You need to track dozens of channels with sales, promotions and special offers. How not to miss a good deal?"
+          },
+          "trendWatching": {
+            "title": "Trend watching",
+            "description": "It's important to know which products are becoming popular to restock inventory in time or launch advertising."
+          }
+        },
+        "solution": {
+          "title": "Solution for e-commerce",
+          "sales": {
+            "title": "Sales monitoring",
+            "description": "Track channels with sales, promotions and special offers. Get notifications about profitable deals automatically."
+          },
+          "trends": {
+            "title": "Trend tracking",
+            "description": "Monitor product discussions, reviews, popular categories. Learn about trends before competitors."
+          },
+          "intelligence": {
+            "title": "Competitive intelligence",
+            "description": "Track competitors' channels, their promotions and new products. Analyze strategies and stay ahead."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "sales": {
+            "title": "Sales monitoring",
+            "description": "Set keywords: \"discount\", \"sale\", \"promotion\", brand names. Get notifications about profitable offers."
+          },
+          "newProducts": {
+            "title": "New product tracking",
+            "description": "Monitor manufacturer and distributor channels. Be the first to know about new products."
+          },
+          "demand": {
+            "title": "Demand analysis",
+            "description": "Track product discussions, reviews, popular categories. Plan purchases based on data."
+          }
+        },
+        "cta": {
+          "title": "Start using",
+          "description": "Set up product and offer monitoring in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       },
       "hr": {
         "title": "HR & Recruiters - Telegram Radar",
-        "description": "Find talents faster. Automate candidate search and labor market monitoring."
+        "description": "Find talents faster. Automate candidate search and labor market monitoring.",
+        "hero": {
+          "title": "HR & Recruiters",
+          "subtitle": "Find talents faster. Automate candidate search and labor market monitoring.",
+          "button": "Start search"
+        },
+        "problems": {
+          "title": "HR and recruiters' challenges",
+          "candidates": {
+            "title": "Candidate search",
+            "description": "You need to monitor dozens of channels with job postings and resumes. Finding suitable candidates takes hours daily."
+          },
+          "analytics": {
+            "title": "Market analytics",
+            "description": "It's important to track labor market trends: popular skills, salaries, employer requirements."
+          }
+        },
+        "solution": {
+          "title": "Solution for HR",
+          "autoSearch": {
+            "title": "Automatic candidate search",
+            "description": "Monitor channels with resumes and job postings. Set filters by skills, experience, location. Get suitable candidates automatically."
+          },
+          "market": {
+            "title": "Labor market monitoring",
+            "description": "Track trends: popular skills, salaries, requirements. Analyze the market and plan hiring strategy."
+          },
+          "proactive": {
+            "title": "Proactive recruiting",
+            "description": "Find talents before they start looking for work. Contact candidates first."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "resumes": {
+            "title": "Resume monitoring",
+            "description": "Set filters by skills, experience, location. Get notifications about new resumes matching your requirements."
+          },
+          "competitors": {
+            "title": "Competitor job posting tracking",
+            "description": "Monitor competitors' channels. Analyze their requirements and salaries. Stay competitive in the market."
+          },
+          "specialists": {
+            "title": "Specialist search",
+            "description": "Track discussions in professional communities. Find active specialists and experts in your field."
+          }
+        },
+        "cta": {
+          "title": "Start using",
+          "description": "Set up candidate and labor market monitoring in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       },
       "resellers": {
         "title": "Resellers - Telegram Radar",
-        "description": "Don't miss profitable deals. Automate search for products and services for resale."
+        "description": "Don't miss profitable deals. Automate search for products and services for resale.",
+        "hero": {
+          "title": "Resellers",
+          "subtitle": "Don't miss profitable deals. Automate search for products and services for resale.",
+          "button": "Start search"
+        },
+        "problems": {
+          "title": "Resellers' challenges",
+          "deals": {
+            "title": "Search for profitable offers",
+            "description": "You need to constantly monitor dozens of channels with product and service offers. Profitable deals are snapped up in minutes."
+          },
+          "missed": {
+            "title": "Missed opportunities",
+            "description": "While you browse channels manually, other resellers are already buying profitable products. Every minute of delay is lost profit."
+          }
+        },
+        "solution": {
+          "title": "Solution for resellers",
+          "notifications": {
+            "title": "Instant notifications",
+            "description": "Receive notifications about profitable offers in real-time. React faster than competitors and close deals first."
+          },
+          "filtering": {
+            "title": "Filtering by criteria",
+            "description": "Set up monitoring by keywords: product categories, prices, conditions. Get only relevant offers."
+          },
+          "channels": {
+            "title": "Multiple channel monitoring",
+            "description": "Track dozens of channels simultaneously: marketplaces, sales groups, channels with offers. You won't miss anything."
+          }
+        },
+        "examples": {
+          "title": "Usage examples",
+          "sales": {
+            "title": "Sales monitoring",
+            "description": "Set keywords: \"discount\", \"sale\", \"profitable\", product category names. Get notifications about profitable offers."
+          },
+          "wholesale": {
+            "title": "Wholesale offer search",
+            "description": "Monitor channels with wholesale offers. Find products for resale with good margin."
+          },
+          "services": {
+            "title": "Service tracking",
+            "description": "Monitor service offers for resale: subscriptions, courses, access. Find profitable partnerships."
+          }
+        },
+        "cta": {
+          "title": "Start using",
+          "description": "Set up profitable offer monitoring in 3 minutes. Free plan available forever.",
+          "button": "Set up monitoring"
+        },
+        "backToHome": "← Back to home"
       }
     }
   },
