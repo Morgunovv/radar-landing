@@ -1,13 +1,15 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Zap, Star, Crown, Check } from 'lucide-react'
+import { Zap, Star, Crown, Check, ChevronDown } from 'lucide-react'
 
 const plans = [
   {
     name: 'Free',
     subtitle: 'Попробуй возможности',
     price: 'Бесплатно',
+    priceEur: 0,
     period: 'навсегда',
     features: [
       'До 5 каналов мониторинга',
@@ -22,6 +24,7 @@ const plans = [
     name: 'Light',
     subtitle: 'Для начинающих',
     price: '€3',
+    priceEur: 3,
     period: '/ мес',
     periodText: 'в месяц',
     features: [
@@ -40,6 +43,7 @@ const plans = [
     name: 'Medium',
     subtitle: 'Самый популярный',
     price: '€5',
+    priceEur: 5,
     period: '/ мес',
     periodText: 'в месяц',
     features: [
@@ -59,6 +63,7 @@ const plans = [
     name: 'Hard',
     subtitle: 'Для профессионалов',
     price: '€9',
+    priceEur: 9,
     period: '/ мес',
     periodText: 'в месяц',
     features: [
@@ -79,6 +84,7 @@ const plans = [
     name: 'Rock',
     subtitle: 'Максимальная мощность',
     price: '€17',
+    priceEur: 17,
     period: '/ мес',
     periodText: 'в месяц',
     features: [
@@ -98,7 +104,87 @@ const plans = [
   }
 ]
 
+const currencies = [
+  { code: 'EUR', symbol: '€', name: 'EUR' },
+  { code: 'USD', symbol: '$', name: 'USD' },
+  { code: 'RUR', symbol: '₽', name: 'RUR' },
+  { code: 'UAH', symbol: '₴', name: 'UAH' },
+  { code: 'CNY', symbol: '¥', name: 'CNY' },
+  { code: 'CAD', symbol: 'C$', name: 'CAD' }
+]
+
+const currencySymbols: Record<string, string> = {
+  EUR: '€',
+  USD: '$',
+  RUR: '₽',
+  UAH: '₴',
+  CNY: '¥',
+  CAD: 'C$'
+}
+
 export function Pricing() {
+  const [selectedCurrency, setSelectedCurrency] = useState('EUR')
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({})
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const fetchExchangeRates = async () => {
+      setLoading(true)
+      try {
+        // Используем exchangerate-api.com (бесплатный, не требует API ключа)
+        const response = await fetch(`https://api.exchangerate-api.com/v4/latest/EUR`)
+        const data = await response.json()
+        
+        const rates: Record<string, number> = { EUR: 1 }
+        // Получаем все нужные валюты
+        if (data.rates.USD) rates.USD = data.rates.USD
+        if (data.rates.UAH) rates.UAH = data.rates.UAH
+        if (data.rates.CNY) rates.CNY = data.rates.CNY
+        if (data.rates.CAD) rates.CAD = data.rates.CAD
+        // RUR это старая валюта, используем RUB
+        if (data.rates.RUB) rates.RUR = data.rates.RUB
+        
+        setExchangeRates(rates)
+      } catch (error) {
+        console.error('Error fetching exchange rates:', error)
+        // Fallback к курсам по умолчанию
+        setExchangeRates({ EUR: 1, USD: 1.1, RUR: 100, UAH: 40, CNY: 7.5, CAD: 1.5 })
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchExchangeRates()
+  }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      if (!target.closest('.currency-dropdown')) {
+        setIsDropdownOpen(false)
+      }
+    }
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isDropdownOpen])
+
+  const getPrice = (priceEur: number) => {
+    if (priceEur === 0) return 'Бесплатно'
+    
+    const rate = exchangeRates[selectedCurrency] || 1
+    const convertedPrice = Math.round(priceEur * rate)
+    const symbol = currencySymbols[selectedCurrency] || selectedCurrency
+    
+    return `${symbol}${convertedPrice}`
+  }
+
   return (
     <section id="pricing" className="py-24 px-4 relative overflow-hidden">
       <div className="container mx-auto max-w-7xl">
@@ -110,7 +196,39 @@ export function Pricing() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Выбери свой план</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Начни бесплатно. Масштабируйся по мере роста.</p>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">Начни бесплатно. Масштабируйся по мере роста.</p>
+          
+          {/* Выпадающий список валют */}
+          <div className="relative inline-block currency-dropdown">
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
+            >
+              <span className="text-sm font-medium">Выбери валюту</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {isDropdownOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
+                {currencies.map((currency) => (
+                  <button
+                    key={currency.code}
+                    onClick={() => {
+                      setSelectedCurrency(currency.code)
+                      setIsDropdownOpen(false)
+                    }}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                      selectedCurrency === currency.code
+                        ? 'bg-primary/20 text-primary'
+                        : 'text-primary-foreground hover:bg-muted'
+                    }`}
+                  >
+                    <span className="font-medium">{currency.symbol} {currency.name}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
@@ -148,11 +266,13 @@ export function Pricing() {
                 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    {plan.price === 'Бесплатно' ? (
+                    {plan.priceEur === 0 ? (
                       <span className="text-4xl font-bold">Бесплатно</span>
                     ) : (
                       <>
-                        <span className="text-4xl font-bold">{plan.price}</span>
+                        <span className="text-4xl font-bold">
+                          {loading ? '...' : getPrice(plan.priceEur)}
+                        </span>
                         <span className="text-muted-foreground">{plan.period}</span>
                       </>
                     )}
