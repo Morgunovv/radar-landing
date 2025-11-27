@@ -182,6 +182,11 @@ export function Pricing() {
     const convertedPrice = Math.round(priceEur * rate)
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
+    // Для CAD используем правильный формат: C$ перед числом
+    if (selectedCurrency === 'CAD') {
+      return `C$${convertedPrice}`
+    }
+    
     return `${symbol}${convertedPrice}`
   }
 
@@ -204,7 +209,9 @@ export function Pricing() {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
             >
-              <span className="text-sm font-medium">Выбери валюту</span>
+              <span className="text-sm font-medium">
+                {currencies.find(c => c.code === selectedCurrency)?.symbol} {selectedCurrency}
+              </span>
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
@@ -223,7 +230,13 @@ export function Pricing() {
                         : 'text-primary-foreground hover:bg-muted'
                     }`}
                   >
-                    <span className="font-medium">{currency.symbol} {currency.name}</span>
+                    <span className="font-medium">
+                      {selectedCurrency === currency.code ? (
+                        <span className="text-primary">{currency.symbol} {currency.name}</span>
+                      ) : (
+                        <span>{currency.symbol} {currency.name}</span>
+                      )}
+                    </span>
                   </button>
                 ))}
               </div>
