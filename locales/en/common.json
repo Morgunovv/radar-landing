@@ -1,0 +1,100 @@
+{
+  "navbar": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "setup": "Setup in 3 minutes",
+    "start": "Start"
+  },
+  "hero": {
+    "badge": "Real-time monitoring",
+    "title": "Don't search for information -",
+    "titleHighlight": "let it find you",
+    "subtitle": "Automate Telegram channel monitoring. Get only relevant information in real-time.",
+    "stats": {
+      "channels": "monitoring channels",
+      "time": "time spent searching",
+      "relevance": "relevance"
+    },
+    "cta": {
+      "setup": "Setup in 3 minutes",
+      "learnMore": "Learn more"
+    },
+    "footer": "🔒 Secure • Free forever • No credit card required"
+  },
+  "features": {
+    "title": "Key Benefits",
+    "subtitle": "Everything you need for effective Telegram monitoring",
+    "items": {
+      "speed": {
+        "title": "Speed = Money",
+        "description": "Be the first to know about important events. Automatic filtering by your criteria. 0 delays - real-time monitoring."
+      },
+      "personalization": {
+        "title": "Personalization",
+        "description": "Monitor only by your keywords. Smart spam and irrelevant content filtering. Channel priority settings."
+      },
+      "roi": {
+        "title": "ROI",
+        "description": "Save 10-15 hours per week = more time for analysis. Don't miss profitable signals. Competitive advantage through reaction speed."
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Automate 80% of routine work. Focus on strategy, not content search. Scale without hiring additional staff."
+      },
+      "privacy": {
+        "title": "Privacy",
+        "description": "Support for monitoring private channels through personal account. Secure session storage with encryption. Full control over data."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "Automatic error handling. Retry mechanisms for stable operation. Monitoring and logging of all operations."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Choose your plan",
+    "subtitle": "Start free. Scale as you grow.",
+    "selectCurrency": "Select currency",
+    "free": "Free",
+    "forever": "forever",
+    "month": "per month",
+    "popular": "Popular",
+    "try": "Try",
+    "choosePlan": "Choose plan",
+    "footer": "Free plan forever • Paid plans without card binding",
+    "plans": {
+      "free": {
+        "subtitle": "Try the features",
+        "features": {
+          "channels": "Up to 5 monitoring channels",
+          "queries": "Up to 10 keyword queries",
+          "support": "Basic support"
+        }
+      },
+      "light": {
+        "subtitle": "For beginners"
+      },
+      "medium": {
+        "subtitle": "Most popular"
+      },
+      "hard": {
+        "subtitle": "For professionals"
+      },
+      "rock": {
+        "subtitle": "Maximum power"
+      },
+      "features": {
+        "channels": "Up to {{count}} monitoring channels",
+        "queries": "Up to {{count}} keyword queries",
+        "private": "Private channel monitoring",
+        "unlimited": "Unlimited forwarding groups",
+        "copy": "Copy old messages",
+        "forward": "Forward or copy-paste posts",
+        "links": "Manage source links",
+        "priority": "Priority support",
+        "dedicated": "Dedicated support"
+      }
+    }
+  }
+}

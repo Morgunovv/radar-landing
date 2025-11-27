@@ -1,0 +1,101 @@
+{
+  "navbar": {
+    "features": "Características",
+    "pricing": "Precios",
+    "faq": "FAQ",
+    "setup": "Configurar en 3 minutos",
+    "start": "Comenzar"
+  },
+  "hero": {
+    "badge": "Monitoreo en tiempo real",
+    "title": "No busques información -",
+    "titleHighlight": "déjala encontrarte",
+    "subtitle": "Automatiza el monitoreo de canales de Telegram. Obtén solo información relevante en tiempo real.",
+    "stats": {
+      "channels": "canales de monitoreo",
+      "time": "tiempo de búsqueda",
+      "relevance": "relevancia"
+    },
+    "cta": {
+      "setup": "Configurar en 3 minutos",
+      "learnMore": "Saber más"
+    },
+    "footer": "🔒 Seguro • Gratis para siempre • Sin tarjeta de crédito"
+  },
+  "features": {
+    "title": "Beneficios Clave",
+    "subtitle": "Todo lo que necesitas para un monitoreo efectivo de Telegram",
+    "items": {
+      "speed": {
+        "title": "Velocidad = Dinero",
+        "description": "Sé el primero en conocer eventos importantes. Filtrado automático según tus criterios. 0 retrasos - monitoreo en tiempo real."
+      },
+      "personalization": {
+        "title": "Personalización",
+        "description": "Monitorea solo por tus palabras clave. Filtrado inteligente de spam y contenido irrelevante. Configuración de prioridades de canales."
+      },
+      "roi": {
+        "title": "ROI",
+        "description": "Ahorra 10-15 horas por semana = más tiempo para análisis. No pierdas señales rentables. Ventaja competitiva a través de la velocidad de reacción."
+      },
+      "automation": {
+        "title": "Automatización",
+        "description": "Automatiza el 80% del trabajo rutinario. Enfócate en la estrategia, no en la búsqueda de contenido. Escala sin contratar personal adicional."
+      },
+      "privacy": {
+        "title": "Privacidad",
+        "description": "Soporte para monitoreo de canales privados a través de cuenta personal. Almacenamiento seguro de sesiones con cifrado. Control total sobre los datos."
+      },
+      "reliability": {
+        "title": "Confiabilidad",
+        "description": "Manejo automático de errores. Mecanismos de reintento para operación estable. Monitoreo y registro de todas las operaciones."
+      }
+    }
+  },
+  "pricing": {
+    "title": "Elige tu plan",
+    "subtitle": "Comienza gratis. Escala según creces.",
+    "selectCurrency": "Selecciona moneda",
+    "free": "Gratis",
+    "forever": "para siempre",
+    "month": "por mes",
+    "popular": "Popular",
+    "try": "Probar",
+    "choosePlan": "Elegir plan",
+    "footer": "Plan gratuito para siempre • Planes de pago sin vinculación de tarjeta",
+    "plans": {
+      "free": {
+        "subtitle": "Prueba las características",
+        "features": {
+          "channels": "Hasta 5 canales de monitoreo",
+          "queries": "Hasta 10 consultas de palabras clave",
+          "support": "Soporte básico"
+        }
+      },
+      "light": {
+        "subtitle": "Para principiantes"
+      },
+      "medium": {
+        "subtitle": "Más popular"
+      },
+      "hard": {
+        "subtitle": "Para profesionales"
+      },
+      "rock": {
+        "subtitle": "Máxima potencia"
+      },
+      "features": {
+        "channels": "Hasta {{count}} canales de monitoreo",
+        "queries": "Hasta {{count}} consultas de palabras clave",
+        "private": "Monitoreo de canales privados",
+        "unlimited": "Grupos de reenvío ilimitados",
+        "copy": "Copiar mensajes antiguos",
+        "forward": "Reenviar o copiar-pegar publicaciones",
+        "links": "Gestionar enlaces de origen",
+        "priority": "Soporte prioritario",
+        "dedicated": "Soporte dedicado"
+      }
+    }
+  }
+}
+

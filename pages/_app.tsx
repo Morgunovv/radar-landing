@@ -1,10 +1,11 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { LanguageProvider } from '@/contexts/LanguageContext'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <LanguageProvider>
       <Head>
         {/* Yandex.Metrika counter */}
         <script
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* /Yandex.Metrika counter */}
       </Head>
       <Component {...pageProps} />
-    </>
+    </LanguageProvider>
   )
 }
 
