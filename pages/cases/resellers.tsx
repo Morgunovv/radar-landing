@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
@@ -8,12 +9,36 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Resellers() {
   const { t } = useLanguage()
+  const router = useRouter()
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://telegram-radar.com'
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/cases/resellers`
+  const ogImage = `${siteUrl}/logo.png`
+  const title = String(t('pages.cases.resellers.title'))
+  const description = String(t('pages.cases.resellers.description'))
+
   return (
     <>
       <Head>
-        <title>{String(t('pages.cases.resellers.title'))}</title>
-        <meta name="description" content={String(t('pages.cases.resellers.description'))} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Telegram Radar" />
+        <meta property="og:locale" content={router.locale === 'ru' ? 'ru_RU' : router.locale === 'es' ? 'es_ES' : 'en_US'} />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={currentUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -364,27 +364,339 @@
     "cases": {
       "crypto": {
         "title": "Traders de Cripto - Telegram Radar",
-        "description": "Automatiza el monitoreo de canales de cripto. Obtén señales sobre listados, bombas y noticias importantes primero."
+        "description": "Automatiza el monitoreo de canales de cripto. Obtén señales sobre listados, bombas y noticias importantes primero.",
+        "hero": {
+          "title": "Traders de Cripto",
+          "subtitle": "Monitorea 100+ canales de cripto simultáneamente. Obtén solo señales relevantes en segundos.",
+          "button": "Comenzar monitoreo"
+        },
+        "problems": {
+          "title": "Problemas de los traders de cripto",
+          "missedOpportunities": {
+            "title": "Oportunidades perdidas",
+            "description": "Mientras revisas canales manualmente, otros traders ya están entrando en posiciones. Cada minuto de retraso puede costar ganancias."
+          },
+          "informationNoise": {
+            "title": "Ruido informativo",
+            "description": "Cientos de mensajes al día, pero solo unos pocos son realmente importantes. ¿Cómo encontrar lo que necesitas entre todo este ruido?"
+          }
+        },
+        "solution": {
+          "title": "Solución con Telegram Radar",
+          "monitoring": {
+            "title": "Monitoreo de 100+ canales",
+            "description": "Rastrea todos los canales importantes de cripto simultáneamente: noticias sobre listados, señales de analistas, discusiones en comunidades. No te perderás nada."
+          },
+          "filtering": {
+            "title": "Filtrado preciso de señales",
+            "description": "Configura el monitoreo por palabras clave: nombres de monedas, términos \"listado\", \"bomba\", \"dump\", \"airdrop\". Obtén solo mensajes relevantes."
+          },
+          "notifications": {
+            "title": "Notificaciones instantáneas",
+            "description": "Recibe señales en tiempo real. Sé el primero en conocer eventos importantes y toma decisiones más rápido que los competidores."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "listings": {
+            "title": "Monitoreo de listados",
+            "description": "Configura palabras clave: \"listado\", \"listing\", \"nuevo token\". Recibe notificaciones sobre nuevos listados en exchanges en segundos."
+          },
+          "signals": {
+            "title": "Seguimiento de señales",
+            "description": "Monitorea canales de analistas por palabras clave: nombres de monedas, \"buy\", \"sell\", \"target\". No pierdas señales importantes."
+          },
+          "news": {
+            "title": "Noticias y eventos",
+            "description": "Rastrea noticias sobre asociaciones, actualizaciones de protocolos, eventos importantes en el ecosistema de criptomonedas."
+          }
+        },
+        "cta": {
+          "title": "Comienza ahora mismo",
+          "description": "Configura el monitoreo de canales de cripto en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       },
       "marketers": {
         "title": "Marketers - Telegram Radar",
-        "description": "Automatiza la búsqueda de contenido para republicaciones. Encuentra tendencias antes que los competidores."
+        "description": "Automatiza la búsqueda de contenido para republicaciones. Encuentra tendencias antes que los competidores.",
+        "hero": {
+          "title": "Marketers",
+          "subtitle": "Automatiza la búsqueda de contenido para republicaciones. Encuentra tendencias antes que los competidores.",
+          "button": "Comenzar a usar"
+        },
+        "problems": {
+          "title": "Desafíos de los marketers",
+          "contentSearch": {
+            "title": "Búsqueda de contenido",
+            "description": "Se pasan horas diariamente buscando contenido relevante para clientes. Necesitas monitorear docenas de canales manualmente."
+          },
+          "competitiveIntelligence": {
+            "title": "Inteligencia competitiva",
+            "description": "Es importante rastrear lo que publican los competidores, qué tendencias aparecen, para estar por delante."
+          }
+        },
+        "solution": {
+          "title": "Cómo Telegram Radar ayuda",
+          "autoSearch": {
+            "title": "Búsqueda automática de contenido",
+            "description": "Configura el monitoreo por temas de tus clientes. Obtén contenido relevante automáticamente, sin búsqueda manual."
+          },
+          "trendWatching": {
+            "title": "Seguimiento de tendencias",
+            "description": "Rastrea temas y tendencias populares en tu nicho. Sé el primero en usar nuevas ideas para contenido."
+          },
+          "timeSaving": {
+            "title": "Ahorro de tiempo",
+            "description": "Ahorra 10-15 horas por semana en búsqueda de contenido. Enfócate en estrategia y creatividad, no en rutina."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "competitors": {
+            "title": "Monitoreo de competidores",
+            "description": "Rastrea canales de competidores y clientes. Sé el primero en conocer nuevas publicaciones y promociones."
+          },
+          "reposts": {
+            "title": "Búsqueda de contenido para republicaciones",
+            "description": "Configura filtros por temas de clientes. Obtén contenido listo para publicar automáticamente."
+          },
+          "mentions": {
+            "title": "Seguimiento de menciones",
+            "description": "Monitorea menciones de marcas de clientes. Responde a discusiones y reseñas en tiempo real."
+          }
+        },
+        "cta": {
+          "title": "Comienza a automatizar",
+          "description": "Configura el monitoreo de contenido para tus clientes en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       },
       "media": {
         "title": "Medios y Periodistas - Telegram Radar",
-        "description": "Sé el primero con las noticias. Agrega información de 200+ fuentes en segundos."
+        "description": "Sé el primero con las noticias. Agrega información de 200+ fuentes en segundos.",
+        "hero": {
+          "title": "Medios y Periodistas",
+          "subtitle": "Sé el primero con las noticias. Agrega información de 200+ fuentes en segundos.",
+          "button": "Comenzar monitoreo"
+        },
+        "problems": {
+          "title": "Problemas de los medios",
+          "speed": {
+            "title": "Velocidad de publicación",
+            "description": "En los medios, la velocidad lo es todo. Mientras buscas información manualmente, los competidores ya están publicando noticias."
+          },
+          "sources": {
+            "title": "Múltiples fuentes",
+            "description": "Necesitas rastrear cientos de canales y fuentes. ¿Cómo no perder una noticia importante entre el flujo de información?"
+          }
+        },
+        "solution": {
+          "title": "Solución para medios",
+          "aggregation": {
+            "title": "Agregación de 200+ fuentes",
+            "description": "Monitorea todos los canales de noticias importantes, blogs, fuentes oficiales simultáneamente. Obtén información de todas las fuentes en un solo lugar."
+          },
+          "filtering": {
+            "title": "Filtrado por temas",
+            "description": "Configura el monitoreo por palabras clave: temas, nombres, eventos. Obtén solo noticias relevantes para tu redacción."
+          },
+          "firstNews": {
+            "title": "Primero con las noticias",
+            "description": "Recibe notificaciones sobre eventos importantes en tiempo real. Publica noticias antes que los competidores."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "newsChannels": {
+            "title": "Monitoreo de canales de noticias",
+            "description": "Rastrea todos los canales de noticias importantes en tu tema. Recibe noticias automáticamente, sin búsqueda manual."
+          },
+          "events": {
+            "title": "Seguimiento de eventos",
+            "description": "Configura el monitoreo por palabras clave: nombres de eventos, nombres, lugares. Sé el primero en conocer eventos."
+          },
+          "aggregation": {
+            "title": "Agregación de información",
+            "description": "Recopila información de diferentes fuentes en un solo canal. Ahorra tiempo en búsqueda y análisis."
+          }
+        },
+        "cta": {
+          "title": "Comienza a usar",
+          "description": "Configura el monitoreo de fuentes de noticias en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       },
       "ecommerce": {
         "title": "E-commerce - Telegram Radar",
-        "description": "Encuentra ofertas rentables y tendencias antes que los competidores. Automatiza la búsqueda de productos."
+        "description": "Encuentra ofertas rentables y tendencias antes que los competidores. Automatiza la búsqueda de productos.",
+        "hero": {
+          "title": "E-commerce",
+          "subtitle": "Encuentra ofertas rentables y tendencias antes que los competidores. Automatiza la búsqueda de productos.",
+          "button": "Comenzar monitoreo"
+        },
+        "problems": {
+          "title": "Desafíos del e-commerce",
+          "deals": {
+            "title": "Búsqueda de ofertas rentables",
+            "description": "Necesitas rastrear docenas de canales con ventas, promociones y ofertas especiales. ¿Cómo no perder una buena oferta?"
+          },
+          "trendWatching": {
+            "title": "Seguimiento de tendencias",
+            "description": "Es importante saber qué productos se están volviendo populares para reponer el inventario a tiempo o lanzar publicidad."
+          }
+        },
+        "solution": {
+          "title": "Solución para e-commerce",
+          "sales": {
+            "title": "Monitoreo de ventas",
+            "description": "Rastrea canales con ventas, promociones y ofertas especiales. Recibe notificaciones sobre ofertas rentables automáticamente."
+          },
+          "trends": {
+            "title": "Seguimiento de tendencias",
+            "description": "Monitorea discusiones de productos, reseñas, categorías populares. Conoce las tendencias antes que los competidores."
+          },
+          "intelligence": {
+            "title": "Inteligencia competitiva",
+            "description": "Rastrea canales de competidores, sus promociones y novedades. Analiza estrategias y mantente por delante."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "sales": {
+            "title": "Monitoreo de ventas",
+            "description": "Configura palabras clave: \"descuento\", \"venta\", \"promoción\", nombres de marcas. Recibe notificaciones sobre ofertas rentables."
+          },
+          "newProducts": {
+            "title": "Seguimiento de novedades",
+            "description": "Monitorea canales de fabricantes y distribuidores. Sé el primero en conocer nuevos productos."
+          },
+          "demand": {
+            "title": "Análisis de demanda",
+            "description": "Rastrea discusiones de productos, reseñas, categorías populares. Planifica compras basadas en datos."
+          }
+        },
+        "cta": {
+          "title": "Comienza a usar",
+          "description": "Configura el monitoreo de productos y ofertas en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       },
       "hr": {
         "title": "RRHH y Reclutadores - Telegram Radar",
-        "description": "Encuentra talentos más rápido. Automatiza la búsqueda de candidatos y el monitoreo del mercado laboral."
+        "description": "Encuentra talentos más rápido. Automatiza la búsqueda de candidatos y el monitoreo del mercado laboral.",
+        "hero": {
+          "title": "RRHH y Reclutadores",
+          "subtitle": "Encuentra talentos más rápido. Automatiza la búsqueda de candidatos y el monitoreo del mercado laboral.",
+          "button": "Comenzar búsqueda"
+        },
+        "problems": {
+          "title": "Desafíos de RRHH y reclutadores",
+          "candidates": {
+            "title": "Búsqueda de candidatos",
+            "description": "Necesitas monitorear docenas de canales con vacantes y currículums. La búsqueda de candidatos adecuados toma horas diariamente."
+          },
+          "analytics": {
+            "title": "Análisis de mercado",
+            "description": "Es importante rastrear tendencias en el mercado laboral: habilidades populares, salarios, requisitos de empleadores."
+          }
+        },
+        "solution": {
+          "title": "Solución para RRHH",
+          "autoSearch": {
+            "title": "Búsqueda automática de candidatos",
+            "description": "Monitorea canales con currículums y vacantes. Configura filtros por habilidades, experiencia, ubicación. Obtén candidatos adecuados automáticamente."
+          },
+          "market": {
+            "title": "Monitoreo del mercado laboral",
+            "description": "Rastrea tendencias: habilidades populares, salarios, requisitos. Analiza el mercado y planifica estrategia de contratación."
+          },
+          "proactive": {
+            "title": "Reclutamiento proactivo",
+            "description": "Encuentra talentos antes de que comiencen a buscar trabajo. Contacta candidatos primero."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "resumes": {
+            "title": "Monitoreo de currículums",
+            "description": "Configura filtros por habilidades, experiencia, ubicación. Recibe notificaciones sobre nuevos currículums que cumplan tus requisitos."
+          },
+          "competitors": {
+            "title": "Seguimiento de vacantes de competidores",
+            "description": "Monitorea canales de competidores. Analiza sus requisitos y salarios. Mantente competitivo en el mercado."
+          },
+          "specialists": {
+            "title": "Búsqueda de especialistas",
+            "description": "Rastrea discusiones en comunidades profesionales. Encuentra especialistas activos y expertos en tu área."
+          }
+        },
+        "cta": {
+          "title": "Comienza a usar",
+          "description": "Configura el monitoreo de candidatos y mercado laboral en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       },
       "resellers": {
         "title": "Revendedores - Telegram Radar",
-        "description": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa."
+        "description": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa.",
+        "hero": {
+          "title": "Revendedores",
+          "subtitle": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa.",
+          "button": "Comenzar búsqueda"
+        },
+        "problems": {
+          "title": "Desafíos de los revendedores",
+          "deals": {
+            "title": "Búsqueda de ofertas rentables",
+            "description": "Necesitas monitorear constantemente docenas de canales con ofertas de productos y servicios. Las ofertas rentables se agotan en minutos."
+          },
+          "missed": {
+            "title": "Oportunidades perdidas",
+            "description": "Mientras revisas canales manualmente, otros revendedores ya están comprando productos rentables. Cada minuto de retraso es ganancia perdida."
+          }
+        },
+        "solution": {
+          "title": "Solución para revendedores",
+          "notifications": {
+            "title": "Notificaciones instantáneas",
+            "description": "Recibe notificaciones sobre ofertas rentables en tiempo real. Reacciona más rápido que los competidores y cierra tratos primero."
+          },
+          "filtering": {
+            "title": "Filtrado por criterios",
+            "description": "Configura el monitoreo por palabras clave: categorías de productos, precios, condiciones. Obtén solo ofertas relevantes."
+          },
+          "channels": {
+            "title": "Monitoreo de múltiples canales",
+            "description": "Rastrea docenas de canales simultáneamente: marketplaces, grupos de venta, canales con ofertas. No te perderás nada."
+          }
+        },
+        "examples": {
+          "title": "Ejemplos de uso",
+          "sales": {
+            "title": "Monitoreo de ventas",
+            "description": "Configura palabras clave: \"descuento\", \"venta\", \"rentable\", nombres de categorías de productos. Recibe notificaciones sobre ofertas rentables."
+          },
+          "wholesale": {
+            "title": "Búsqueda de ofertas mayoristas",
+            "description": "Monitorea canales con ofertas mayoristas. Encuentra productos para reventa con buen margen."
+          },
+          "services": {
+            "title": "Seguimiento de servicios",
+            "description": "Monitorea ofertas de servicios para reventa: suscripciones, cursos, accesos. Encuentra asociaciones rentables."
+          }
+        },
+        "cta": {
+          "title": "Comienza a usar",
+          "description": "Configura el monitoreo de ofertas rentables en 3 minutos. El plan gratuito está disponible para siempre.",
+          "button": "Configurar monitoreo"
+        },
+        "backToHome": "← Volver al inicio"
       }
     }
   },
@@ -451,6 +763,52 @@
           "changeFormat": {
             "question": "¿Puedo cambiar el formato de publicación después de la configuración?",
             "answer": "Sí:\n• El formato se puede cambiar en cualquier momento\n• El cambio se aplica a nuevos mensajes\n• Los mensajes antiguos no se cambian\n\nCómo cambiar:\n1. Abre configuración del canal de publicación\n2. \"🔍 Filtro de mensajes para publicación\"\n3. \"📄 Reenviar o copiar-pegar\"\n4. Selecciona nuevo formato"
+          },
+          "sourceLink": {
+            "question": "¿Cómo agregar enlace a la fuente en los mensajes?",
+            "answer": "Función de enlace a fuente:\n• Se puede activar/desactivar en configuración del canal\n• Agrega enlace clicable al mensaje original\n• Funciona con ambos formatos (Forward y Copy)\n\nCómo activar:\n1. Abre configuración del canal de publicación\n2. \"🔍 Filtro de mensajes para publicación\"\n3. Activa opción \"Agregar enlace a fuente\"\n\nFormato:\nEl enlace aparece al final del mensaje:\n[Nombre del Canal](https://t.me/channel_username/123)"
+          },
+          "forwardVsCopy": {
+            "question": "¿Cuál es la diferencia entre Forward y Copy?",
+            "answer": "Forward (reenviar original):\n✅ Preserva autoría y fuente\n✅ Los suscriptores ven canal fuente\n✅ Mantiene formato original\n❌ Se ve que el mensaje fue reenviado\n❌ Depende del acceso al original\n\nCopy (copiar-pegar):\n✅ El mensaje parece original\n✅ Se puede ocultar la fuente\n✅ Independiente del original\n❌ Se pierde información del autor\n❌ Puede perder formato\n\nUsa Forward para:\n• Canales de noticias\n• Canales con contenido original\n• Cuando la transparencia de fuente es importante\n\nUsa Copy para:\n• Agregadores de noticias\n• Canales anónimos\n• Cuando el original puede ser eliminado"
+          }
+        }
+      },
+      "filtering": {
+        "title": "Modos de Filtrado de Mensajes",
+        "items": {
+          "repostAll": {
+            "question": "¿Qué es el modo \"Reenviar todos los mensajes\"?",
+            "answer": "Modo reenviar todos:\n• Publica TODOS los mensajes de canales de monitoreo\n• No se aplica filtrado por palabras clave\n• Cada mensaje se publica automáticamente\n\nCómo activar:\n1. Abre configuración del canal de publicación\n2. \"🔍 Filtro de mensajes para publicación\"\n3. Haz clic en \"🌐 Todos los mensajes\"\n4. Confirma activación\n\nQué sucede:\n• Se eliminan todas las configuraciones de palabras clave para este canal\n• Todos los mensajes de canales de monitoreo se publicarán\n• Puedes volver a filtrado por palabras clave en cualquier momento\n\nUsar cuando:\n• Quieres todo el contenido del canal fuente\n• No necesitas filtrado\n• Creas agregador de contenido"
+          },
+          "keywordFiltering": {
+            "question": "¿Cómo funciona el filtrado por palabras clave?",
+            "answer": "Cómo funciona:\n1. El bot extrae texto del mensaje\n2. Verifica coincidencias con palabras clave\n3. Si encuentra coincidencia - el mensaje se publica\n4. Si no hay coincidencia - el mensaje se omite\n\nCaracterísticas:\n• Búsqueda no distingue mayúsculas/minúsculas (por defecto)\n• Coincidencia parcial de palabras\n• Busca en todo el texto del mensaje\n• Al menos una coincidencia es suficiente\n\nEjemplo:\nPalabras clave: \"bitcoin\", \"ethereum\"\nMensaje: \"Bitcoin alcanzó nuevo máximo\"\nResultado: ✅ Publicado (bitcoin coincidió)\n\nMensaje: \"Noticias del mercado de valores\"\nResultado: ❌ No publicado (sin coincidencias)"
+          },
+          "combinedModes": {
+            "question": "¿Puedo combinar \"reenviar todos\" y filtrado por palabras clave?",
+            "answer": "Sí, puedes combinar modos:\n• Algunos canales de monitoreo pueden usar \"reenviar todos\"\n• Otros canales pueden usar filtrado por palabras clave\n• Ambos funcionan simultáneamente en un canal de publicación\n\nEjemplo:\nCanal de publicación: \"Noticias\"\n├── Canal de monitoreo \"Cryptonews\" → reenviar todos\n└── Canal de monitoreo \"TechNews\" → palabras clave: \"bitcoin\", \"ethereum\"\n\nResultado:\n• Todos los mensajes de \"Cryptonews\" se publican\n• Solo mensajes con palabras clave de \"TechNews\" se publican\n\nCómo configurar:\n1. Agrega múltiples canales de monitoreo\n2. Para algunos canales activa \"reenviar todos\"\n3. Para otros canales configura filtrado por palabras clave\n4. Ambos modos funcionan automáticamente"
+          }
+        }
+      },
+      "pricing": {
+        "title": "Precios y Planes",
+        "items": {
+          "freePlan": {
+            "question": "¿Qué incluye el plan gratuito?",
+            "answer": "Características del plan gratuito:\n• Hasta 3 canales (monitoreo + publicación)\n• Hasta 10 consultas de palabras clave\n• Hasta 10 publicaciones al copiar mensajes antiguos\n• Soporte básico\n• Gratis para siempre - sin límites de tiempo\n\nLimitaciones:\n• Conexión de cuenta personal: no disponible\n• Solo se pueden monitorear canales públicos\n• Número limitado de canales\n\nPerfecto para:\n• Probar el servicio\n• Necesidades básicas de monitoreo\n• Uso personal con pocos canales"
+          },
+          "paidPlans": {
+            "question": "¿Cuáles son los planes de pago y sus límites?",
+            "answer": "Plan Light:\n• 50 canales, 50 palabras clave\n• Cuenta personal: disponible\n• Precio: 150 Telegram Stars/mes (≈3 EUR)\n\nPlan Medium:\n• 100 canales, 100 palabras clave\n• Cuenta personal: disponible\n• Precio: 250 Telegram Stars/mes (≈5 EUR)\n\nPlan Hard:\n• 200 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 500 Telegram Stars/mes (≈12 EUR)\n\nPlan Rock:\n• 500 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 1000 Telegram Stars/mes\n\nTodos los planes de pago incluyen:\n• Monitoreo de canales privados\n• Conexión de cuenta personal\n• Soporte prioritario"
+          },
+          "limits": {
+            "question": "¿Cómo se calculan los límites de canales?",
+            "answer": "Qué cuenta hacia el límite:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación\n\nEjemplo:\n• 2 canales de monitoreo + 1 canal de publicación = 3 canales\n• En plan Gratis (límite 3) - límite alcanzado\n• No se pueden agregar más canales\n\nCómo verificar:\n1. Ve a \"💳 Límites\"\n2. Verifica \"Canales: X / Y\"\n3. X = cantidad actual, Y = límite\n\nCuando se alcanza el límite:\n• El bot notificará: \"⚠️ Límite de canales alcanzado: X\"\n• Necesitas eliminar canales o actualizar plan"
+          },
+          "changePlan": {
+            "question": "¿Cómo cambiar o actualizar mi plan?",
+            "answer": "Cómo actualizar:\n1. Ve a \"💳 Límites\"\n2. Selecciona nuevo plan de planes disponibles\n3. Paga vía Telegram Stars\n4. El plan cambia automáticamente\n\nQué sucede:\n• Los nuevos límites se aplican inmediatamente\n• Las configuraciones existentes se preservan\n• Si el uso actual excede el nuevo límite, necesitas eliminar elementos excedentes\n\nEjemplo:\n• Tienes 30 canales en plan Medium (límite 100)\n• Cambias a plan Light (límite 50)\n• Todos los 30 canales continúan funcionando\n• Puedes agregar 20 canales más\n\nPago:\n• Vía Telegram Stars\n• Usa aplicación de escritorio de Telegram para mejores tarifas\n• La suscripción se renueva por el período seleccionado"
           }
         }
       },
@@ -468,6 +826,10 @@
           "multipleUsers": {
             "question": "¿Puedo usar una cuenta para múltiples usuarios?",
             "answer": "Técnicamente:\n• Una cuenta solo puede conectarse a un usuario del bot\n• Al intentar conectar la misma cuenta a otro usuario, la sesión anterior se desconectará\n\nRecomendaciones:\n• Usa cuenta separada para cada usuario del bot\n• Esto asegura seguridad e independencia de configuraciones"
+          },
+          "disconnect": {
+            "question": "¿Cómo desconectar cuenta personal?",
+            "answer": "Cómo desconectar:\n1. Ve a \"🔌 Conectar cuenta personal\"\n2. Haz clic en \"🔴 Desconectar sesión\"\n3. Confirma desconexión\n\nQué sucede:\n• La sesión se elimina del sistema\n• Los canales públicos continúan funcionando\n• Los canales privados y grupos se vuelven inaccesibles\n• Las configuraciones de canales de monitoreo se preservan\n\nImportante:\n• La desconexión es irreversible\n• Necesitas reconectar para usar canales privados nuevamente\n• Los datos de sesión se eliminan completamente"
           }
         }
       },
@@ -493,6 +855,39 @@
           "keywordsNotWorking": {
             "question": "Las palabras clave no funcionan",
             "answer": "Posibles causas:\n• Palabras clave no agregadas\n• Ortografía incorrecta de palabras clave\n• Palabras clave no aplicadas al canal de publicación\n\nSoluciones:\n1. Verifica lista de palabras clave\n2. Asegúrate de que las palabras clave estén agregadas al canal de publicación\n3. Verifica ortografía de palabras clave\n4. Intenta agregar palabras clave nuevamente"
+          },
+          "delay": {
+            "question": "Los mensajes llegan con retraso",
+            "answer": "Comportamiento normal:\n• Retraso de 5-30 segundos es normal\n• Depende de la carga del servidor y la cola de tareas\n\nSi el retraso es muy largo:\n1. Verifica conexión a internet\n2. Verifica carga del servidor (puede ser temporal)\n3. Contacta soporte si el retraso es constante\n\nOptimización:\n• El bot usa procesamiento asíncrono\n• La cola de tareas se procesa continuamente\n• Retrasos posibles bajo alta carga"
+          },
+          "channelNotMonitored": {
+            "question": "Algunos canales no se están monitoreando",
+            "answer": "Posibles causas:\n• Canal eliminado del monitoreo\n• Canal bloqueado o no disponible\n• Problemas de conexión\n• Canal es privado y sin acceso\n\nSoluciones:\n1. Verifica lista de canales de monitoreo\n2. Asegúrate de que el canal exista y sea accesible\n3. Para canales privados - verifica conexión de cuenta personal\n4. Intenta eliminar y agregar canal nuevamente\n\nVerificar:\n• Abre canal en Telegram\n• Verifica que el canal sea accesible\n• Verifica configuraciones de monitoreo en el bot"
+          },
+          "botNotAdmin": {
+            "question": "Error \"El bot no es administrador\"",
+            "answer": "Causa:\n• El bot no está agregado como administrador o fue eliminado\n\nSoluciones:\n1. Agrega el bot como administrador del canal\n2. Activa permiso \"Publicar mensajes\"\n3. Haz clic en \"Verificar permisos\" en el menú del canal en el bot\n\nCómo agregar bot:\n1. Abre configuración del canal en Telegram\n2. Ve a \"Administradores\"\n3. Haz clic en \"Agregar administrador\"\n4. Busca @radar_telegram_bot\n5. Activa \"Publicar mensajes\"\n6. Haz clic en \"Listo\""
+          },
+          "accountDisconnected": {
+            "question": "La cuenta se desconectó sola",
+            "answer": "Posibles causas:\n• Sesión expirada (raro)\n• Problemas del servidor\n• Contraseña de Telegram cambiada\n• Problemas de conexión\n\nSoluciones:\n1. Reconecta cuenta\n2. Verifica configuraciones de seguridad de Telegram\n3. Contacta soporte si el problema se repite\n\nPrevención:\n• Verifica regularmente el estado de conexión\n• No cambies contraseña de Telegram innecesariamente\n• Reporta problemas a soporte"
+          }
+        }
+      },
+      "tips": {
+        "title": "Consejos y Recomendaciones",
+        "items": {
+          "effectiveKeywords": {
+            "question": "¿Cómo crear palabras clave efectivas?",
+            "answer": "Principios:\n• Usa palabras específicas, no generales\n• Evita palabras muy cortas (menos de 3 caracteres)\n• Combina múltiples palabras para búsqueda precisa\n• Considera sinónimos y variantes de escritura\n\nEjemplos:\n❌ Malo: \"noticias\", \"cripto\"\n✅ Bueno: \"bitcoin\", \"ethereum\", \"criptomoneda\"\n\nConsejos:\n• Usa palabras que describan con precisión el contenido necesario\n• Agrega variantes de escritura (ej., \"bitcoin\" y \"биткоин\")\n• Excluye palabras que puedan dar muchas falsas alarmas\n• Prueba palabras clave y ajusta según resultados"
+          },
+          "thematicChannels": {
+            "question": "¿Cómo organizar canales de publicación?",
+            "answer": "Principio:\n• Crea canales separados para diferentes temas\n• Usa diferentes palabras clave para cada canal\n• Configura canales independientemente\n\nEjemplo:\nCanal \"Criptomonedas\":\n├── Canales de monitoreo: Cryptonews, BitcoinNews\n├── Palabras clave: bitcoin, ethereum, criptomoneda\n\nCanal \"Tecnología\":\n├── Canales de monitoreo: TechNews, ITChannel\n├── Palabras clave: tecnología, IT, programación\n\nBeneficios:\n• Los suscriptores obtienen solo contenido relevante\n• Más fácil gestión de contenido\n• Puedes configurar diferentes formatos de publicación\n• Mejor organización"
+          },
+          "bulkAddChannels": {
+            "question": "¿Cómo agregar múltiples canales eficientemente?",
+            "answer": "Consejos:\n• Agrega canales en grupos separados por coma\n• Usa cola automática (integrada)\n• Verifica lista de canales después de agregar\n\nEjemplo:\nEn lugar de agregar uno por uno:\n1. Agregar cryptonews\n2. Esperar\n3. Agregar bitcoin\n...\n\nUsa:\nAgregar: cryptonews, bitcoin, ethereum, blockchain\n(Todos los canales se agregan automáticamente con retraso)\n\nBeneficios:\n• Ahorra tiempo\n• Protección contra límites de flood\n• Gestión conveniente\n\nCómo funciona:\n• Los canales se agregan a la cola automáticamente\n• Procesamiento con retraso de 3-5 segundos entre canales\n• Recibes notificación cuando esté completo"
           }
         }
       }

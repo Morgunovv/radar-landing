@@ -28,7 +28,26 @@ const faqSectionsConfig = [
     items: [
       { key: 'multipleChannels' },
       { key: 'format' },
-      { key: 'changeFormat' }
+      { key: 'changeFormat' },
+      { key: 'sourceLink' },
+      { key: 'forwardVsCopy' }
+    ]
+  },
+  {
+    key: 'filtering',
+    items: [
+      { key: 'repostAll' },
+      { key: 'keywordFiltering' },
+      { key: 'combinedModes' }
+    ]
+  },
+  {
+    key: 'pricing',
+    items: [
+      { key: 'freePlan' },
+      { key: 'paidPlans' },
+      { key: 'limits' },
+      { key: 'changePlan' }
     ]
   },
   {
@@ -36,7 +55,8 @@ const faqSectionsConfig = [
     items: [
       { key: 'security' },
       { key: 'code' },
-      { key: 'multipleUsers' }
+      { key: 'multipleUsers' },
+      { key: 'disconnect' }
     ]
   },
   {
@@ -46,7 +66,19 @@ const faqSectionsConfig = [
       { key: 'limitReached' },
       { key: 'noMessages' },
       { key: 'notPublishing' },
-      { key: 'keywordsNotWorking' }
+      { key: 'keywordsNotWorking' },
+      { key: 'delay' },
+      { key: 'channelNotMonitored' },
+      { key: 'botNotAdmin' },
+      { key: 'accountDisconnected' }
+    ]
+  },
+  {
+    key: 'tips',
+    items: [
+      { key: 'effectiveKeywords' },
+      { key: 'thematicChannels' },
+      { key: 'bulkAddChannels' }
     ]
   }
 ]

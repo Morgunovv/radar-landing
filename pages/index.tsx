@@ -83,12 +83,35 @@ export default function Home() {
     }
   }, [router])
 
+  const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://telegram-radar.com'
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : siteUrl
+  const ogImage = `${siteUrl}/logo.png`
+  const title = String(t('pages.home.title'))
+  const description = String(t('pages.home.description'))
+
   return (
     <>
       <Head>
-        <title>{String(t('pages.home.title'))}</title>
-        <meta name="description" content={String(t('pages.home.description'))} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:site_name" content="Telegram Radar" />
+        <meta property="og:locale" content={router.locale === 'ru' ? 'ru_RU' : router.locale === 'es' ? 'es_ES' : 'en_US'} />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={currentUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

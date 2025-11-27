@@ -451,6 +451,52 @@
           "changeFormat": {
             "question": "Can I change publication format after setup?",
             "answer": "Yes:\n• Format can be changed at any time\n• Change applies to new messages\n• Old messages are not changed\n\nHow to change:\n1. Open publication channel settings\n2. \"🔍 Message filter for posting\"\n3. \"📄 Forward or copy-paste\"\n4. Select new format"
+          },
+          "sourceLink": {
+            "question": "How to add source link to messages?",
+            "answer": "Source link feature:\n• Can be enabled/disabled in channel settings\n• Adds clickable link to original message\n• Works with both Forward and Copy formats\n\nHow to enable:\n1. Open publication channel settings\n2. \"🔍 Message filter for posting\"\n3. Enable \"Add source link\" option\n\nFormat:\nThe link appears at the end of message:\n[Channel Name](https://t.me/channel_username/123)"
+          },
+          "forwardVsCopy": {
+            "question": "What's the difference between Forward and Copy?",
+            "answer": "Forward (forward original):\n✅ Preserves authorship and source\n✅ Subscribers see source channel\n✅ Maintains original formatting\n❌ Shows that message was forwarded\n❌ Depends on access to original\n\nCopy (copy-paste):\n✅ Message looks original\n✅ Can hide source\n✅ Independent of original\n❌ Loses author information\n❌ May lose formatting\n\nUse Forward for:\n• News channels\n• Channels with original content\n• When source transparency is important\n\nUse Copy for:\n• News aggregators\n• Anonymous channels\n• When original may be deleted"
+          }
+        }
+      },
+      "filtering": {
+        "title": "Message Filtering Modes",
+        "items": {
+          "repostAll": {
+            "question": "What is \"Repost all messages\" mode?",
+            "answer": "Repost all mode:\n• Publishes ALL messages from monitoring channels\n• No keyword filtering applied\n• Every message is published automatically\n\nHow to enable:\n1. Open publication channel settings\n2. \"🔍 Message filter for posting\"\n3. Click \"🌐 All messages\"\n4. Confirm activation\n\nWhat happens:\n• All keyword settings for this channel are removed\n• All messages from monitoring channels will be published\n• Can switch back to keyword filtering anytime\n\nUse when:\n• You want all content from source channel\n• No filtering needed\n• Creating content aggregator"
+          },
+          "keywordFiltering": {
+            "question": "How does keyword filtering work?",
+            "answer": "How it works:\n1. Bot extracts text from message\n2. Checks for keyword matches\n3. If match found - message is published\n4. If no match - message is skipped\n\nFeatures:\n• Case-insensitive search (by default)\n• Partial word matching\n• Searches entire message text\n• At least one keyword match is enough\n\nExample:\nKeywords: \"bitcoin\", \"ethereum\"\nMessage: \"Bitcoin reached new high\"\nResult: ✅ Published (bitcoin matched)\n\nMessage: \"Stock market news\"\nResult: ❌ Not published (no matches)"
+          },
+          "combinedModes": {
+            "question": "Can I combine \"repost all\" and keyword filtering?",
+            "answer": "Yes, you can combine modes:\n• Some monitoring channels can use \"repost all\"\n• Other channels can use keyword filtering\n• Both work simultaneously in one publication channel\n\nExample:\nPublication channel: \"News\"\n├── Monitoring channel \"Cryptonews\" → repost all\n└── Monitoring channel \"TechNews\" → keywords: \"bitcoin\", \"ethereum\"\n\nResult:\n• All messages from \"Cryptonews\" are published\n• Only messages with keywords from \"TechNews\" are published\n\nHow to set up:\n1. Add multiple monitoring channels\n2. For some channels enable \"repost all\"\n3. For other channels configure keyword filtering\n4. Both modes work automatically"
+          }
+        }
+      },
+      "pricing": {
+        "title": "Pricing and Plans",
+        "items": {
+          "freePlan": {
+            "question": "What's included in the free plan?",
+            "answer": "Free plan features:\n• Up to 3 channels (monitoring + publication)\n• Up to 10 keyword queries\n• Up to 10 posts when copying old messages\n• Basic support\n• Free forever - no time limits\n\nLimitations:\n• Personal account connection: not available\n• Only public channels can be monitored\n• Limited number of channels\n\nPerfect for:\n• Trying out the service\n• Basic monitoring needs\n• Personal use with few channels"
+          },
+          "paidPlans": {
+            "question": "What are the paid plans and their limits?",
+            "answer": "Light Plan:\n• 50 channels, 50 keywords\n• Personal account: available\n• Price: 150 Telegram Stars/month (≈3 EUR)\n\nMedium Plan:\n• 100 channels, 100 keywords\n• Personal account: available\n• Price: 250 Telegram Stars/month (≈5 EUR)\n\nHard Plan:\n• 200 channels, 200 keywords\n• Personal account: available\n• Price: 500 Telegram Stars/month (≈12 EUR)\n\nRock Plan:\n• 500 channels, 200 keywords\n• Personal account: available\n• Price: 1000 Telegram Stars/month\n\nAll paid plans include:\n• Private channel monitoring\n• Personal account connection\n• Priority support"
+          },
+          "limits": {
+            "question": "How are channel limits calculated?",
+            "answer": "What counts toward limit:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels\n\nExample:\n• 2 monitoring channels + 1 publication channel = 3 channels\n• On Free plan (limit 3) - limit reached\n• Cannot add more channels\n\nHow to check:\n1. Go to \"💳 Limits\"\n2. Check \"Channels: X / Y\"\n3. X = current count, Y = limit\n\nWhen limit reached:\n• Bot will notify: \"⚠️ Channel limit reached: X\"\n• Need to delete channels or upgrade plan"
+          },
+          "changePlan": {
+            "question": "How to change or upgrade my plan?",
+            "answer": "How to upgrade:\n1. Go to \"💳 Limits\"\n2. Select new plan from available plans\n3. Pay via Telegram Stars\n4. Plan changes automatically\n\nWhat happens:\n• New limits apply immediately\n• Existing settings are preserved\n• If current usage exceeds new limit, need to remove excess items\n\nExample:\n• You have 30 channels on Medium plan (limit 100)\n• Switch to Light plan (limit 50)\n• All 30 channels continue working\n• Can add 20 more channels\n\nPayment:\n• Via Telegram Stars\n• Use desktop Telegram app for better rates\n• Subscription renews for selected period"
           }
         }
       },
@@ -468,6 +514,10 @@
           "multipleUsers": {
             "question": "Can I use one account for multiple users?",
             "answer": "Technically:\n• One account can only be connected to one bot user\n• When trying to connect same account to another user, previous session will disconnect\n\nRecommendations:\n• Use separate account for each bot user\n• This ensures security and independence of settings"
+          },
+          "disconnect": {
+            "question": "How to disconnect personal account?",
+            "answer": "How to disconnect:\n1. Go to \"🔌 Connect personal account\"\n2. Click \"🔴 Disconnect session\"\n3. Confirm disconnection\n\nWhat happens:\n• Session is removed from system\n• Public channels continue working\n• Private channels and groups become unavailable\n• Monitoring channel settings are preserved\n\nImportant:\n• Disconnection is irreversible\n• Need to reconnect to use private channels again\n• Session data is completely deleted"
           }
         }
       },
@@ -493,6 +543,39 @@
           "keywordsNotWorking": {
             "question": "Keywords not working",
             "answer": "Possible causes:\n• Keywords not added\n• Incorrect keyword spelling\n• Keywords not applied to publication channel\n\nSolutions:\n1. Check keywords list\n2. Make sure keywords are added to publication channel\n3. Check keyword spelling\n4. Try adding keywords again"
+          },
+          "delay": {
+            "question": "Messages arrive with delay",
+            "answer": "Normal behavior:\n• Delay of 5-30 seconds is normal\n• Depends on server load and task queue\n\nIf delay is too long:\n1. Check internet connection\n2. Check server load (may be temporary)\n3. Contact support if delay is constant\n\nOptimization:\n• Bot uses asynchronous processing\n• Task queue is processed continuously\n• Delays possible under high load"
+          },
+          "channelNotMonitored": {
+            "question": "Some channels are not being monitored",
+            "answer": "Possible causes:\n• Channel removed from monitoring\n• Channel blocked or unavailable\n• Connection problems\n• Channel is private and no access\n\nSolutions:\n1. Check monitoring channels list\n2. Make sure channel exists and is accessible\n3. For private channels - check personal account connection\n4. Try removing and adding channel again\n\nCheck:\n• Open channel in Telegram\n• Verify channel is accessible\n• Check monitoring settings in bot"
+          },
+          "botNotAdmin": {
+            "question": "Error \"Bot is not administrator\"",
+            "answer": "Cause:\n• Bot not added as administrator or removed\n\nSolutions:\n1. Add bot as channel administrator\n2. Enable \"Post messages\" permission\n3. Click \"Check permissions\" in channel menu in bot\n\nHow to add bot:\n1. Open channel settings in Telegram\n2. Go to \"Administrators\"\n3. Click \"Add administrator\"\n4. Find @radar_telegram_bot\n5. Enable \"Post messages\"\n6. Click \"Done\""
+          },
+          "accountDisconnected": {
+            "question": "Account disconnected by itself",
+            "answer": "Possible causes:\n• Session expired (rare)\n• Server problems\n• Telegram password changed\n• Connection issues\n\nSolutions:\n1. Reconnect account\n2. Check Telegram security settings\n3. Contact support if problem repeats\n\nPrevention:\n• Regularly check connection status\n• Don't change Telegram password unnecessarily\n• Report problems to support"
+          }
+        }
+      },
+      "tips": {
+        "title": "Tips and Recommendations",
+        "items": {
+          "effectiveKeywords": {
+            "question": "How to create effective keywords?",
+            "answer": "Principles:\n• Use specific words, not general ones\n• Avoid too short words (less than 3 characters)\n• Combine multiple words for precise search\n• Consider synonyms and spelling variants\n\nExamples:\n❌ Bad: \"news\", \"crypto\"\n✅ Good: \"bitcoin\", \"ethereum\", \"cryptocurrency\"\n\nTips:\n• Use words that accurately describe needed content\n• Add spelling variants (e.g., \"bitcoin\" and \"биткоин\")\n• Exclude words that may give many false positives\n• Test keywords and adjust based on results"
+          },
+          "thematicChannels": {
+            "question": "How to organize publication channels?",
+            "answer": "Principle:\n• Create separate channels for different topics\n• Use different keywords for each channel\n• Configure channels independently\n\nExample:\nChannel \"Cryptocurrencies\":\n├── Monitoring channels: Cryptonews, BitcoinNews\n├── Keywords: bitcoin, ethereum, cryptocurrency\n\nChannel \"Technology\":\n├── Monitoring channels: TechNews, ITChannel\n├── Keywords: technology, IT, programming\n\nBenefits:\n• Subscribers get only relevant content\n• Easier content management\n• Can configure different publication formats\n• Better organization"
+          },
+          "bulkAddChannels": {
+            "question": "How to efficiently add multiple channels?",
+            "answer": "Tips:\n• Add channels in groups separated by comma\n• Use automatic queue (built-in)\n• Check channel list after adding\n\nExample:\nInstead of adding one by one:\n1. Add cryptonews\n2. Wait\n3. Add bitcoin\n...\n\nUse:\nAdd: cryptonews, bitcoin, ethereum, blockchain\n(All channels added automatically with delay)\n\nBenefits:\n• Saves time\n• Protection from flood limits\n• Convenient management\n\nHow it works:\n• Channels added to queue automatically\n• Processing with 3-5 second delay between channels\n• You get notification when complete"
           }
         }
       }
