@@ -42,3 +42,22 @@ export function getCurrentLanguage(pathname: string): Language {
   return 'ru'
 }
 
+export function getTranslationArray(lang: Language, key: string): string[] {
+  const keys = key.split('.')
+  let value: any = translations[lang]
+  
+  for (const k of keys) {
+    if (value && typeof value === 'object' && k in value) {
+      value = value[k]
+    } else {
+      return []
+    }
+  }
+  
+  if (Array.isArray(value)) {
+    return value
+  }
+  
+  return []
+}
+

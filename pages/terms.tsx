@@ -3,16 +3,17 @@ import { useRouter } from 'next/router'
 import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getTranslation, getCurrentLanguage, getTranslationArray, Language } from '@/utils/translations'
 
 export default function Terms() {
-  const { t, language } = useLanguage()
   const router = useRouter()
+  const lang = getCurrentLanguage(router.pathname)
+  const t = (key: string) => getTranslation(lang, key)
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/terms`
   const ogImage = `${siteUrl}/logo.png`
-  const title = String(t('pages.terms.title'))
-  const description = String(t('pages.terms.description'))
+  const title = t('pages.terms.title')
+  const description = t('pages.terms.description')
 
   return (
     <>
@@ -28,7 +29,10 @@ export default function Terms() {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Telegram Radar" />
-        <meta property="og:locale" content={router.locale === 'ru' ? 'ru_RU' : router.locale === 'es' ? 'es_ES' : 'en_US'} />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'es' ? 'es_ES' : 'en_US'} />
+        <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/terms`} />
+        <link rel="alternate" hrefLang="ru" href={`${siteUrl}/terms`} />
+        <link rel="alternate" hrefLang="es" href={`${siteUrl}/es/terms`} />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -50,7 +54,7 @@ export default function Terms() {
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
                 <h1 className="text-4xl md:text-5xl font-bold mb-8">{t('pages.terms.content.heading')}</h1>
-                <p className="text-muted-foreground mb-8">{t('pages.terms.content.lastUpdated')}: {new Date().toLocaleDateString(language === 'ru' ? 'ru-RU' : language === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <p className="text-muted-foreground mb-8">{t('pages.terms.content.lastUpdated')}: {new Date().toLocaleDateString(lang === 'ru' ? 'ru-RU' : lang === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
                 <section className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.acceptance.title')}</h2>
@@ -72,12 +76,9 @@ export default function Terms() {
                     {t('pages.terms.content.registration.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(() => {
-                      const items = t('pages.terms.content.registration.items', { returnObjects: true })
-                      return Array.isArray(items) ? items.map((item: string, index: number) => (
-                        <li key={index}>{item}</li>
-                      )) : null
-                    })()}
+                    {getTranslationArray(lang, 'pages.terms.content.registration.items').map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.terms.content.registration.responsibility')}
@@ -90,12 +91,9 @@ export default function Terms() {
                     {t('pages.terms.content.rules.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(() => {
-                      const items = t('pages.terms.content.rules.items', { returnObjects: true })
-                      return Array.isArray(items) ? items.map((item: string, index: number) => (
-                        <li key={index}>{item}</li>
-                      )) : null
-                    })()}
+                    {getTranslationArray(lang, 'pages.terms.content.rules.items').map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
@@ -105,12 +103,9 @@ export default function Terms() {
                     {t('pages.terms.content.pricing.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(() => {
-                      const items = t('pages.terms.content.pricing.items', { returnObjects: true })
-                      return Array.isArray(items) ? items.map((item: string, index: number) => (
-                        <li key={index}>{item}</li>
-                      )) : null
-                    })()}
+                    {getTranslationArray(lang, 'pages.terms.content.pricing.items').map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
@@ -120,12 +115,9 @@ export default function Terms() {
                     {t('pages.terms.content.liability.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(() => {
-                      const items = t('pages.terms.content.liability.items', { returnObjects: true })
-                      return Array.isArray(items) ? items.map((item: string, index: number) => (
-                        <li key={index}>{item}</li>
-                      )) : null
-                    })()}
+                    {getTranslationArray(lang, 'pages.terms.content.liability.items').map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {t('pages.terms.content.liability.responsibility')}
@@ -145,12 +137,9 @@ export default function Terms() {
                     {t('pages.terms.content.termination.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    {(() => {
-                      const items = t('pages.terms.content.termination.items', { returnObjects: true })
-                      return Array.isArray(items) ? items.map((item: string, index: number) => (
-                        <li key={index}>{item}</li>
-                      )) : null
-                    })()}
+                    {getTranslationArray(lang, 'pages.terms.content.termination.items').map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
@@ -167,11 +156,7 @@ export default function Terms() {
                     {t('pages.terms.content.contacts.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>{(() => {
-                      const items = t('pages.terms.content.contacts.items', { returnObjects: true })
-                      const firstItem = Array.isArray(items) ? items[0] : String(items)
-                      return `${firstItem}: `
-                    })()}<a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
+                    <li>{getTranslationArray(lang, 'pages.terms.content.contacts.items')[0] || ''}: <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
                   </ul>
                 </section>
 
