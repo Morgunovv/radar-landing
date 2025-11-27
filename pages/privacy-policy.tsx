@@ -24,12 +24,8 @@ export default function PrivacyPolicy() {
           <div className="pt-24 pb-16">
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
-                <h1 className="text-4xl md:text-5xl font-bold mb-8">{t('pages.privacy.content.heading')}</h1>
-                <p className="text-muted-foreground mb-8">{t('pages.privacy.content.lastUpdated')}: {new Date().toLocaleDateString(language === 'ru' ? 'ru-RU' : language === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-
-              <div className="prose prose-invert max-w-none">
-                <h1 className="text-4xl md:text-5xl font-bold mb-8">{t('pages.privacy.content.heading')}</h1>
-                <p className="text-muted-foreground mb-8">{t('pages.privacy.content.lastUpdated')}: {new Date().toLocaleDateString(language === 'ru' ? 'ru-RU' : language === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8">{String(t('pages.privacy.content.heading'))}</h1>
+                <p className="text-muted-foreground mb-8">{String(t('pages.privacy.content.lastUpdated'))}: {new Date().toLocaleDateString(language === 'ru' ? 'ru-RU' : language === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
                 <section className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">{t('pages.privacy.content.general.title')}</h2>
