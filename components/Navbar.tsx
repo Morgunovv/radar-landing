@@ -21,8 +21,27 @@ export function Navbar() {
   const t = (key: string) => getTranslation(lang, key)
   
   const getLanguagePath = (langCode: Language) => {
-    if (langCode === 'ru') return '/'
-    return `/${langCode}`
+    // Получаем текущий путь без префикса языка
+    let currentPath = router.pathname
+    
+    // Убираем префиксы языков, если они есть
+    if (currentPath.startsWith('/en/')) {
+      currentPath = currentPath.substring(3) // убираем '/en'
+    } else if (currentPath.startsWith('/es/')) {
+      currentPath = currentPath.substring(3) // убираем '/es'
+    } else if (currentPath === '/en') {
+      currentPath = '/'
+    } else if (currentPath === '/es') {
+      currentPath = '/'
+    }
+    
+    // Если переключаемся на русский, возвращаем путь без префикса
+    if (langCode === 'ru') {
+      return currentPath
+    }
+    
+    // Для других языков добавляем префикс
+    return `/${langCode}${currentPath === '/' ? '' : currentPath}`
   }
 
   useEffect(() => {
