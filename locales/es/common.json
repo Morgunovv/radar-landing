@@ -225,6 +225,116 @@
         "description": "No pierdas ofertas rentables. Automatiza la búsqueda de productos y servicios para reventa."
       }
     }
+  },
+  "faq": {
+    "title": "Preguntas",
+    "titleHighlight": "Frecuentes",
+    "subtitle": "Encuentra respuestas a las preguntas más populares sobre Telegram Radar",
+    "contactSupport": "Contactar Soporte",
+    "notFound": "¿No encontraste respuesta a tu pregunta?",
+    "sections": {
+      "general": {
+        "title": "Preguntas Generales",
+        "items": {
+          "howItWorks": {
+            "question": "¿Cómo funciona el monitoreo de canales?",
+            "answer": "Cómo funciona:\n1. El bot se conecta a Telegram a través de API\n2. Rastrea nuevos mensajes en canales especificados\n3. Verifica mensajes por coincidencias de palabras clave (si están configuradas)\n4. Agrega mensajes coincidentes a la cola de publicación\n5. Publica mensajes en canales de publicación especificados\n\nDetalles técnicos:\n• Los canales públicos usan una cuenta de monitoreo compartida\n• Los canales privados requieren conexión de cuenta personal\n• Los mensajes se procesan asincrónicamente a través de cola Redis\n• El retraso entre procesamiento de mensajes es mínimo"
+          },
+          "channelsLimit": {
+            "question": "¿Cuántos canales puedo monitorear?",
+            "answer": "Límites por plan:\n• Gratis: hasta 5 canales de monitoreo, hasta 10 consultas de palabras clave\n• Light: hasta 50 canales, hasta 50 consultas de palabras clave\n• Medium: hasta 100 canales, hasta 100 consultas de palabras clave\n• Hard: hasta 200 canales, hasta 200 consultas de palabras clave\n• Rock: hasta 500 canales, hasta 200 consultas de palabras clave\n\nQué cuenta:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación"
+          },
+          "privateChannels": {
+            "question": "¿Puedo monitorear canales privados?",
+            "answer": "Sí, con condiciones:\n• Requiere conexión de cuenta personal de Telegram\n• Requiere plan de pago (Light, Medium, Hard, Rock)\n• Necesita acceso al canal (suscripción o enlace de invitación)\n\nCómo agregar canal privado:\n1. Conecta cuenta personal\n2. Obtén enlace de invitación al canal\n3. Envía enlace de invitación al bot\n4. El bot se suscribirá automáticamente al canal a través de tu cuenta\n\nLimitaciones:\n• Los canales privados solo se pueden monitorear a través de cuenta personal\n• El plan gratuito no admite canales privados\n• Las notificaciones del canal se desactivan automáticamente"
+          },
+          "speed": {
+            "question": "¿Qué tan rápido llegan los mensajes después de la publicación?",
+            "answer": "Velocidad de procesamiento:\n• Generalmente los mensajes se publican en segundos después de aparecer en el canal fuente\n• El retraso depende de la carga del servidor y la cola de tareas\n• Promedio: 5-30 segundos\n\nFactores que afectan la velocidad:\n• Cantidad de mensajes siendo procesados\n• Carga del servidor\n• Retrasos de API de Telegram\n• Cantidad de canales de monitoreo"
+          }
+        }
+      },
+      "keywords": {
+        "title": "Preguntas sobre Palabras Clave",
+        "items": {
+          "howKeywordsWork": {
+            "question": "¿Cómo funcionan las palabras clave?",
+            "answer": "Cómo funciona:\n1. El bot extrae texto del mensaje\n2. Verifica texto por coincidencias de palabras clave\n3. Si se encuentra al menos una coincidencia - el mensaje se publica\n4. Si no hay coincidencias - el mensaje no se publica\n\nCaracterísticas:\n• La búsqueda no distingue mayúsculas/minúsculas (por defecto)\n• Búsqueda parcial de palabras\n• Búsqueda en todo el texto del mensaje\n\nEjemplo:\nPalabra clave: \"bitcoin\"\nMensaje: \"Bitcoin alcanzó nuevo máximo\"\nResultado: ✅ Coincidencia encontrada"
+          },
+          "regex": {
+            "question": "¿Puedo usar expresiones regulares?",
+            "answer": "Versión actual:\n• Las expresiones regulares no están soportadas\n• Todas las palabras clave se buscan como texto plano\n\nPlaneado para versiones futuras:\n• Soporte de expresiones regulares\n• Opción \"Usar regex\" al agregar palabra clave\n• Ejemplos: bitcoin|ethereum, \\d+, [A-Z]+"
+          },
+          "exactMatch": {
+            "question": "¿Cómo buscar coincidencia exacta de palabra?",
+            "answer": "Versión actual:\n• Por defecto búsqueda parcial de palabra\n• bitcoin encontrará: \"bitcoin\", \"bitcoins\", \"cryptobitcoin\"\n\nPlaneado para versiones futuras:\n• Opción \"Buscar palabra completa\"\n• bitcoin solo encontrará: \"bitcoin\", \"bitcoin.\", \"bitcoin,\", pero no \"bitcoins\"\n\nSolución temporal:\n• Usa palabras clave más específicas\n• Combina múltiples palabras para búsqueda exacta"
+          },
+          "caseSensitive": {
+            "question": "¿Se considera la sensibilidad a mayúsculas/minúsculas?",
+            "answer": "Comportamiento actual:\n• Por defecto la búsqueda no distingue mayúsculas/minúsculas\n• bitcoin encontrará: \"bitcoin\", \"Bitcoin\", \"BITCOIN\", \"BiTcOiN\"\n\nPlaneado para versiones futuras:\n• Configuración de sensibilidad a mayúsculas/minúsculas\n• Opción \"Considerar mayúsculas/minúsculas\" al agregar palabra clave"
+          }
+        }
+      },
+      "publishing": {
+        "title": "Preguntas sobre Canales de Publicación",
+        "items": {
+          "multipleChannels": {
+            "question": "¿Puedo publicar en múltiples canales simultáneamente?",
+            "answer": "Sí:\n• Se pueden crear múltiples canales de publicación\n• Cada canal se configura independientemente\n• Un mensaje puede publicarse en múltiples canales simultáneamente\n\nConfiguración:\n• Cada canal de publicación se configura por separado\n• Se pueden usar diferentes palabras clave para diferentes canales\n• Se pueden usar diferentes formatos de publicación"
+          },
+          "format": {
+            "question": "¿Qué formato de publicación es mejor usar?",
+            "answer": "Forward (reenviar original):\n✅ Preserva autoría y fuente\n✅ Los suscriptores ven la fuente\n❌ Se ve que el mensaje fue reenviado\nUsar para: canales de noticias, canales con contenido original\n\nCopy (copiar-pegar):\n✅ El mensaje parece original\n✅ Se puede ocultar la fuente\n❌ Se pierde información del autor\nUsar para: agregadores de noticias, canales anónimos\n\nRecomendación:\n• Para canales de noticias - Forward\n• Para agregadores - Copy con enlace a fuente\n• Para canales anónimos - Copy sin enlace"
+          },
+          "changeFormat": {
+            "question": "¿Puedo cambiar el formato de publicación después de la configuración?",
+            "answer": "Sí:\n• El formato se puede cambiar en cualquier momento\n• El cambio se aplica a nuevos mensajes\n• Los mensajes antiguos no se cambian\n\nCómo cambiar:\n1. Abre configuración del canal de publicación\n2. \"🔍 Filtro de mensajes para publicación\"\n3. \"📄 Reenviar o copiar-pegar\"\n4. Selecciona nuevo formato"
+          }
+        }
+      },
+      "account": {
+        "title": "Preguntas sobre Cuenta Personal",
+        "items": {
+          "security": {
+            "question": "¿Es seguro conectar cuenta personal?",
+            "answer": "Seguridad:\n✅ Sesión almacenada encriptada\n✅ Contraseña no almacenada\n✅ Se puede desconectar sesión en cualquier momento\n✅ Sesión usada solo para monitoreo de canales\n\nQué hace el bot:\n• Se suscribe a canales para monitoreo\n• Desactiva notificaciones de canales\n• Lee mensajes de canales\n• No envía mensajes en tu nombre\n• No cambia configuración de cuenta\n\nRecomendaciones:\n• Usa cuenta separada para el bot (si es posible)\n• Verifica regularmente la actividad de la cuenta\n• Desconecta sesión si ya no es necesaria"
+          },
+          "code": {
+            "question": "¿Qué hacer si olvidé el código de confirmación?",
+            "answer": "Soluciones:\n1. Espera unos minutos - el código puede llegar con retraso\n2. Verifica que el número de teléfono sea correcto\n3. Intenta solicitar nuevo código (si está disponible)\n4. Asegúrate de tener acceso a Telegram en este número\n\nSi el código no llega:\n• Verifica conexión a internet\n• Asegúrate de que Telegram funcione en tu dispositivo\n• Intenta reiniciar el proceso de conexión"
+          },
+          "multipleUsers": {
+            "question": "¿Puedo usar una cuenta para múltiples usuarios?",
+            "answer": "Técnicamente:\n• Una cuenta solo puede conectarse a un usuario del bot\n• Al intentar conectar la misma cuenta a otro usuario, la sesión anterior se desconectará\n\nRecomendaciones:\n• Usa cuenta separada para cada usuario del bot\n• Esto asegura seguridad e independencia de configuraciones"
+          }
+        }
+      },
+      "troubleshooting": {
+        "title": "Solución de Problemas",
+        "items": {
+          "channelNotFound": {
+            "question": "Canal no encontrado",
+            "answer": "Posibles causas:\n• Nombre de usuario del canal incorrecto\n• Canal eliminado o bloqueado\n• Canal es privado y sin acceso\n\nSoluciones:\n1. Verifica la corrección del nombre de usuario (sin @)\n2. Asegúrate de que el canal exista y sea accesible\n3. Para canales privados - conecta cuenta personal\n4. Intenta usar enlace completo: https://t.me/username"
+          },
+          "limitReached": {
+            "question": "Error \"Límite de canales alcanzado\"",
+            "answer": "Causa:\n• Límite de canales excedido para tu plan\n\nSoluciones:\n1. Elimina canales no utilizados\n2. O elige plan con límite más alto\n\nCómo verificar límite:\n1. Ve a \"💳 Límites\"\n2. Verifica línea \"Canales: X / Y\"\n3. X - cantidad actual, Y - límite"
+          },
+          "noMessages": {
+            "question": "Los mensajes no llegan",
+            "answer": "Posibles causas:\n• Canal no agregado al monitoreo\n• Palabras clave no configuradas (si se usa filtrado)\n• Canal eliminado o bloqueado\n• Problemas de conexión\n\nSoluciones:\n1. Verifica que el canal esté agregado a la lista de canales de monitoreo\n2. Verifica configuración de filtrado (palabras clave o reenviar todos)\n3. Asegúrate de que el canal exista y sea accesible\n4. Verifica conexión a internet\n5. Reinicia el bot (comando /start)"
+          },
+          "notPublishing": {
+            "question": "Los mensajes no se publican en el canal",
+            "answer": "Posibles causas:\n• El bot no es administrador del canal\n• El bot tiene permisos insuficientes\n• Canal eliminado o bloqueado\n• Canales de monitoreo no configurados\n\nSoluciones:\n1. Verifica que el bot esté agregado como administrador\n2. Verifica permisos del bot (debe tener \"Publicar mensajes\")\n3. Asegúrate de que el canal exista y esté activo\n4. Verifica configuración de canales de monitoreo\n5. Haz clic en \"Verificar permisos\" en el menú del canal"
+          },
+          "keywordsNotWorking": {
+            "question": "Las palabras clave no funcionan",
+            "answer": "Posibles causas:\n• Palabras clave no agregadas\n• Ortografía incorrecta de palabras clave\n• Palabras clave no aplicadas al canal de publicación\n\nSoluciones:\n1. Verifica lista de palabras clave\n2. Asegúrate de que las palabras clave estén agregadas al canal de publicación\n3. Verifica ortografía de palabras clave\n4. Intenta agregar palabras clave nuevamente"
+          }
+        }
+      }
+    }
   }
 }
 

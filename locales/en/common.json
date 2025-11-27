@@ -225,5 +225,115 @@
         "description": "Don't miss profitable deals. Automate search for products and services for resale."
       }
     }
+  },
+  "faq": {
+    "title": "Frequently Asked",
+    "titleHighlight": "Questions",
+    "subtitle": "Find answers to the most popular questions about Telegram Radar",
+    "contactSupport": "Contact Support",
+    "notFound": "Didn't find an answer to your question?",
+    "sections": {
+      "general": {
+        "title": "General Questions",
+        "items": {
+          "howItWorks": {
+            "question": "How does channel monitoring work?",
+            "answer": "How it works:\n1. Bot connects to Telegram via API\n2. Tracks new messages in specified channels\n3. Checks messages for keyword matches (if configured)\n4. Adds matching messages to publication queue\n5. Publishes messages to specified publication channels\n\nTechnical details:\n• Public channels use a shared monitoring account\n• Private channels require personal account connection\n• Messages are processed asynchronously via Redis queue\n• Delay between message processing is minimal"
+          },
+          "channelsLimit": {
+            "question": "How many channels can I monitor?",
+            "answer": "Plan limits:\n• Free: up to 5 monitoring channels, up to 10 keyword queries\n• Light: up to 50 channels, up to 50 keyword queries\n• Medium: up to 100 channels, up to 100 keyword queries\n• Hard: up to 200 channels, up to 200 keyword queries\n• Rock: up to 500 channels, up to 200 keyword queries\n\nWhat counts:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels"
+          },
+          "privateChannels": {
+            "question": "Can I monitor private channels?",
+            "answer": "Yes, with conditions:\n• Requires personal Telegram account connection\n• Requires paid plan (Light, Medium, Hard, Rock)\n• Need access to channel (subscription or invite link)\n\nHow to add private channel:\n1. Connect personal account\n2. Get invite link to channel\n3. Send invite link to bot\n4. Bot will automatically subscribe to channel via your account\n\nLimitations:\n• Private channels can only be monitored via personal account\n• Free plan does not support private channels\n• Channel notifications are automatically disabled"
+          },
+          "speed": {
+            "question": "How fast do messages arrive after publication?",
+            "answer": "Processing speed:\n• Usually messages are published within seconds after appearing in source channel\n• Delay depends on server load and task queue\n• Average: 5-30 seconds\n\nFactors affecting speed:\n• Number of messages being processed\n• Server load\n• Telegram API delays\n• Number of monitoring channels"
+          }
+        }
+      },
+      "keywords": {
+        "title": "Questions about Keywords",
+        "items": {
+          "howKeywordsWork": {
+            "question": "How do keywords work?",
+            "answer": "How it works:\n1. Bot extracts text from message\n2. Checks text for keyword matches\n3. If at least one match found - message is published\n4. If no matches - message is not published\n\nFeatures:\n• Search is case-insensitive (by default)\n• Partial word search\n• Search through entire message text\n\nExample:\nKeyword: \"bitcoin\"\nMessage: \"Bitcoin reached new maximum\"\nResult: ✅ Match found"
+          },
+          "regex": {
+            "question": "Can I use regular expressions?",
+            "answer": "Current version:\n• Regular expressions are not supported\n• All keywords are searched as plain text\n\nPlanned for future versions:\n• Regular expression support\n• \"Use regex\" option when adding keyword\n• Examples: bitcoin|ethereum, \\d+, [A-Z]+"
+          },
+          "exactMatch": {
+            "question": "How to search for exact word match?",
+            "answer": "Current version:\n• By default partial word search\n• bitcoin will find: \"bitcoin\", \"bitcoins\", \"cryptobitcoin\"\n\nPlanned for future versions:\n• \"Search whole word\" option\n• bitcoin will only find: \"bitcoin\", \"bitcoin.\", \"bitcoin,\", but not \"bitcoins\"\n\nTemporary solution:\n• Use more specific keywords\n• Combine multiple words for exact search"
+          },
+          "caseSensitive": {
+            "question": "Is case sensitivity considered?",
+            "answer": "Current behavior:\n• By default search is case-insensitive\n• bitcoin will find: \"bitcoin\", \"Bitcoin\", \"BITCOIN\", \"BiTcOiN\"\n\nPlanned for future versions:\n• Case sensitivity setting\n• \"Consider case\" option when adding keyword"
+          }
+        }
+      },
+      "publishing": {
+        "title": "Questions about Publication Channels",
+        "items": {
+          "multipleChannels": {
+            "question": "Can I publish to multiple channels simultaneously?",
+            "answer": "Yes:\n• Can create multiple publication channels\n• Each channel is configured independently\n• One message can be published to multiple channels simultaneously\n\nConfiguration:\n• Each publication channel is configured separately\n• Can use different keywords for different channels\n• Can use different publication formats"
+          },
+          "format": {
+            "question": "Which publication format is better to use?",
+            "answer": "Forward (forward original):\n✅ Preserves authorship and source\n✅ Subscribers see source\n❌ Shows that message was forwarded\nUse for: news channels, channels with original content\n\nCopy (copy-paste):\n✅ Message looks original\n✅ Can hide source\n❌ Loses author information\nUse for: news aggregators, anonymous channels\n\nRecommendation:\n• For news channels - Forward\n• For aggregators - Copy with source link\n• For anonymous channels - Copy without link"
+          },
+          "changeFormat": {
+            "question": "Can I change publication format after setup?",
+            "answer": "Yes:\n• Format can be changed at any time\n• Change applies to new messages\n• Old messages are not changed\n\nHow to change:\n1. Open publication channel settings\n2. \"🔍 Message filter for posting\"\n3. \"📄 Forward or copy-paste\"\n4. Select new format"
+          }
+        }
+      },
+      "account": {
+        "title": "Questions about Personal Account",
+        "items": {
+          "security": {
+            "question": "Is it safe to connect personal account?",
+            "answer": "Security:\n✅ Session stored encrypted\n✅ Password not stored\n✅ Can disconnect session at any time\n✅ Session used only for channel monitoring\n\nWhat bot does:\n• Subscribes to channels for monitoring\n• Disables channel notifications\n• Reads messages from channels\n• Does not send messages on your behalf\n• Does not change account settings\n\nRecommendations:\n• Use separate account for bot (if possible)\n• Regularly check account activity\n• Disconnect session if no longer needed"
+          },
+          "code": {
+            "question": "What to do if I forgot confirmation code?",
+            "answer": "Solutions:\n1. Wait a few minutes - code may arrive with delay\n2. Check that phone number is correct\n3. Try requesting new code (if available)\n4. Make sure you have access to Telegram on this number\n\nIf code doesn't arrive:\n• Check internet connection\n• Make sure Telegram works on your device\n• Try restarting connection process"
+          },
+          "multipleUsers": {
+            "question": "Can I use one account for multiple users?",
+            "answer": "Technically:\n• One account can only be connected to one bot user\n• When trying to connect same account to another user, previous session will disconnect\n\nRecommendations:\n• Use separate account for each bot user\n• This ensures security and independence of settings"
+          }
+        }
+      },
+      "troubleshooting": {
+        "title": "Troubleshooting",
+        "items": {
+          "channelNotFound": {
+            "question": "Channel not found",
+            "answer": "Possible causes:\n• Incorrect channel username\n• Channel deleted or blocked\n• Channel is private and no access\n\nSolutions:\n1. Check username correctness (without @)\n2. Make sure channel exists and is accessible\n3. For private channels - connect personal account\n4. Try using full link: https://t.me/username"
+          },
+          "limitReached": {
+            "question": "Error \"Channel limit reached\"",
+            "answer": "Cause:\n• Exceeded channel limit for your plan\n\nSolutions:\n1. Delete unused channels\n2. Or choose plan with higher limit\n\nHow to check limit:\n1. Go to \"💳 Limits\"\n2. Check line \"Channels: X / Y\"\n3. X - current count, Y - limit"
+          },
+          "noMessages": {
+            "question": "Messages not arriving",
+            "answer": "Possible causes:\n• Channel not added to monitoring\n• Keywords not configured (if filtering used)\n• Channel deleted or blocked\n• Connection problems\n\nSolutions:\n1. Check that channel is added to monitoring channels list\n2. Check filtering settings (keywords or repost all)\n3. Make sure channel exists and is accessible\n4. Check internet connection\n5. Restart bot (command /start)"
+          },
+          "notPublishing": {
+            "question": "Messages not publishing to channel",
+            "answer": "Possible causes:\n• Bot is not channel administrator\n• Bot has insufficient permissions\n• Channel deleted or blocked\n• Monitoring channels not configured\n\nSolutions:\n1. Check that bot is added as administrator\n2. Check bot permissions (should have \"Post messages\")\n3. Make sure channel exists and is active\n4. Check monitoring channels settings\n5. Click \"Check permissions\" in channel menu"
+          },
+          "keywordsNotWorking": {
+            "question": "Keywords not working",
+            "answer": "Possible causes:\n• Keywords not added\n• Incorrect keyword spelling\n• Keywords not applied to publication channel\n\nSolutions:\n1. Check keywords list\n2. Make sure keywords are added to publication channel\n3. Check keyword spelling\n4. Try adding keywords again"
+          }
+        }
+      }
+    }
   }
 }
