@@ -44,6 +44,14 @@ export function Navbar() {
     return `/${langCode}${currentPath === '/' ? '' : currentPath}`
   }
 
+  const getFAQPath = () => {
+    // Всегда возвращаем правильный путь к FAQ для текущего языка
+    if (lang === 'ru') {
+      return '/faq'
+    }
+    return `/${lang}/faq`
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
@@ -99,7 +107,7 @@ export function Navbar() {
             <Link href={`${getLanguagePath(lang)}#pricing`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
               {t('navbar.pricing')}
             </Link>
-            <Link href={`${getLanguagePath(lang)}/faq`} className="text-muted-foreground hover:text-primary transition-colors font-medium">
+            <Link href={getFAQPath()} className="text-muted-foreground hover:text-primary transition-colors font-medium">
               {t('navbar.faq')}
             </Link>
             
@@ -249,7 +257,7 @@ export function Navbar() {
                     {t('navbar.pricing')}
                   </Link>
                   <Link
-                    href={`${getLanguagePath(lang)}/faq`}
+                    href={getFAQPath()}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="px-4 py-3 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors font-medium"
                   >
