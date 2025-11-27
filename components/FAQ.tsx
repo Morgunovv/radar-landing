@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
+import { getTranslation, getCurrentLanguage } from '@/utils/translations'
 
 const faqSectionsConfig = [
   {
@@ -83,6 +85,10 @@ const faqSectionsConfig = [
 ]
 
 export function FAQ() {
+  const router = useRouter()
+  const lang = getCurrentLanguage(router.pathname)
+  const t = (key: string) => getTranslation(lang, key)
+  
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({})
 
   const toggleItem = (sectionIndex: number, itemIndex: number) => {
@@ -104,13 +110,13 @@ export function FAQ() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Часто задаваемые{' '}
+            {t('faq.title')}{' '}
             <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              вопросы
+              {t('faq.titleHighlight')}
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Нашли ответы на самые популярные вопросы о Telegram Radar
+            {t('faq.subtitle')}
           </p>
         </motion.div>
 
@@ -125,24 +131,15 @@ export function FAQ() {
               className="mb-12"
             >
               <h3 className="text-2xl font-bold text-white mb-6">
-                {section.key === 'general' && 'Общие вопросы'}
-                {section.key === 'keywords' && 'Вопросы о ключевых словах'}
-                {section.key === 'publishing' && 'Вопросы о каналах публикации'}
-                {section.key === 'filtering' && 'Моды фильтрации сообщений'}
-                {section.key === 'pricing' && 'Цены и планы'}
-                {section.key === 'account' && 'Вопросы о личном аккаунте'}
-                {section.key === 'troubleshooting' && 'Решение проблем'}
-                {section.key === 'tips' && 'Советы и рекомендации'}
+                {t(`faq.sections.${section.key}.title`)}
               </h3>
               <div className="space-y-4">
                 {section.items.map((item, itemIndex) => {
                   const key = `${sectionIndex}-${itemIndex}`
                   const isOpen = openItems[key] || false
                   
-                  // Получаем переводы из JSON
-                  const translations = require('@/locales/ru/common.json')
-                  const question = translations.faq?.sections?.[section.key]?.items?.[item.key]?.question || ''
-                  const answer = translations.faq?.sections?.[section.key]?.items?.[item.key]?.answer || ''
+                  const question = t(`faq.sections.${section.key}.items.${item.key}.question`)
+                  const answer = t(`faq.sections.${section.key}.items.${item.key}.answer`)
                   
                   return (
                     <motion.div
@@ -196,7 +193,7 @@ export function FAQ() {
           className="mt-12 text-center"
         >
           <p className="text-muted-foreground mb-6">
-            Не нашли ответ на свой вопрос?
+            {t('faq.notFound')}
           </p>
           <a
             href="https://t.me/radar_telegram_bot"
@@ -204,7 +201,7 @@ export function FAQ() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            Связаться с поддержкой
+            {t('faq.contactSupport')}
             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>

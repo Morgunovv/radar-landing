@@ -5,11 +5,17 @@ import { Navbar } from '@/components/Navbar'
 import Link from 'next/link'
 import { TrendingUp, Zap, Target, Clock, ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { getTranslation, getCurrentLanguage, Language } from '@/utils/translations'
 
 export default function CryptoTraders() {
-  const { t } = useLanguage()
   const router = useRouter()
+  const lang = getCurrentLanguage(router.pathname)
+  const t = (key: string) => getTranslation(lang, key)
+  
+  const getLanguagePath = (langCode: Language) => {
+    if (langCode === 'ru') return ''
+    return `/${langCode}`
+  }
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
   const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/cases/crypto-traders`
   const ogImage = `${siteUrl}/logo.png`
@@ -30,7 +36,10 @@ export default function CryptoTraders() {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Telegram Radar" />
-        <meta property="og:locale" content={router.locale === 'ru' ? 'ru_RU' : router.locale === 'es' ? 'es_ES' : 'en_US'} />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'es' ? 'es_ES' : 'en_US'} />
+        <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/cases/crypto-traders`} />
+        <link rel="alternate" hrefLang="ru" href={`${siteUrl}/cases/crypto-traders`} />
+        <link rel="alternate" hrefLang="es" href={`${siteUrl}/es/cases/crypto-traders`} />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -200,7 +209,7 @@ export default function CryptoTraders() {
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
-                  <Link href="/" className="text-primary hover:underline">
+                  <Link href={`${getLanguagePath(lang)}/`} className="text-primary hover:underline">
                     {t('pages.cases.crypto.backToHome')}
                   </Link>
                 </div>

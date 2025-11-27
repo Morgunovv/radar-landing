@@ -5,12 +5,12 @@ import { Footer } from '@/components/Footer'
 import { Navbar } from '@/components/Navbar'
 import { getTranslation, getCurrentLanguage } from '@/utils/translations'
 
-export default function FAQPage() {
+export default function FAQPageES() {
   const router = useRouter()
   const lang = getCurrentLanguage(router.pathname)
   const t = (key: string) => getTranslation(lang, key)
   const siteUrl = typeof window !== 'undefined' ? window.location.origin : 'https://radar-bot.com'
-  const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/faq`
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : `${siteUrl}/es/faq`
   const ogImage = `${siteUrl}/logo.png`
   const title = String(t('pages.faq.title'))
   const description = String(t('pages.faq.description'))
@@ -29,7 +29,7 @@ export default function FAQPage() {
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Telegram Radar" />
-        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : lang === 'es' ? 'es_ES' : 'en_US'} />
+        <meta property="og:locale" content="es_ES" />
         <link rel="alternate" hrefLang="en" href={`${siteUrl}/en/faq`} />
         <link rel="alternate" hrefLang="ru" href={`${siteUrl}/faq`} />
         <link rel="alternate" hrefLang="es" href={`${siteUrl}/es/faq`} />
@@ -52,9 +52,7 @@ export default function FAQPage() {
         <div className="fixed inset-0 bg-[url('/images/bg-pattern.svg')] bg-cover bg-center opacity-10 pointer-events-none"></div>
         <div className="relative z-10">
           <Navbar />
-          <div className="pt-24">
-            <FAQ />
-          </div>
+          <FAQ />
           <Footer />
         </div>
       </main>
