@@ -9,8 +9,8 @@ export default function FAQPage() {
   return (
     <>
       <Head>
-        <title>{t('pages.faq.title')}</title>
-        <meta name="description" content={t('pages.faq.description')} />
+        <title>{String(t('pages.faq.title'))}</title>
+        <meta name="description" content={String(t('pages.faq.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

@@ -11,8 +11,8 @@ export default function CryptoTraders() {
   return (
     <>
       <Head>
-        <title>{t('pages.cases.crypto.title')}</title>
-        <meta name="description" content={t('pages.cases.crypto.description')} />
+        <title>{String(t('pages.cases.crypto.title'))}</title>
+        <meta name="description" content={String(t('pages.cases.crypto.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

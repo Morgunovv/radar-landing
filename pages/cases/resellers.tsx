@@ -11,8 +11,8 @@ export default function Resellers() {
   return (
     <>
       <Head>
-        <title>{t('pages.cases.resellers.title')}</title>
-        <meta name="description" content={t('pages.cases.resellers.description')} />
+        <title>{String(t('pages.cases.resellers.title'))}</title>
+        <meta name="description" content={String(t('pages.cases.resellers.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

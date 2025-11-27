@@ -9,8 +9,8 @@ export default function Terms() {
   return (
     <>
       <Head>
-        <title>{t('pages.terms.title')}</title>
-        <meta name="description" content={t('pages.terms.description')} />
+        <title>{String(t('pages.terms.title'))}</title>
+        <meta name="description" content={String(t('pages.terms.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

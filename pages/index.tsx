@@ -86,8 +86,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{t('pages.home.title')}</title>
-        <meta name="description" content={t('pages.home.description')} />
+        <title>{String(t('pages.home.title'))}</title>
+        <meta name="description" content={String(t('pages.home.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

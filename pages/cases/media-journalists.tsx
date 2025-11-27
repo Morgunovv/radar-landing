@@ -11,8 +11,8 @@ export default function MediaJournalists() {
   return (
     <>
       <Head>
-        <title>{t('pages.cases.media.title')}</title>
-        <meta name="description" content={t('pages.cases.media.description')} />
+        <title>{String(t('pages.cases.media.title'))}</title>
+        <meta name="description" content={String(t('pages.cases.media.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />

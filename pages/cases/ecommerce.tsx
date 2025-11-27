@@ -11,8 +11,8 @@ export default function Ecommerce() {
   return (
     <>
       <Head>
-        <title>{t('pages.cases.ecommerce.title')}</title>
-        <meta name="description" content={t('pages.cases.ecommerce.description')} />
+        <title>{String(t('pages.cases.ecommerce.title'))}</title>
+        <meta name="description" content={String(t('pages.cases.ecommerce.description'))} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.png" />
         <link rel="apple-touch-icon" href="/logo.png" />
