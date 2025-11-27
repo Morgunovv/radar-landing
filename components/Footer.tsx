@@ -9,12 +9,12 @@ export function Footer() {
     <footer className="border-t border-border/50 py-12 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
-          <div>
+          <div className="relative z-0">
             <div className="flex items-center gap-2 mb-4">
               <img 
                 src="/logo.png" 
                 alt="Telegram Radar" 
-                className="w-10 h-10 rounded-xl object-contain"
+                className="w-10 h-10 rounded-xl object-contain pointer-events-none"
                 loading="lazy"
               />
               <span className="text-xl font-bold">Telegram Radar</span>
@@ -24,35 +24,35 @@ export function Footer() {
             </p>
           </div>
 
-          <div>
+          <div className="relative z-10">
             <h4 className="font-semibold mb-4">{t('footer.product.title')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href="#features" className="hover:text-primary transition-colors">{t('footer.product.features')}</a>
+                <a href="#features" className="hover:text-primary transition-colors relative z-10">{t('footer.product.features')}</a>
               </li>
               <li>
-                <a href="#pricing" className="hover:text-primary transition-colors">{t('footer.product.pricing')}</a>
+                <a href="#pricing" className="hover:text-primary transition-colors relative z-10">{t('footer.product.pricing')}</a>
               </li>
               <li>
-                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t('footer.product.try')}</a>
+                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.product.try')}</a>
               </li>
             </ul>
           </div>
 
-          <div>
+          <div className="relative z-10">
             <h4 className="font-semibold mb-4">{t('footer.support.title')}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">{t('footer.support.faq')}</Link>
+                <Link href="/faq" className="hover:text-primary transition-colors relative z-10">{t('footer.support.faq')}</Link>
               </li>
               <li>
-                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t('footer.support.bot')}</a>
+                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.support.bot')}</a>
               </li>
               <li>
-                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t('footer.support.docs')}</a>
+                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.support.docs')}</a>
               </li>
               <li>
-                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{t('footer.support.contact')}</a>
+                <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors relative z-10">{t('footer.support.contact')}</a>
               </li>
             </ul>
           </div>
