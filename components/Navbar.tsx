@@ -6,9 +6,9 @@ import { Send, ChevronDown, Globe } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const languages = [
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' }
+  { code: 'ru', name: 'Русский', flag: '🇷🇺', countryCode: 'RU' },
+  { code: 'en', name: 'English', flag: '🇬🇧', countryCode: 'GB' },
+  { code: 'es', name: 'Español', flag: '🇪🇸', countryCode: 'ES' }
 ]
 
 export function Navbar() {
@@ -75,8 +75,8 @@ export function Navbar() {
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
-                <Globe className="w-4 h-4" />
-                <span className="text-sm font-medium">{currentLanguage.flag} {currentLanguage.code.toUpperCase()}</span>
+                <Globe className="w-5 h-5" />
+                <span className="text-sm font-medium">{currentLanguage.countryCode} {currentLanguage.countryCode}</span>
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -95,7 +95,7 @@ export function Navbar() {
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
-                      <span className="font-medium">{lang.flag} {lang.name}</span>
+                      <span className="font-medium">{lang.countryCode} {lang.name}</span>
                     </button>
                   ))}
                 </div>
@@ -120,7 +120,7 @@ export function Navbar() {
                 className="inline-flex items-center gap-1 px-2 py-1.5 rounded-md bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
               >
                 <Globe className="w-4 h-4" />
-                <span className="text-xs font-medium">{currentLanguage.code.toUpperCase()}</span>
+                <span className="text-xs font-medium">{currentLanguage.countryCode}</span>
               </button>
               
               {isLangDropdownOpen && (
@@ -138,7 +138,7 @@ export function Navbar() {
                           : 'text-primary-foreground hover:bg-muted'
                       }`}
                     >
-                      <span className="font-medium">{lang.flag} {lang.name}</span>
+                      <span className="font-medium">{lang.countryCode} {lang.name}</span>
                     </button>
                   ))}
                 </div>
