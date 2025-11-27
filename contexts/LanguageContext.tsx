@@ -7,7 +7,7 @@ type Language = 'ru' | 'en' | 'es'
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string, params?: Record<string, string>) => string
+  t: (key: string, params?: Record<string, string | boolean>) => string | string[]
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -54,7 +54,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const t = (key: string, params?: Record<string, string>): string => {
+  const t = (key: string, params?: Record<string, string | boolean>): string | string[] => {
     if (!isClient) return key
     
     const keys = key.split('.')
@@ -68,6 +68,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
     }
     
+    // Если запрашивается массив
+    if (params?.returnObjects && Array.isArray(value)) {
+      return value
+    }
+    
     if (typeof value !== 'string') {
       return key
     }
@@ -75,7 +80,8 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     // Заменяем параметры
     if (params) {
       return Object.entries(params).reduce((str, [param, val]) => {
-        return str.replace(`{{${param}}}`, val)
+        if (param === 'returnObjects') return str
+        return str.replace(`{{${param}}}`, String(val))
       }, value)
     }
     

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Terms() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   return (
     <>
       <Head>
@@ -24,122 +24,116 @@ export default function Terms() {
           <div className="pt-24 pb-16">
             <div className="container mx-auto max-w-4xl px-4">
               <div className="prose prose-invert max-w-none">
-                <h1 className="text-4xl md:text-5xl font-bold mb-8">Условия использования</h1>
-                <p className="text-muted-foreground mb-8">Последнее обновление: {new Date().toLocaleDateString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-8">{t('pages.terms.content.heading')}</h1>
+                <p className="text-muted-foreground mb-8">{t('pages.terms.content.lastUpdated')}: {new Date().toLocaleDateString(language === 'ru' ? 'ru-RU' : language === 'en' ? 'en-US' : 'es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">1. Принятие условий</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.acceptance.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Используя сервис Telegram Radar (далее - «Сервис»), вы соглашаетесь с настоящими Условиями использования. Если вы не согласны с какими-либо условиями, пожалуйста, не используйте Сервис.
+                    {t('pages.terms.content.acceptance.text')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">2. Описание сервиса</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.description.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Telegram Radar - это сервис для автоматического мониторинга Telegram-каналов, фильтрации сообщений по ключевым словам и автоматической публикации в указанные каналы. Сервис предоставляется «как есть» без каких-либо гарантий.
+                    {t('pages.terms.content.description.text')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">3. Регистрация и учетная запись</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.registration.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Для использования Сервиса необходимо:
+                    {t('pages.terms.content.registration.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Иметь действующий аккаунт Telegram</li>
-                    <li>Начать работу с ботом @radar_telegram_bot</li>
-                    <li>Следовать инструкциям бота для настройки мониторинга</li>
+                    {(t('pages.terms.content.registration.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Вы несете ответственность за сохранность доступа к вашему аккаунту Telegram и за все действия, совершенные с использованием вашего аккаунта.
+                    {t('pages.terms.content.registration.responsibility')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">4. Правила использования</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.rules.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    При использовании Сервиса запрещается:
+                    {t('pages.terms.content.rules.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Использовать Сервис для незаконных целей</li>
-                    <li>Нарушать права интеллектуальной собственности третьих лиц</li>
-                    <li>Распространять спам, вредоносное ПО или контент, нарушающий права других</li>
-                    <li>Пытаться взломать, нарушить работу или обойти ограничения Сервиса</li>
-                    <li>Использовать Сервис для мониторинга контента без согласия владельцев каналов (где это требуется)</li>
-                    <li>Нарушать правила использования Telegram</li>
+                    {(t('pages.terms.content.rules.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">5. Тарифы и оплата</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.pricing.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Сервис предоставляется на условиях различных тарифных планов:
+                    {t('pages.terms.content.pricing.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Бесплатный тариф - предоставляется навсегда с ограниченным функционалом</li>
-                    <li>Платные тарифы - оплачиваются через Telegram Stars на ежемесячной основе</li>
-                    <li>Оплата производится заранее за выбранный период</li>
-                    <li>Возврат средств не предусмотрен, за исключением случаев технических сбоев</li>
+                    {(t('pages.terms.content.pricing.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">6. Ограничения ответственности</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.liability.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Сервис предоставляется «как есть». Мы не гарантируем:
+                    {t('pages.terms.content.liability.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Непрерывную и безошибочную работу Сервиса</li>
-                    <li>Отсутствие задержек в обработке сообщений</li>
-                    <li>Доступность всех каналов для мониторинга</li>
-                    <li>Точность фильтрации по ключевым словам на 100%</li>
+                    {(t('pages.terms.content.liability.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Мы не несем ответственности за контент, публикуемый через Сервис, и за последствия его использования.
+                    {t('pages.terms.content.liability.responsibility')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">7. Интеллектуальная собственность</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.intellectual.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Все права на Сервис, включая дизайн, программное обеспечение, логотипы и торговые марки, принадлежат Telegram Radar. Вы не имеете права копировать, модифицировать или распространять материалы Сервиса без письменного разрешения.
+                    {t('pages.terms.content.intellectual.text')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">8. Прекращение использования</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.termination.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Мы оставляем за собой право приостановить или прекратить доступ к Сервису в случае:
+                    {t('pages.terms.content.termination.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Нарушения настоящих Условий использования</li>
-                    <li>Неоплаты платного тарифа</li>
-                    <li>Технических работ или форс-мажорных обстоятельств</li>
-                    <li>Нарушения правил использования Telegram</li>
+                    {(t('pages.terms.content.termination.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                      <li key={index}>{item}</li>
+                    ))}
                   </ul>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">9. Изменения условий</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.changes.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Мы оставляем за собой право изменять настоящие Условия использования в любое время. О существенных изменениях мы уведомим пользователей через Telegram бот или на сайте. Продолжение использования Сервиса после изменений означает ваше согласие с новыми условиями.
+                    {t('pages.terms.content.changes.text')}
                   </p>
                 </section>
 
                 <section className="mb-12">
-                  <h2 className="text-2xl font-bold mb-4">10. Контакты</h2>
+                  <h2 className="text-2xl font-bold mb-4">{t('pages.terms.content.contacts.title')}</h2>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
-                    По всем вопросам, связанным с использованием Сервиса, обращайтесь:
+                    {t('pages.terms.content.contacts.text')}
                   </p>
                   <ul className="list-disc pl-6 text-muted-foreground space-y-2 mb-4">
-                    <li>Через Telegram бот: <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
+                    <li>{(t('pages.terms.content.contacts.items', { returnObjects: true }) as string[])[0]}: <a href="https://t.me/radar_telegram_bot" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">@radar_telegram_bot</a></li>
                   </ul>
                 </section>
 
                 <div className="mt-12 pt-8 border-t border-border/50">
                   <Link href="/" className="text-primary hover:underline">
-                    ← Вернуться на главную
+                    {t('pages.terms.content.backToHome')}
                   </Link>
                 </div>
               </div>
