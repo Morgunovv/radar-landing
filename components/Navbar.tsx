@@ -54,7 +54,7 @@ export function Navbar() {
               <img 
                 src="/logo.png" 
                 alt="Telegram Radar" 
-                className="w-4 h-4 rounded-xl object-contain"
+                className="w-10 h-10 rounded-xl object-contain"
                 loading="eager"
               />
               <span className="text-xl md:text-2xl font-bold">Telegram Radar</span>
