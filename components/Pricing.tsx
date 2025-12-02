@@ -67,9 +67,17 @@ export function Pricing() {
   const t = (key: string, params?: Record<string, string>) => getTranslation(lang, key, params)
   
   const [selectedCurrency, setSelectedCurrency] = useState('EUR')
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [selectedDuration, setSelectedDuration] = useState<1 | 3 | 12>(1)
+  const [isCurrencyDropdownOpen, setIsCurrencyDropdownOpen] = useState(false)
+  const [isDurationDropdownOpen, setIsDurationDropdownOpen] = useState(false)
   const [exchangeRates, setExchangeRates] = useState<Record<string, number>>({})
   const [loading, setLoading] = useState(false)
+
+  const durationOptions = [
+    { months: 1, discount: 0 },
+    { months: 3, discount: 10 },
+    { months: 12, discount: 30 }
+  ]
 
   useEffect(() => {
     const fetchExchangeRates = async () => {
@@ -105,22 +113,38 @@ export function Pricing() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement
       if (!target.closest('.currency-dropdown')) {
-        setIsDropdownOpen(false)
+        setIsCurrencyDropdownOpen(false)
+      }
+      if (!target.closest('.duration-dropdown')) {
+        setIsDurationDropdownOpen(false)
       }
     }
 
-    if (isDropdownOpen) {
+    if (isCurrencyDropdownOpen || isDurationDropdownOpen) {
       document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [isDropdownOpen])
+  }, [isCurrencyDropdownOpen, isDurationDropdownOpen])
 
   const getPrice = (priceEur: number) => {
     const rate = exchangeRates[selectedCurrency] || 1
-    const convertedPrice = Math.round(priceEur * rate)
+    const discount = durationOptions.find(d => d.months === selectedDuration)?.discount || 0
+    const discountedPrice = priceEur * (1 - discount / 100)
+    const totalPrice = discountedPrice * selectedDuration
+    const convertedPrice = Math.round(totalPrice * rate)
+    const symbol = currencySymbols[selectedCurrency] || selectedCurrency
+    
+    return `${symbol}${convertedPrice}`
+  }
+
+  const getPricePerMonth = (priceEur: number) => {
+    const rate = exchangeRates[selectedCurrency] || 1
+    const discount = durationOptions.find(d => d.months === selectedDuration)?.discount || 0
+    const discountedPrice = priceEur * (1 - discount / 100)
+    const convertedPrice = Math.round(discountedPrice * rate)
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
     return `${symbol}${convertedPrice}`
@@ -140,44 +164,87 @@ export function Pricing() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">{t('pricing.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">{t('pricing.subtitle')}</p>
           
-          {/* Выпадающий список валют */}
-          <div className="relative inline-block currency-dropdown">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
-            >
-              <span className="text-sm font-medium">
-                {currencies.find(c => c.code === selectedCurrency)?.symbol} {selectedCurrency} {t('pricing.selectCurrency')}
-              </span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
-            
-            {isDropdownOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
-                {currencies.map((currency) => (
-                  <button
-                    key={currency.code}
-                    onClick={() => {
-                      setSelectedCurrency(currency.code)
-                      setIsDropdownOpen(false)
-                    }}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                      selectedCurrency === currency.code
-                        ? 'bg-primary/20 text-primary'
-                        : 'text-primary-foreground hover:bg-muted'
-                    }`}
-                  >
-                    <span className="font-medium">
-                      {selectedCurrency === currency.code ? (
-                        <span className="text-primary">{currency.symbol} {currency.name}</span>
-                      ) : (
-                        <span>{currency.symbol} {currency.name}</span>
-                      )}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            )}
+          {/* Выпадающие списки валют и срока */}
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            {/* Выпадающий список валют */}
+            <div className="relative inline-block currency-dropdown">
+              <button
+                onClick={() => setIsCurrencyDropdownOpen(!isCurrencyDropdownOpen)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
+              >
+                <span className="text-sm font-medium">
+                  {currencies.find(c => c.code === selectedCurrency)?.symbol} {selectedCurrency}
+                </span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isCurrencyDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isCurrencyDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
+                  {currencies.map((currency) => (
+                    <button
+                      key={currency.code}
+                      onClick={() => {
+                        setSelectedCurrency(currency.code)
+                        setIsCurrencyDropdownOpen(false)
+                      }}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                        selectedCurrency === currency.code
+                          ? 'bg-primary/20 text-primary'
+                          : 'text-primary-foreground hover:bg-muted'
+                      }`}
+                    >
+                      <span className="font-medium">
+                        {selectedCurrency === currency.code ? (
+                          <span className="text-primary">{currency.symbol} {currency.name}</span>
+                        ) : (
+                          <span>{currency.symbol} {currency.name}</span>
+                        )}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Выпадающий список срока */}
+            <div className="relative inline-block duration-dropdown">
+              <button
+                onClick={() => setIsDurationDropdownOpen(!isDurationDropdownOpen)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 text-primary-foreground transition-all duration-300"
+              >
+                <span className="text-sm font-medium">
+                  {t(`pricing.duration.${selectedDuration}`)}
+                </span>
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isDurationDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isDurationDropdownOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 rounded-lg bg-card border border-border/50 backdrop-blur-sm shadow-lg z-50 overflow-hidden">
+                  {durationOptions.map((option) => (
+                    <button
+                      key={option.months}
+                      onClick={() => {
+                        setSelectedDuration(option.months as 1 | 3 | 12)
+                        setIsDurationDropdownOpen(false)
+                      }}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                        selectedDuration === option.months
+                          ? 'bg-primary/20 text-primary'
+                          : 'text-primary-foreground hover:bg-muted'
+                      }`}
+                    >
+                      <span className="font-medium">
+                        {selectedDuration === option.months ? (
+                          <span className="text-primary">{t(`pricing.duration.${option.months}`)}</span>
+                        ) : (
+                          <span>{t(`pricing.duration.${option.months}`)}</span>
+                        )}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </motion.div>
 
@@ -221,11 +288,22 @@ export function Pricing() {
                 <p className="text-sm text-muted-foreground mb-4">{t(`pricing.plans.${plan.key}.subtitle`)}</p>
                 
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-bold">
-                      {loading ? '...' : getPrice(plan.priceEur)}
-                    </span>
-                    <span className="text-muted-foreground"> {t('pricing.month')}</span>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-4xl font-bold">
+                        {loading ? '...' : getPrice(plan.priceEur)}
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-sm text-muted-foreground">
+                        {loading ? '' : `${getPricePerMonth(plan.priceEur)} ${t('pricing.month')}`}
+                      </span>
+                      {selectedDuration > 1 && (
+                        <span className="text-xs text-muted-foreground">
+                          × {selectedDuration} {t('pricing.months')}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 

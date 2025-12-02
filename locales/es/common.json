@@ -57,7 +57,15 @@
     "title": "Elige tu plan",
     "subtitle": "Escala según creces.",
     "selectCurrency": "Selecciona moneda",
+    "selectDuration": "Selecciona duración",
     "month": "por mes",
+    "months": "mes.",
+    "discount": "Descuento",
+    "duration": {
+      "1": "1 mes",
+      "3": "3 meses (-10%)",
+      "12": "12 meses (-30%)"
+    },
     "popular": "Popular",
     "try": "Probar",
     "choosePlan": "Elegir plan",
