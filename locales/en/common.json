@@ -705,11 +705,11 @@
           },
           "channelsLimit": {
             "question": "How many channels can I monitor?",
-            "answer": "Plan limits:\n• Light: up to 50 channels, up to 50 keyword queries\n• Medium: up to 100 channels, up to 100 keyword queries\n• Hard: up to 200 channels, up to 200 keyword queries\n• Rock: up to 500 channels, up to 200 keyword queries\n\nWhat counts:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels"
+            "answer": "Plan limits:\n• Demo: up to 50 channels, up to 50 keyword queries (valid for 10 days)\n• Light: up to 50 channels, up to 50 keyword queries\n• Medium: up to 100 channels, up to 100 keyword queries\n• Hard: up to 200 channels, up to 200 keyword queries\n• Rock: up to 500 channels, up to 200 keyword queries\n\nWhat counts:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels"
           },
           "privateChannels": {
             "question": "Can I monitor private channels?",
-            "answer": "Yes, with conditions:\n• Requires personal Telegram account connection\n• Requires paid plan (Light, Medium, Hard, Rock)\n• Need access to channel (subscription or invite link)\n\nHow to add private channel:\n1. Connect personal account\n2. Get invite link to channel\n3. Send invite link to bot\n4. Bot will automatically subscribe to channel via your account\n\nLimitations:\n• Private channels can only be monitored via personal account\n• Channel notifications are automatically disabled"
+            "answer": "Yes, with conditions:\n• Requires personal Telegram account connection\n• Requires paid plan (Light, Medium, Hard, Rock)\n• Need access to channel (subscription or invite link)\n\nHow to add private channel:\n1. Connect personal account\n2. Get invite link to channel\n3. Send invite link to bot\n4. Bot will automatically subscribe to channel via your account\n\nLimitations:\n• Private channels can only be monitored via personal account\n• Demo plan does not support private channels\n• Channel notifications are automatically disabled"
           },
           "speed": {
             "question": "How fast do messages arrive after publication?",
@@ -783,6 +783,10 @@
       "pricing": {
         "title": "Pricing and Plans",
         "items": {
+          "demoPlan": {
+            "question": "What's included in the Demo plan?",
+            "answer": "Demo plan features:\n• Up to 50 channels (monitoring + publication)\n• Up to 50 keyword queries\n• Valid for 10 days\n• Basic support\n\nLimitations:\n• Personal account connection: not available\n• Only public channels can be monitored\n• Plan is valid for 10 days from activation\n\nPerfect for:\n• Testing the service\n• Getting familiar with features\n• Evaluating capabilities before choosing a paid plan"
+          },
           "paidPlans": {
             "question": "What are the paid plans and their limits?",
             "answer": "Light Plan:\n• 50 channels, 50 keywords\n• Personal account: available\n• Price: 150 Telegram Stars/month (≈3 EUR)\n\nMedium Plan:\n• 100 channels, 100 keywords\n• Personal account: available\n• Price: 250 Telegram Stars/month (≈5 EUR)\n\nHard Plan:\n• 200 channels, 200 keywords\n• Personal account: available\n• Price: 500 Telegram Stars/month (≈12 EUR)\n\nRock Plan:\n• 500 channels, 200 keywords\n• Personal account: available\n• Price: 1000 Telegram Stars/month\n\nAll paid plans include:\n• Private channel monitoring\n• Personal account connection\n• Priority support"

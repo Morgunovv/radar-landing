@@ -705,11 +705,11 @@
           },
           "channelsLimit": {
             "question": "¿Cuántos canales puedo monitorear?",
-            "answer": "Límites por plan:\n• Light: hasta 50 canales, hasta 50 consultas de palabras clave\n• Medium: hasta 100 canales, hasta 100 consultas de palabras clave\n• Hard: hasta 200 canales, hasta 200 consultas de palabras clave\n• Rock: hasta 500 canales, hasta 200 consultas de palabras clave\n\nQué cuenta:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación"
+            "answer": "Límites por plan:\n• Demo: hasta 50 canales, hasta 50 consultas de palabras clave (válido por 10 días)\n• Light: hasta 50 canales, hasta 50 consultas de palabras clave\n• Medium: hasta 100 canales, hasta 100 consultas de palabras clave\n• Hard: hasta 200 canales, hasta 200 consultas de palabras clave\n• Rock: hasta 500 canales, hasta 200 consultas de palabras clave\n\nQué cuenta:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación"
           },
           "privateChannels": {
             "question": "¿Puedo monitorear canales privados?",
-            "answer": "Sí, con condiciones:\n• Requiere conexión de cuenta personal de Telegram\n• Requiere plan de pago (Light, Medium, Hard, Rock)\n• Necesita acceso al canal (suscripción o enlace de invitación)\n\nCómo agregar canal privado:\n1. Conecta cuenta personal\n2. Obtén enlace de invitación al canal\n3. Envía enlace de invitación al bot\n4. El bot se suscribirá automáticamente al canal a través de tu cuenta\n\nLimitaciones:\n• Los canales privados solo se pueden monitorear a través de cuenta personal\n• Las notificaciones del canal se desactivan automáticamente"
+            "answer": "Sí, con condiciones:\n• Requiere conexión de cuenta personal de Telegram\n• Requiere plan de pago (Light, Medium, Hard, Rock)\n• Necesita acceso al canal (suscripción o enlace de invitación)\n\nCómo agregar canal privado:\n1. Conecta cuenta personal\n2. Obtén enlace de invitación al canal\n3. Envía enlace de invitación al bot\n4. El bot se suscribirá automáticamente al canal a través de tu cuenta\n\nLimitaciones:\n• Los canales privados solo se pueden monitorear a través de cuenta personal\n• El plan Demo no admite canales privados\n• Las notificaciones del canal se desactivan automáticamente"
           },
           "speed": {
             "question": "¿Qué tan rápido llegan los mensajes después de la publicación?",
@@ -783,6 +783,10 @@
       "pricing": {
         "title": "Precios y Planes",
         "items": {
+          "demoPlan": {
+            "question": "¿Qué incluye el plan Demo?",
+            "answer": "Características del plan Demo:\n• Hasta 50 canales (monitoreo + publicación)\n• Hasta 50 consultas de palabras clave\n• Válido por 10 días\n• Soporte básico\n\nLimitaciones:\n• Conexión de cuenta personal: no disponible\n• Solo se pueden monitorear canales públicos\n• El plan es válido por 10 días desde la activación\n\nPerfecto para:\n• Probar el servicio\n• Familiarizarse con las funciones\n• Evaluar las capacidades antes de elegir un plan de pago"
+          },
           "paidPlans": {
             "question": "¿Cuáles son los planes de pago y sus límites?",
             "answer": "Plan Light:\n• 50 canales, 50 palabras clave\n• Cuenta personal: disponible\n• Precio: 150 Telegram Stars/mes (≈3 EUR)\n\nPlan Medium:\n• 100 canales, 100 palabras clave\n• Cuenta personal: disponible\n• Precio: 250 Telegram Stars/mes (≈5 EUR)\n\nPlan Hard:\n• 200 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 500 Telegram Stars/mes (≈12 EUR)\n\nPlan Rock:\n• 500 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 1000 Telegram Stars/mes\n\nTodos los planes de pago incluyen:\n• Monitoreo de canales privados\n• Conexión de cuenta personal\n• Soporte prioritario"

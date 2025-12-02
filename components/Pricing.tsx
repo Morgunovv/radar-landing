@@ -181,7 +181,7 @@ export function Pricing() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {planConfig.map((plan, index) => {
             const IconComponent = plan.icon
             // Определяем, это каналы или запросы для первого числа
@@ -196,14 +196,14 @@ export function Pricing() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: plan.popular ? 1.08 : 1.05, y: -5 }}
+                whileHover={{ scale: 1.05, y: -5 }}
                 transition={{ 
                   opacity: { duration: 0.5, delay: index * 0.1 },
                   scale: { duration: 0.3, ease: "easeOut" }
                 }}
                 className={`relative rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 ${
                   plan.popular 
-                    ? 'bg-card border-2 border-primary shadow-2xl scale-105 lg:scale-110 z-10' 
+                    ? 'bg-card border-2 border-primary shadow-2xl scale-105 z-10' 
                     : 'bg-card/50 border border-border/50 hover:border-primary/50'
                 }`}
               >
