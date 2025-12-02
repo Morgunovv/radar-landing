@@ -79,6 +79,10 @@ export function Pricing() {
     { months: 12, discount: 30 }
   ]
 
+  const CACHE_KEY = 'telegram-radar-exchange-rates'
+  const CACHE_TIMESTAMP_KEY = 'telegram-radar-exchange-rates-timestamp'
+  const CACHE_DURATION = 24 * 60 * 60 * 1000 // 24 часа в миллисекундах
+
   useEffect(() => {
     const fetchExchangeRates = async () => {
       setLoading(true)
@@ -96,11 +100,37 @@ export function Pricing() {
         // RUR это старая валюта, используем RUB
         if (data.rates.RUB) rates.RUR = data.rates.RUB
         
+        // Сохраняем курсы в localStorage
+        localStorage.setItem(CACHE_KEY, JSON.stringify(rates))
+        localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString())
+        
         setExchangeRates(rates)
       } catch (error) {
         console.error('Error fetching exchange rates:', error)
-        // Fallback к курсам по умолчанию
-        setExchangeRates({ EUR: 1, USD: 1.1, RUR: 100, UAH: 40, CNY: 7.5, CAD: 1.5 })
+        
+        // Пытаемся загрузить из кеша
+        try {
+          const cachedRates = localStorage.getItem(CACHE_KEY)
+          const cachedTimestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY)
+          
+          if (cachedRates) {
+            const rates = JSON.parse(cachedRates)
+            const timestamp = cachedTimestamp ? parseInt(cachedTimestamp) : 0
+            const age = Date.now() - timestamp
+            
+            // Используем кеш даже если он старый (лучше старый курс, чем хардкод)
+            console.log(`Using cached rates (age: ${Math.round(age / 1000 / 60 / 60)} hours)`)
+            setExchangeRates(rates)
+          } else {
+            // Fallback к курсам по умолчанию только если кеша нет
+            console.warn('No cached rates found, using hardcoded fallback')
+            setExchangeRates({ EUR: 1, USD: 1.1, RUR: 100, UAH: 40, CNY: 7.5, CAD: 1.5 })
+          }
+        } catch (cacheError) {
+          console.error('Error loading cached rates:', cacheError)
+          // Если и с кешем проблемы - используем хардкод
+          setExchangeRates({ EUR: 1, USD: 1.1, RUR: 100, UAH: 40, CNY: 7.5, CAD: 1.5 })
+        }
       } finally {
         setLoading(false)
       }
