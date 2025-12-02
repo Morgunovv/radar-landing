@@ -8,15 +8,6 @@ import { getTranslation, getCurrentLanguage } from '@/utils/translations'
 
 const planConfig = [
   {
-    name: 'Free',
-    key: 'free',
-    priceEur: 0,
-    features: [5, 10, 'support'],
-    icon: Zap,
-    gradient: 'from-gray-400 to-gray-600',
-    popular: false
-  },
-  {
     name: 'Light',
     key: 'light',
     priceEur: 3,
@@ -128,8 +119,6 @@ export function Pricing() {
   }, [isDropdownOpen])
 
   const getPrice = (priceEur: number) => {
-    if (priceEur === 0) return t('pricing.free')
-    
     const rate = exchangeRates[selectedCurrency] || 1
     const convertedPrice = Math.round(priceEur * rate)
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
@@ -233,65 +222,34 @@ export function Pricing() {
                 
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
-                    {plan.priceEur === 0 ? (
-                      <span className="text-4xl font-bold">{t('pricing.free')}</span>
-                    ) : (
-                      <>
-                        <span className="text-4xl font-bold">
-                          {loading ? '...' : getPrice(plan.priceEur)}
-                        </span>
-                        <span className="text-muted-foreground"> {t('pricing.month')}</span>
-                      </>
-                    )}
+                    <span className="text-4xl font-bold">
+                      {loading ? '...' : getPrice(plan.priceEur)}
+                    </span>
+                    <span className="text-muted-foreground"> {t('pricing.month')}</span>
                   </div>
                 </div>
 
                 <ul className="space-y-3 mb-6">
-                  {plan.key === 'free' ? (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.channels')}
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.queries')}
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.free.features.support')}
-                        </span>
-                      </li>
-                    </>
-                  ) : (
-                    <>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.features.channels', { count: channelsCount.toString() })}
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">
-                          {t('pricing.plans.features.queries', { count: queriesCount.toString() })}
-                        </span>
-                      </li>
-                      {otherFeatures.map((feature, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-muted-foreground">
-                            {t(`pricing.plans.features.${feature}`)}
-                          </span>
-                        </li>
-                      ))}
-                    </>
-                  )}
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">
+                      {t('pricing.plans.features.channels', { count: channelsCount.toString() })}
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">
+                      {t('pricing.plans.features.queries', { count: queriesCount.toString() })}
+                    </span>
+                  </li>
+                  {otherFeatures.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-muted-foreground">
+                        {t(`pricing.plans.features.${feature}`)}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
 
                 <a
@@ -304,7 +262,7 @@ export function Pricing() {
                       : 'bg-card hover:bg-muted text-primary-foreground'
                   }`}
                 >
-                  {plan.priceEur === 0 ? t('pricing.try') : t('pricing.choosePlan')}
+                  {t('pricing.choosePlan')}
                 </a>
               </motion.div>
             )
