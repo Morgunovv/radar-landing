@@ -324,7 +324,7 @@ export function Pricing() {
                           <span className="text-4xl font-bold">
                             {loading ? '...' : getPricePerMonth(plan.priceEur)}
                           </span>
-                          <span className="text-xl text-muted-foreground ml-1">
+                          <span className="text-base text-muted-foreground ml-1">
                             {loading ? '' : t('pricing.month')}
                           </span>
                         </div>
