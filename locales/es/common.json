@@ -55,24 +55,14 @@
   },
   "pricing": {
     "title": "Elige tu plan",
-    "subtitle": "Comienza gratis. Escala según creces.",
+    "subtitle": "Escala según creces.",
     "selectCurrency": "Selecciona moneda",
-    "free": "Gratis",
-    "forever": "para siempre",
     "month": "por mes",
     "popular": "Popular",
     "try": "Probar",
     "choosePlan": "Elegir plan",
-    "footer": "Plan gratuito para siempre • Planes de pago sin vinculación de tarjeta",
+    "footer": "Planes de pago sin vinculación de tarjeta",
     "plans": {
-      "free": {
-        "subtitle": "Prueba las características",
-        "features": {
-          "channels": "Hasta 5 canales de monitoreo",
-          "queries": "Hasta 10 consultas de palabras clave",
-          "support": "Soporte básico"
-        }
-      },
       "light": {
         "subtitle": "Para principiantes"
       },
@@ -150,9 +140,8 @@
   },
   "cta": {
     "title": "¿Listo para automatizar el monitoreo?",
-    "subtitle": "Comienza con un plan gratuito para siempre. Sin tarjeta de crédito, sin límites de tiempo.",
+    "subtitle": "Comienza a usar ahora mismo. Sin vinculación de tarjeta requerida.",
     "stats": {
-      "free": "Gratis para siempre",
       "noLimits": "Sin límites",
       "setup": "3 min",
       "setupLabel": "Configuración"
@@ -232,7 +221,6 @@
           "title": "5. Precios y Pago",
           "text": "El Servicio se proporciona bajo varios planes de precios:",
           "items": [
-            "Plan gratuito - proporcionado para siempre con funcionalidad limitada",
             "Planes de pago - pagados a través de Telegram Stars mensualmente",
             "El pago se realiza por adelantado por el período seleccionado",
             "No se proporcionan reembolsos, excepto en casos de fallos técnicos"
@@ -414,7 +402,7 @@
         },
         "cta": {
           "title": "Comienza ahora mismo",
-          "description": "Configura el monitoreo de canales de cripto en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de canales de cripto en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -470,7 +458,7 @@
         },
         "cta": {
           "title": "Comienza a automatizar",
-          "description": "Configura el monitoreo de contenido para tus clientes en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de contenido para tus clientes en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -526,7 +514,7 @@
         },
         "cta": {
           "title": "Comienza a usar",
-          "description": "Configura el monitoreo de fuentes de noticias en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de fuentes de noticias en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -582,7 +570,7 @@
         },
         "cta": {
           "title": "Comienza a usar",
-          "description": "Configura el monitoreo de productos y ofertas en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de productos y ofertas en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -638,7 +626,7 @@
         },
         "cta": {
           "title": "Comienza a usar",
-          "description": "Configura el monitoreo de candidatos y mercado laboral en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de candidatos y mercado laboral en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -694,7 +682,7 @@
         },
         "cta": {
           "title": "Comienza a usar",
-          "description": "Configura el monitoreo de ofertas rentables en 3 minutos. El plan gratuito está disponible para siempre.",
+          "description": "Configura el monitoreo de ofertas rentables en 3 minutos.",
           "button": "Configurar monitoreo"
         },
         "backToHome": "← Volver al inicio"
@@ -717,11 +705,11 @@
           },
           "channelsLimit": {
             "question": "¿Cuántos canales puedo monitorear?",
-            "answer": "Límites por plan:\n• Gratis: hasta 5 canales de monitoreo, hasta 10 consultas de palabras clave\n• Light: hasta 50 canales, hasta 50 consultas de palabras clave\n• Medium: hasta 100 canales, hasta 100 consultas de palabras clave\n• Hard: hasta 200 canales, hasta 200 consultas de palabras clave\n• Rock: hasta 500 canales, hasta 200 consultas de palabras clave\n\nQué cuenta:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación"
+            "answer": "Límites por plan:\n• Light: hasta 50 canales, hasta 50 consultas de palabras clave\n• Medium: hasta 100 canales, hasta 100 consultas de palabras clave\n• Hard: hasta 200 canales, hasta 200 consultas de palabras clave\n• Rock: hasta 500 canales, hasta 200 consultas de palabras clave\n\nQué cuenta:\n• Canales de monitoreo (de dónde vienen los mensajes)\n• Canales de publicación (donde se publican los mensajes)\n• Total = canales de monitoreo + canales de publicación"
           },
           "privateChannels": {
             "question": "¿Puedo monitorear canales privados?",
-            "answer": "Sí, con condiciones:\n• Requiere conexión de cuenta personal de Telegram\n• Requiere plan de pago (Light, Medium, Hard, Rock)\n• Necesita acceso al canal (suscripción o enlace de invitación)\n\nCómo agregar canal privado:\n1. Conecta cuenta personal\n2. Obtén enlace de invitación al canal\n3. Envía enlace de invitación al bot\n4. El bot se suscribirá automáticamente al canal a través de tu cuenta\n\nLimitaciones:\n• Los canales privados solo se pueden monitorear a través de cuenta personal\n• El plan gratuito no admite canales privados\n• Las notificaciones del canal se desactivan automáticamente"
+            "answer": "Sí, con condiciones:\n• Requiere conexión de cuenta personal de Telegram\n• Requiere plan de pago (Light, Medium, Hard, Rock)\n• Necesita acceso al canal (suscripción o enlace de invitación)\n\nCómo agregar canal privado:\n1. Conecta cuenta personal\n2. Obtén enlace de invitación al canal\n3. Envía enlace de invitación al bot\n4. El bot se suscribirá automáticamente al canal a través de tu cuenta\n\nLimitaciones:\n• Los canales privados solo se pueden monitorear a través de cuenta personal\n• Las notificaciones del canal se desactivan automáticamente"
           },
           "speed": {
             "question": "¿Qué tan rápido llegan los mensajes después de la publicación?",
@@ -795,10 +783,6 @@
       "pricing": {
         "title": "Precios y Planes",
         "items": {
-          "freePlan": {
-            "question": "¿Qué incluye el plan gratuito?",
-            "answer": "Características del plan gratuito:\n• Hasta 3 canales (monitoreo + publicación)\n• Hasta 10 consultas de palabras clave\n• Hasta 10 publicaciones al copiar mensajes antiguos\n• Soporte básico\n• Gratis para siempre - sin límites de tiempo\n\nLimitaciones:\n• Conexión de cuenta personal: no disponible\n• Solo se pueden monitorear canales públicos\n• Número limitado de canales\n\nPerfecto para:\n• Probar el servicio\n• Necesidades básicas de monitoreo\n• Uso personal con pocos canales"
-          },
           "paidPlans": {
             "question": "¿Cuáles son los planes de pago y sus límites?",
             "answer": "Plan Light:\n• 50 canales, 50 palabras clave\n• Cuenta personal: disponible\n• Precio: 150 Telegram Stars/mes (≈3 EUR)\n\nPlan Medium:\n• 100 canales, 100 palabras clave\n• Cuenta personal: disponible\n• Precio: 250 Telegram Stars/mes (≈5 EUR)\n\nPlan Hard:\n• 200 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 500 Telegram Stars/mes (≈12 EUR)\n\nPlan Rock:\n• 500 canales, 200 palabras clave\n• Cuenta personal: disponible\n• Precio: 1000 Telegram Stars/mes\n\nTodos los planes de pago incluyen:\n• Monitoreo de canales privados\n• Conexión de cuenta personal\n• Soporte prioritario"

@@ -55,24 +55,14 @@
   },
   "pricing": {
     "title": "Choose your plan",
-    "subtitle": "Start free. Scale as you grow.",
+    "subtitle": "Scale as you grow.",
     "selectCurrency": "Select currency",
-    "free": "Free",
-    "forever": "forever",
     "month": "per month",
     "popular": "Popular",
     "try": "Try",
     "choosePlan": "Choose plan",
-    "footer": "Free plan forever • Paid plans without card binding",
+    "footer": "Paid plans without card binding",
     "plans": {
-      "free": {
-        "subtitle": "Try the features",
-        "features": {
-          "channels": "Up to 5 monitoring channels",
-          "queries": "Up to 10 keyword queries",
-          "support": "Basic support"
-        }
-      },
       "light": {
         "subtitle": "For beginners"
       },
@@ -150,9 +140,8 @@
   },
   "cta": {
     "title": "Ready to automate monitoring?",
-    "subtitle": "Start with a free plan forever. No credit card, no time limits.",
+    "subtitle": "Start using right now. No card binding required.",
     "stats": {
-      "free": "Free forever",
       "noLimits": "No limits",
       "setup": "3 min",
       "setupLabel": "Setup"
@@ -232,7 +221,6 @@
           "title": "5. Pricing and Payment",
           "text": "The Service is provided under various pricing plans:",
           "items": [
-            "Free plan - provided forever with limited functionality",
             "Paid plans - paid through Telegram Stars on a monthly basis",
             "Payment is made in advance for the selected period",
             "Refunds are not provided, except in cases of technical failures"
@@ -414,7 +402,7 @@
         },
         "cta": {
           "title": "Start right now",
-          "description": "Set up crypto channel monitoring in 3 minutes. Free plan available forever.",
+          "description": "Set up crypto channel monitoring in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -470,7 +458,7 @@
         },
         "cta": {
           "title": "Start automating",
-          "description": "Set up content monitoring for your clients in 3 minutes. Free plan available forever.",
+          "description": "Set up content monitoring for your clients in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -526,7 +514,7 @@
         },
         "cta": {
           "title": "Start using",
-          "description": "Set up news source monitoring in 3 minutes. Free plan available forever.",
+          "description": "Set up news source monitoring in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -582,7 +570,7 @@
         },
         "cta": {
           "title": "Start using",
-          "description": "Set up product and offer monitoring in 3 minutes. Free plan available forever.",
+          "description": "Set up product and offer monitoring in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -638,7 +626,7 @@
         },
         "cta": {
           "title": "Start using",
-          "description": "Set up candidate and labor market monitoring in 3 minutes. Free plan available forever.",
+          "description": "Set up candidate and labor market monitoring in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -694,7 +682,7 @@
         },
         "cta": {
           "title": "Start using",
-          "description": "Set up profitable offer monitoring in 3 minutes. Free plan available forever.",
+          "description": "Set up profitable offer monitoring in 3 minutes.",
           "button": "Set up monitoring"
         },
         "backToHome": "← Back to home"
@@ -717,11 +705,11 @@
           },
           "channelsLimit": {
             "question": "How many channels can I monitor?",
-            "answer": "Plan limits:\n• Free: up to 5 monitoring channels, up to 10 keyword queries\n• Light: up to 50 channels, up to 50 keyword queries\n• Medium: up to 100 channels, up to 100 keyword queries\n• Hard: up to 200 channels, up to 200 keyword queries\n• Rock: up to 500 channels, up to 200 keyword queries\n\nWhat counts:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels"
+            "answer": "Plan limits:\n• Light: up to 50 channels, up to 50 keyword queries\n• Medium: up to 100 channels, up to 100 keyword queries\n• Hard: up to 200 channels, up to 200 keyword queries\n• Rock: up to 500 channels, up to 200 keyword queries\n\nWhat counts:\n• Monitoring channels (where messages come from)\n• Publication channels (where messages are published)\n• Total = monitoring channels + publication channels"
           },
           "privateChannels": {
             "question": "Can I monitor private channels?",
-            "answer": "Yes, with conditions:\n• Requires personal Telegram account connection\n• Requires paid plan (Light, Medium, Hard, Rock)\n• Need access to channel (subscription or invite link)\n\nHow to add private channel:\n1. Connect personal account\n2. Get invite link to channel\n3. Send invite link to bot\n4. Bot will automatically subscribe to channel via your account\n\nLimitations:\n• Private channels can only be monitored via personal account\n• Free plan does not support private channels\n• Channel notifications are automatically disabled"
+            "answer": "Yes, with conditions:\n• Requires personal Telegram account connection\n• Requires paid plan (Light, Medium, Hard, Rock)\n• Need access to channel (subscription or invite link)\n\nHow to add private channel:\n1. Connect personal account\n2. Get invite link to channel\n3. Send invite link to bot\n4. Bot will automatically subscribe to channel via your account\n\nLimitations:\n• Private channels can only be monitored via personal account\n• Channel notifications are automatically disabled"
           },
           "speed": {
             "question": "How fast do messages arrive after publication?",
@@ -795,10 +783,6 @@
       "pricing": {
         "title": "Pricing and Plans",
         "items": {
-          "freePlan": {
-            "question": "What's included in the free plan?",
-            "answer": "Free plan features:\n• Up to 3 channels (monitoring + publication)\n• Up to 10 keyword queries\n• Up to 10 posts when copying old messages\n• Basic support\n• Free forever - no time limits\n\nLimitations:\n• Personal account connection: not available\n• Only public channels can be monitored\n• Limited number of channels\n\nPerfect for:\n• Trying out the service\n• Basic monitoring needs\n• Personal use with few channels"
-          },
           "paidPlans": {
             "question": "What are the paid plans and their limits?",
             "answer": "Light Plan:\n• 50 channels, 50 keywords\n• Personal account: available\n• Price: 150 Telegram Stars/month (≈3 EUR)\n\nMedium Plan:\n• 100 channels, 100 keywords\n• Personal account: available\n• Price: 250 Telegram Stars/month (≈5 EUR)\n\nHard Plan:\n• 200 channels, 200 keywords\n• Personal account: available\n• Price: 500 Telegram Stars/month (≈12 EUR)\n\nRock Plan:\n• 500 channels, 200 keywords\n• Personal account: available\n• Price: 1000 Telegram Stars/month\n\nAll paid plans include:\n• Private channel monitoring\n• Personal account connection\n• Priority support"
