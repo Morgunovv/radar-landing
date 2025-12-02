@@ -92,7 +92,7 @@ export function Hero() {
               className="p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/50 transition-colors"
             >
               <Target className="w-8 h-8 text-primary mb-3 mx-auto" />
-              <div className="text-3xl font-bold mb-1">100+</div>
+              <div className="text-3xl font-bold mb-1">{t('hero.stats.maxChannels')}</div>
               <div className="text-sm text-muted-foreground">{t('hero.stats.channels')}</div>
             </motion.div>
             <motion.div

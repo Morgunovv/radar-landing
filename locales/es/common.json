@@ -13,6 +13,7 @@
     "titleHighlight": "déjala encontrarte",
     "subtitle": "Automatiza el monitoreo de canales de Telegram. Obtén solo información relevante en tiempo real.",
     "stats": {
+      "maxChannels": "hasta 500",
       "channels": "canales de monitoreo",
       "time": "tiempo de búsqueda",
       "relevance": "relevancia"

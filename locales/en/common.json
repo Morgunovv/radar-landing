@@ -13,6 +13,7 @@
     "titleHighlight": "let it find you",
     "subtitle": "Automate Telegram channel monitoring. Get only relevant information in real-time.",
     "stats": {
+      "maxChannels": "up to 500",
       "channels": "monitoring channels",
       "time": "time spent searching",
       "relevance": "relevance"
