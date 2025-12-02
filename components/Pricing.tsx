@@ -29,7 +29,7 @@ const planConfig = [
     name: 'Hard',
     key: 'hard',
     priceEur: 9,
-    features: [200, 200, 'private', 'unlimited', 'copy', 'forward', 'links', 'priority'],
+    features: [200, 200, 'private', 'unlimited', 'copy', 'forward', 'links'],
     icon: Crown,
     gradient: 'from-purple-400 to-pink-500',
     popular: false
@@ -38,7 +38,7 @@ const planConfig = [
     name: 'Rock',
     key: 'rock',
     priceEur: 17,
-    features: [500, 200, 'private', 'unlimited', 'copy', 'forward', 'links', 'priority', 'dedicated'],
+    features: [500, 200, 'private', 'unlimited', 'copy', 'forward', 'links', 'priority'],
     icon: Crown,
     gradient: 'from-yellow-400 to-orange-500',
     popular: false
