@@ -129,6 +129,14 @@ export function Pricing() {
     }
   }, [isCurrencyDropdownOpen, isDurationDropdownOpen])
 
+  const formatPrice = (value: number): string => {
+    const [integerPart, decimalPart] = value.toFixed(2).split('.')
+    const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, "'")
+    return decimalPart && decimalPart !== '00' 
+      ? `${formattedInteger}.${decimalPart}`
+      : formattedInteger
+  }
+
   const getPrice = (priceEur: number) => {
     const rate = exchangeRates[selectedCurrency] || 1
     const discount = durationOptions.find(d => d.months === selectedDuration)?.discount || 0
@@ -139,9 +147,9 @@ export function Pricing() {
     
     // Для 1 месяца округляем до целых, для остальных - до сотых
     if (selectedDuration === 1) {
-      return `${symbol}${Math.round(convertedPrice)}`
+      return `${symbol}${formatPrice(Math.round(convertedPrice))}`
     }
-    return `${symbol}${convertedPrice.toFixed(2)}`
+    return `${symbol}${formatPrice(convertedPrice)}`
   }
 
   const getPricePerMonth = (priceEur: number) => {
@@ -153,9 +161,9 @@ export function Pricing() {
     
     // Для 1 месяца округляем до целых, для остальных - до сотых
     if (selectedDuration === 1) {
-      return `${symbol}${Math.round(convertedPrice)}`
+      return `${symbol}${formatPrice(Math.round(convertedPrice))}`
     }
-    return `${symbol}${convertedPrice.toFixed(2)}`
+    return `${symbol}${formatPrice(convertedPrice)}`
   }
 
 
