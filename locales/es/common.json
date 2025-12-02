@@ -103,16 +103,16 @@
     "problemsTitle": "Problemas",
     "solutionsTitle": "Soluciones",
     "items": {
-      "manual": "Necesidad de monitorear 50+ canales manualmente",
+      "manual": "Necesidad de monitorear docenas de canales manualmente",
       "missed": "Perder señales y noticias importantes",
-      "time": "Tiempo en filtrar información (10+ horas al día)",
+      "time": "Tiempo en recopilar información (2+ horas al día)",
       "opportunities": "Oportunidades perdidas por retraso en la información",
       "competitors": "Imposibilidad de rastrear competidores en tiempo real"
     },
     "solutions": {
-      "automatic": "Monitoreo automático de 100+ canales simultáneamente",
+      "automatic": "Monitoreo automático de hasta 500 canales simultáneamente",
       "instant": "Notificaciones instantáneas sobre eventos importantes",
-      "savings": "Ahorra 10-15 horas por semana",
+      "savings": "Ahorra hasta 10-15 horas por semana",
       "first": "Sé el primero en conocer oportunidades",
       "analytics": "Análisis de competidores en tiempo real"
     }

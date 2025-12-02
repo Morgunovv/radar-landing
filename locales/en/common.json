@@ -103,16 +103,16 @@
     "problemsTitle": "Problems",
     "solutionsTitle": "Solutions",
     "items": {
-      "manual": "Need to monitor 50+ channels manually",
+      "manual": "Need to monitor dozens of channels manually",
       "missed": "Missing important signals and news",
-      "time": "Time spent filtering information (10+ hours per day)",
+      "time": "Time spent collecting information (2+ hours per day)",
       "opportunities": "Missed opportunities due to information delay",
       "competitors": "Unable to track competitors in real-time"
     },
     "solutions": {
-      "automatic": "Automatic monitoring of 100+ channels simultaneously",
+      "automatic": "Automatic monitoring of up to 500 channels simultaneously",
       "instant": "Instant notifications about important events",
-      "savings": "Save 10-15 hours per week",
+      "savings": "Save up to 10-15 hours per week",
       "first": "Be first to know about opportunities",
       "analytics": "Real-time competitor analytics"
     }
