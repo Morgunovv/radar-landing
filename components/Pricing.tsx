@@ -129,12 +129,14 @@ export function Pricing() {
     }
   }, [isCurrencyDropdownOpen, isDurationDropdownOpen])
 
-  const formatPrice = (value: number): string => {
+  const formatPrice = (value: number, forceDecimals: boolean = false): string => {
     const [integerPart, decimalPart] = value.toFixed(2).split('.')
     const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, "'")
-    return decimalPart && decimalPart !== '00' 
-      ? `${formattedInteger}.${decimalPart}`
-      : formattedInteger
+    
+    if (forceDecimals || (decimalPart && decimalPart !== '00')) {
+      return `${formattedInteger}.${decimalPart}`
+    }
+    return formattedInteger
   }
 
   const getPrice = (priceEur: number) => {
@@ -145,11 +147,13 @@ export function Pricing() {
     const convertedPrice = totalPrice * rate
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
-    // Для 1 месяца округляем до целых, для остальных - до сотых
-    if (selectedDuration === 1) {
-      return `${symbol}${formatPrice(Math.round(convertedPrice))}`
+    // Для EUR и 1 месяца округляем до целых, для остальных валют и периодов - до сотых
+    const shouldShowDecimals = selectedCurrency !== 'EUR' || selectedDuration > 1
+    
+    if (selectedDuration === 1 && selectedCurrency === 'EUR') {
+      return `${symbol}${formatPrice(Math.round(convertedPrice), false)}`
     }
-    return `${symbol}${formatPrice(convertedPrice)}`
+    return `${symbol}${formatPrice(convertedPrice, shouldShowDecimals)}`
   }
 
   const getPricePerMonth = (priceEur: number) => {
@@ -159,11 +163,13 @@ export function Pricing() {
     const convertedPrice = discountedPrice * rate
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
-    // Для 1 месяца округляем до целых, для остальных - до сотых
-    if (selectedDuration === 1) {
-      return `${symbol}${formatPrice(Math.round(convertedPrice))}`
+    // Для EUR и 1 месяца округляем до целых, для остальных валют и периодов - до сотых
+    const shouldShowDecimals = selectedCurrency !== 'EUR' || selectedDuration > 1
+    
+    if (selectedDuration === 1 && selectedCurrency === 'EUR') {
+      return `${symbol}${formatPrice(Math.round(convertedPrice), false)}`
     }
-    return `${symbol}${formatPrice(convertedPrice)}`
+    return `${symbol}${formatPrice(convertedPrice, shouldShowDecimals)}`
   }
 
 
