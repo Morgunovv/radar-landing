@@ -150,6 +150,8 @@
     "title": "¿Listo para automatizar el monitoreo?",
     "subtitle": "Comienza a usar ahora mismo. Sin vinculación de tarjeta requerida.",
     "stats": {
+      "demoDays": "10 días",
+      "demoLabel": "Prueba gratis",
       "noLimits": "Sin límites",
       "setup": "3 min",
       "setupLabel": "Configuración"

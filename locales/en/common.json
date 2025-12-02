@@ -150,6 +150,8 @@
     "title": "Ready to automate monitoring?",
     "subtitle": "Start using right now. No card binding required.",
     "stats": {
+      "demoDays": "10 days",
+      "demoLabel": "Test for free",
       "noLimits": "No limits",
       "setup": "3 min",
       "setupLabel": "Setup"

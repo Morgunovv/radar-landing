@@ -43,8 +43,8 @@ export function CTA() {
           {/* Stats blocks */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 max-w-2xl mx-auto">
             <div className="p-4">
-              <div className="text-3xl font-bold text-primary mb-1">{t('cta.stats.free')}</div>
-              <div className="text-sm text-muted-foreground">{t('cta.stats.noLimits')}</div>
+              <div className="text-3xl font-bold text-primary mb-1">{t('cta.stats.demoDays')}</div>
+              <div className="text-sm text-muted-foreground">{t('cta.stats.demoLabel')}</div>
             </div>
             <div className="p-4">
               <div className="text-3xl font-bold text-primary mb-1">{t('cta.stats.setup')}</div>
