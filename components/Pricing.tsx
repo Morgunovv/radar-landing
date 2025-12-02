@@ -305,23 +305,35 @@ export function Pricing() {
                 
                 <div className="mb-6">
                   <div className="flex flex-col gap-1">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold">
-                        {loading ? '...' : getPrice(plan.priceEur)}
-                      </span>
-                    </div>
                     {selectedDuration === 1 ? (
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-sm text-muted-foreground">
-                          {loading ? '' : t('pricing.month')}
-                        </span>
-                      </div>
+                      <>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-4xl font-bold">
+                            {loading ? '...' : getPrice(plan.priceEur)}
+                          </span>
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-sm text-muted-foreground">
+                            {loading ? '' : t('pricing.month')}
+                          </span>
+                        </div>
+                      </>
                     ) : (
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-sm text-muted-foreground">
-                          {loading ? '' : `${getPricePerMonth(plan.priceEur)} × ${selectedDuration} ${t('pricing.months')}`}
-                        </span>
-                      </div>
+                      <>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-4xl font-bold">
+                            {loading ? '...' : getPricePerMonth(plan.priceEur)}
+                          </span>
+                          <span className="text-xl text-muted-foreground ml-1">
+                            {loading ? '' : t('pricing.month')}
+                          </span>
+                        </div>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-sm text-muted-foreground">
+                            {loading ? '' : `${getPrice(plan.priceEur)} ${t('pricing.forPeriod', { months: selectedDuration.toString() })}`}
+                          </span>
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>

@@ -61,6 +61,7 @@
     "selectDuration": "Select duration",
     "month": "per month",
     "months": "mo.",
+    "forPeriod": "for {{months}} mo.",
     "discount": "Discount",
     "duration": {
       "1": "1 month",

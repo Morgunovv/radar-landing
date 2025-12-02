@@ -81,6 +81,7 @@
     "selectDuration": "Выбери срок",
     "month": "в месяц",
     "months": "мес.",
+    "forPeriod": "за {{months}} мес.",
     "discount": "Скидка",
     "duration": {
       "1": "1 месяц",
