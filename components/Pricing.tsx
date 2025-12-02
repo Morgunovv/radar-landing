@@ -134,20 +134,28 @@ export function Pricing() {
     const discount = durationOptions.find(d => d.months === selectedDuration)?.discount || 0
     const discountedPrice = priceEur * (1 - discount / 100)
     const totalPrice = discountedPrice * selectedDuration
-    const convertedPrice = Math.round(totalPrice * rate)
+    const convertedPrice = totalPrice * rate
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
-    return `${symbol}${convertedPrice}`
+    // Для 1 месяца округляем до целых, для остальных - до сотых
+    if (selectedDuration === 1) {
+      return `${symbol}${Math.round(convertedPrice)}`
+    }
+    return `${symbol}${convertedPrice.toFixed(2)}`
   }
 
   const getPricePerMonth = (priceEur: number) => {
     const rate = exchangeRates[selectedCurrency] || 1
     const discount = durationOptions.find(d => d.months === selectedDuration)?.discount || 0
     const discountedPrice = priceEur * (1 - discount / 100)
-    const convertedPrice = Math.round(discountedPrice * rate)
+    const convertedPrice = discountedPrice * rate
     const symbol = currencySymbols[selectedCurrency] || selectedCurrency
     
-    return `${symbol}${convertedPrice}`
+    // Для 1 месяца округляем до целых, для остальных - до сотых
+    if (selectedDuration === 1) {
+      return `${symbol}${Math.round(convertedPrice)}`
+    }
+    return `${symbol}${convertedPrice.toFixed(2)}`
   }
 
 
@@ -294,16 +302,19 @@ export function Pricing() {
                         {loading ? '...' : getPrice(plan.priceEur)}
                       </span>
                     </div>
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-sm text-muted-foreground">
-                        {loading ? '' : `${getPricePerMonth(plan.priceEur)} ${t('pricing.month')}`}
-                      </span>
-                      {selectedDuration > 1 && (
-                        <span className="text-xs text-muted-foreground">
-                          × {selectedDuration} {t('pricing.months')}
+                    {selectedDuration === 1 ? (
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-sm text-muted-foreground">
+                          {loading ? '' : t('pricing.month')}
                         </span>
-                      )}
-                    </div>
+                      </div>
+                    ) : (
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-sm text-muted-foreground">
+                          {loading ? '' : `${getPricePerMonth(plan.priceEur)} × ${selectedDuration} ${t('pricing.months')}`}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
